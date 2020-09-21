@@ -13,3 +13,5 @@ Nuestro producto consiste en un sitio que permitirá comercializar platos de com
 - La página de [Mitsukawa](http://sushi-mitsukawa.jp/) y [est](https://www.est-restaurant.de/language/de/gallery/), ofrece productos similares a los nuestros.
 - [Zuma](https://zumarestaurant.com) y [Uchi](http://uchihackney.com/), apunta su web al mismo nicho que nosotros.
 - [Shoryu](https://shoryuramen.com), ofrece funcionalidades que nos interesaría adoptar.
+
+### Aquí está el [Wireframe](https://miro.com/app/board/o9J_kq3L0H4=/)
