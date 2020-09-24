@@ -14,4 +14,4 @@ Nuestro producto consiste en un sitio que permitirá comercializar platos de com
 - [Zuma](https://zumarestaurant.com) y [Uchi](http://uchihackney.com/), apunta su web al mismo nicho que nosotros.
 - [Shoryu](https://shoryuramen.com), ofrece funcionalidades que nos interesaría adoptar.
 
-### Aquí está el [Wireframe](https://miro.com/app/board/o9J_kq3L0H4=/)
+### Aquí está el [Wireframe](https://www.figma.com/file/pqUZxQZuOz3DlQn6QOZH6R/Sushi-E-commerce-Webpage?node-id=0%3A1)
