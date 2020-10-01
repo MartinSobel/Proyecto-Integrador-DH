@@ -17,3 +17,5 @@ Nuestro producto consiste en un sitio que permitirá comercializar platos de com
 ### Aquí está el [Wireframe](https://www.figma.com/file/pqUZxQZuOz3DlQn6QOZH6R/Sushi-E-commerce-Webpage?node-id=0%3A1)
 
 ### Aqui manejamos las [tareas](https://app.asana.com/0/1196241723931905/board)
+
+### Aqui está el [moodboard](https://github.com/MartinSobel/Proyecto-Integrador-DH/blob/master/moodboard.pdf)
