@@ -1,4 +1,4 @@
-# *Retrospectiva Sprint 2 Ej 1
+# *Retrospectiva Sprint 2 Ej 1*
 
 ## 1. Comenzar a hacer
 -Agregar las tareas divididas en Asana con antelación
