@@ -65,6 +65,23 @@ nav i{
   font-weight: bold;
 }
 
+/* Product details */
+#product-main{
+  margin-left: 5%;
+  display: inline-block;
+}
+
+#product-description{
+  display: inline-block;
+  flex-wrap: wrap;
+}
+
+#cart-options{
+  justify-content: center;
+  padding-left: 5%;
+  display: inline-block;
+}
+
 /* Footer */
 footer{
   background-color: black;
