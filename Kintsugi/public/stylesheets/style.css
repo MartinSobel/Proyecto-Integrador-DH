@@ -48,13 +48,10 @@ nav a:hover{
 
 /* Home */
 #banner{
-  background-image: url("/images/home-banner.jpg");
-  background-repeat: no-repeat;
-  background-size: 100%;
+  position: relative;
+  padding-top: 5%;
   height: 50vh;
   width: 100%;
-  display: flex;
-  justify-content: space-around;
 }
 
 .home-cards{
@@ -83,26 +80,20 @@ nav a:hover{
 }
 
 #wasabi{
-  display: inline-block;
-  width: 60%;
-}
-
-#wasabi{
-  display: inline-block;
   width: 60%;
 }
 
 #mano{
-  display: inline-block;
   width: 20%;
   position: relative;
   right: 10%;
+  bottom: 2%;
 }
 
 .home-text{
-  display: inline-block;
   padding: 2% 0% 2% 2%;
-  width: 50%;
+  width: 40%;
+  display: inline-block;
 }
 
 .button {
