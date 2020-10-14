@@ -16,7 +16,7 @@ nav{
   height: 5%;
   display: inline-flex;
   width: 98%;
-  height: 6%;
+  height: 10%;
   border-radius: 10px;
   flex-direction: row;
   z-index: 1;
@@ -49,7 +49,7 @@ nav a:hover{
 /* Home */
 #banner{
   position: relative;
-  padding-top: 5%;
+  padding-top: 7%;
   height: 50vh;
   width: 100%;
 }
