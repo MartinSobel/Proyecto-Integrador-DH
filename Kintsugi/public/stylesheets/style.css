@@ -1,19 +1,25 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
-  background-color: #484848;
+  background-image: url("/images/fondo-web.jpg");
+  background-repeat: repeat;
+  background-size: 40%;
   color: #FFFFFF;
-  align-self: center;
 }
 
 /* Navbar */
 nav{
+  position: fixed;
   margin: 1%;
   background-color: black;
   color: gray;
   height: 5%;
-  display: flex;
+  display: inline-flex;
+  width: 98%;
+  height: 6%;
   border-radius: 10px;
+  flex-direction: row;
+  z-index: 1;
 }
 
 nav ul{
@@ -22,47 +28,94 @@ nav ul{
 }
 
 nav ul li{
-  padding: 7px;
+  padding: 0px 15px;
+  align-self: center;
 }
 
-nav i{
-  right: 60px;
-  background-color: wheat;
+nav ul li img{
+  width: 60px;
 }
+
+nav a{
+  color: gray;
+  text-decoration: none;
+}
+
+nav a:hover{
+  color: white;
+}
+
 
 /* Home */
 #banner{
-  background-color: black;
-  height: 30vh;
+  background-image: url("/images/home-banner.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 50vh;
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
 
 .home-cards{
-  background-color: #2D2D2D;
+  background-color: rgba(0, 0, 0, 0.9);
   display: flex;
   margin: 1%;
   border-radius: 15px;
 }
 
+.home-cards img{
+  border-radius: 10px;
+}
+
+#plato{
+  margin: 2%;
+  width: 40%;
+}
+
+#up{
+  box-sizing: border-box;
+  position: relative;
+  left: 100px;
+  margin-top: 1%;
+  width: 15%;
+  height: 15%;
+}
+
+#wasabi{
+  display: inline-block;
+  width: 60%;
+}
+
+#wasabi{
+  display: inline-block;
+  width: 60%;
+}
+
+#mano{
+  display: inline-block;
+  width: 20%;
+  position: relative;
+  right: 10%;
+}
+
 .home-text{
-  justify-content: left;
+  display: inline-block;
   padding: 2% 0% 2% 2%;
+  width: 50%;
 }
 
 .button {
-  background-color: #D1D1D1;
-  color: black;
+  background-color: #EA5457;
+  color: white;
   border: none;
-  padding: 4px 20px;
+  padding: 6px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 20px;
-  font-weight: bold;
 }
 
 /* Product details */
@@ -87,4 +140,8 @@ footer{
   background-color: black;
   text-align: center;
   padding: 1px;
+}
+
+footer i{
+  margin: 1% 2%;
 }
