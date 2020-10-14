@@ -145,12 +145,17 @@ footer i{
   font-size:58px;
 }
 
-.datos img{
+.titulacion img{
   width: 278px;
   margin-left: 45%;
+  bottom: 40px;
+  position: relative;
 }
-
-.datos .titulacion p{
+.titulacion p{
+  position: relative;
+  bottom: 20px;
+}
+ p{
   font-family: "SF-Pro-Text-Regular";
   font-size: 22px;
 }
@@ -183,20 +188,25 @@ footer i{
   display: inline-block;
   vertical-align: center;
 }
+.finform p{
+  font-size: 12px;
+}
 .finform{
   margin-left: 13%;
-  font-size: 10px;
 }
 .finform button{
   margin-left: 65%;
   background-color: #EA5457;
   border-radius: 57px;
   border: none;
+  height: 30px;
+  width: 20%;
 }
+
 #already{
   color: #A8CA55;
   margin-left: 30%;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .datos .formulario p{
@@ -222,4 +232,30 @@ footer i{
   margin-left: 4%;
   margin-top: 10%;
 }
-
+#sign1{
+  box-sizing: border-box;
+  position: relative;
+  left: 5%;
+  width: 95%;
+}
+#sign2{
+  box-sizing: border-box;
+  position: relative;
+  left: 45%;
+  bottom: 150px;
+  width: 75%;
+}
+#sign3{
+  box-sizing: border-box;
+  position: relative;
+  left: 25%;
+  width: 75%;
+  bottom: 50px;
+}
+#sign4{
+  box-sizing: border-box;
+  position: relative;
+  left: 65%;
+  bottom: 200px;
+  width: 55%;
+}
