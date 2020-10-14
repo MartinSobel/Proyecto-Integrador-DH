@@ -1,9 +1,11 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
+  padding: 0;
   background-image: url("/images/fondo-web.jpg");
-  background-repeat: repeat;
-  background-size: 40%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
   color: #FFFFFF;
 }
 
@@ -136,3 +138,88 @@ footer{
 footer i{
   margin: 1% 2%;
 }
+
+/* Register */
+.datos h2{
+  font-family: "MonumentExtended-Ultrabold";
+  font-size:58px;
+}
+
+.datos img{
+  width: 278px;
+  margin-left: 45%;
+}
+
+.datos .titulacion p{
+  font-family: "SF-Pro-Text-Regular";
+  font-size: 22px;
+}
+
+.datos h3{
+  font-family: "SF-Pro-Display-Medium";
+  font-size: 36px;
+  text-align: center;
+}
+.datos form{
+  text-align: center;
+}
+
+.datos form input{
+  border-radius: 57px;
+  background-color: #626262;
+  border: none;
+  width: 70%;
+  height: 30px;
+  margin: 10px auto;
+  text-align: center;
+}
+.formulario input:hover{
+  background-color: grey;
+}
+.formulario input:focus{
+  background-color:white;
+}
+.datos .radio, #news{
+  display: inline-block;
+  vertical-align: center;
+}
+.finform{
+  margin-left: 13%;
+  font-size: 10px;
+}
+.finform button{
+  margin-left: 65%;
+  background-color: #EA5457;
+  border-radius: 57px;
+  border: none;
+}
+#already{
+  color: #A8CA55;
+  margin-left: 30%;
+  font-size: 12px;
+}
+
+.datos .formulario p{
+  font-size: 8px;
+}
+
+.datos{
+  width: 30%;
+  margin-left: 4%;
+
+}
+.imgizq img{
+  border-radius: 20px;
+  
+}
+.imgizq{
+  width: 49%;
+  margin-left: 4%;
+}
+.datos, .imgizq{
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 4%;
+  margin-top: 10%;
+}
+
