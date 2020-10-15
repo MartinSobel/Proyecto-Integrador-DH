@@ -11,17 +11,22 @@ body {
 
 /* Navbar */
 nav{
+  font-size: 18px;
+  display: flex;
   position: fixed;
   margin: 1%;
   background-color: black;
   color: gray;
   height: 5%;
-  display: inline-flex;
   width: 98%;
   height: 10%;
-  border-radius: 10px;
-  flex-direction: row;
+  border-radius: 20px;
   z-index: 1;
+  justify-content: space-between;
+}
+
+.fa-user-circle{
+  margin-left: 10px;
 }
 
 nav ul{
@@ -30,12 +35,14 @@ nav ul{
 }
 
 nav ul li{
-  padding: 0px 15px;
+  padding: 0px 30px;
   align-self: center;
 }
 
-nav ul li img{
-  width: 60px;
+nav ul img{
+  align-self: center;
+  width: 70px;
+  height: 56px;
 }
 
 nav a{
@@ -52,7 +59,6 @@ nav a:hover{
 #banner{
   position: relative;
   padding-top: 7%;
-  height: 50vh;
   width: 100%;
 }
 
@@ -82,11 +88,12 @@ nav a:hover{
 }
 
 #wasabi{
-  width: 60%;
+  width: 30%;
+  height: 80%;
 }
 
 #mano{
-  width: 20%;
+  height: 50%;
   position: relative;
   right: 10%;
   bottom: 2%;
@@ -96,6 +103,11 @@ nav a:hover{
   padding: 2% 0% 2% 2%;
   width: 40%;
   display: inline-block;
+}
+
+.home-text-2{
+  padding: 2% 0% 2% 2%;
+  display: flex;
 }
 
 .button {
@@ -133,10 +145,20 @@ footer{
   background-color: black;
   text-align: center;
   padding: 1px;
+  
 }
 
 footer i{
-  margin: 1% 2%;
+  margin: 2% 2% 1% 2%;
+}
+
+footer i:hover{
+  color: #626262;
+  cursor: pointer;
+}
+
+footer p{
+  color: #626262;
 }
 
 /* Register y Log in*/
