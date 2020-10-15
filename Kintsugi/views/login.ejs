@@ -3,9 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Log In</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'>
+    <link href="/fonts/MonumentExtended-Ultrabold.otf" rel="stylesheet">
+    <link href="/fonts/SF-Pro-Text-Regular.otf" rel="stylesheet">
+    <link href="/fonts/SF-Pro-Display-Medium.otf" rel="stylesheet">
 </head>
 <body>
-    <h1>Hello World!</h1>
+ <div class="container">
+    <nav>
+        <ul>
+          <li><img src="/images/logo.png" alt=""></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/menu">Menu</a></li>
+          <li><a href="">Locaction</a></li>
+          <li><a href="">Contact</a></li>
+          <li><a href=""><i class="fas fa-search"></i></a></li>
+          <li><a href="/product_cart"><i class="fas fa-shopping-cart"></i></a></li>
+          <li><a href=""><i class="fas fa-user"></i></a></li>
+        </ul>
+    </nav>
+
+    <main class="datos">
+        <div class="titulacion">
+            <h2>Log in</h2>
+            <img src="/images/jap-log-in.png" id="loginjapo">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut tempore numquam, dignissimos tenetur nostrum dolore non, </p>
+        </div>
+        <div class="formulario">
+            <h3>Please, fill in below with your information</h3>
+            <form action="/" method="GET">
+                <input type="email" id="email" name="email" placeholder="Email"><br>
+                <input type="password" id="password" name="password" placeholder="Password"><br>
+                <button type="submit">Enter</button>
+        </div>
+            </form>
+        <div class="finform">
+                <p><input type="radio" name="remember" value="yes"> Remember Me</p>
+                
+        </div>
+        <a href="/register" id="noAccount">I don't have an account</a>
+        
+    </main>
+    <aside class="imgder">
+        <img src="/images/fotos-sushi/login-1-grande.jpg" alt="sushi 1 grande" id="login1"><br>
+        <img src="/images/fotos-sushi/login-2-chica.jpg" alt="sushi 2 chica" id="login2"><br>
+        <img src="/images/fotos-sushi/login-1-chica.jpg" alt="sushi 1 chica" id="login3"><br>
+        <img src="/images/fotos-sushi/login-2-grande.jpg" alt="sushi 2 grande" id="login4">
+     </aside>
+ </div>
 </body>
 </html>

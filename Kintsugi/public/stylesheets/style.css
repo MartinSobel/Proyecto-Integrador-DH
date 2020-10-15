@@ -139,7 +139,7 @@ footer i{
   margin: 1% 2%;
 }
 
-/* Register */
+/* Register y Log in*/
 .datos h2{
   font-family: "MonumentExtended-Ultrabold";
   font-size:58px;
@@ -150,6 +150,9 @@ footer i{
   margin-left: 45%;
   bottom: 40px;
   position: relative;
+}
+.titulacion #loginjapo{
+  margin-left: 37%;
 }
 .titulacion p{
   position: relative;
@@ -184,29 +187,35 @@ footer i{
 .formulario input:focus{
   background-color:white;
 }
-.datos .radio, #news{
-  display: inline-block;
-  vertical-align: center;
-}
+
 .finform p{
   font-size: 12px;
+  bottom: 10%;
+  
 }
 .finform{
   margin-left: 13%;
+  position:relative;
+  bottom: 6px;
 }
-.finform button{
-  margin-left: 65%;
+.formulario button{
+  margin-left: 50%;
   background-color: #EA5457;
   border-radius: 57px;
   border: none;
   height: 30px;
   width: 20%;
+  position:relative;
+  top: 30px;
 }
 
-#already{
+#already, #noAccount{
   color: #A8CA55;
-  margin-left: 30%;
-  font-size: 16px;
+  margin-left: 35%;
+  font-size: 14px;
+  position: relative;
+  top: 10px;
+  font-family: "SF-Pro-Text-Regular";
 }
 
 .datos .formulario p{
@@ -218,15 +227,16 @@ footer i{
   margin-left: 4%;
 
 }
-.imgizq img{
+.imgder img{
   border-radius: 20px;
   
 }
-.imgizq{
+.imgder {
   width: 49%;
   margin-left: 4%;
+  
 }
-.datos, .imgizq{
+.datos, .imgder{
   display: inline-block;
   vertical-align: top;
   margin-left: 4%;
@@ -258,4 +268,28 @@ footer i{
   left: 65%;
   bottom: 200px;
   width: 55%;
+}
+
+#login1{
+  width: 87%;
+  margin-top: 15%;
+}
+
+#login2{
+  transform: rotate(90deg);
+  width: 37%;
+  position: relative;
+  left: 80%;
+  bottom: 187px;
+}
+#login3{
+  width: 50%;
+  position: relative;
+  bottom: 90px;
+}
+#login4{
+  width: 58%;
+  position: relative;
+  bottom: 260px;
+  left: 54%;
 }
