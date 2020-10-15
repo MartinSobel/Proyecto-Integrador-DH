@@ -2,12 +2,16 @@
   font-family: "SF-Pro-Text-Regular";
   src: url(../fonts/SF-Pro-Text-Regular.otf)
 }
-p{
-  font-family: "SF-Pro-Text-Regular";
-  font-size: 22px;
+@font-face{
+  font-family: "SF-Pro-Display-Regular";
+  src: url(../fonts/SF-Pro-Display-Regular.otf)
+}
+@font-face{
+  font-family: "MonumentExtended-Ultrabold";
+  src: url(../fonts/MonumentExtended-Ultrabold.otf)
 }
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "SF-Pro-Text-Regular", Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-image: url("/images/fondo-web.jpg");
@@ -16,10 +20,24 @@ body {
   background-size: 100%;
   color: #FFFFFF;
 }
+h1, h2{
+  font-family: "MonumentExtended-Ultrabold";
+  font-size: 36px;
+  letter-spacing: 1.3pt;
+}
+p{
+  font-family: "SF-Pro-Text-Regular";
+  font-size: 18px;
+}
+h3{
+font-family: "SF-Pro-Display-Regular";
+font-size: 22px;
+letter-spacing: 0.5pt;
+}
 
 /* Navbar */
 nav{
-  font-size: 1px;
+  font-size: 18px;
   display: flex;
   position: fixed;
   margin: 1%;
@@ -191,8 +209,6 @@ footer p{
 
 
 .datos h3{
-  font-family: "SF-Pro-Display-Medium";
-  font-size: 36px;
   text-align: center;
 }
 .datos form{
