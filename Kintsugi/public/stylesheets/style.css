@@ -260,13 +260,13 @@ footer i{
   position: relative;
   left: 25%;
   width: 75%;
-  bottom: 50px;
+  bottom: 100px;
 }
 #sign4{
   box-sizing: border-box;
   position: relative;
   left: 65%;
-  bottom: 200px;
+  bottom: 250px;
   width: 55%;
 }
 
