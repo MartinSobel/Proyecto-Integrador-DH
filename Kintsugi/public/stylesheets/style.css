@@ -1,3 +1,11 @@
+@font-face{
+  font-family: "SF-Pro-Text-Regular";
+  src: url(../fonts/SF-Pro-Text-Regular.otf)
+}
+p{
+  font-family: "SF-Pro-Text-Regular";
+  font-size: 22px;
+}
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
@@ -180,10 +188,7 @@ footer p{
   position: relative;
   bottom: 20px;
 }
- p{
-  font-family: "SF-Pro-Text-Regular";
-  font-size: 22px;
-}
+
 
 .datos h3{
   font-family: "SF-Pro-Display-Medium";
