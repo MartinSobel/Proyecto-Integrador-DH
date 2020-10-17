@@ -414,7 +414,49 @@ footer p{
 .bill{
   background-color: black;
   border-radius: 1em;
+  width: 25%;
+  margin-left: 45%;
+  margin-top: 9%;
 }
+
+.bill h3{
+  text-align: center;
+  margin-top: 10%
+}
+
+.bill .cantbill{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color:#838383;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 7px;
+  font-size: 14px;
+  margin-left: 5%;
+}
+
+.bill #price{
+  text-align: right;
+  position: relative;
+  bottom: 65px;
+  font-size: 14px;
+  margin-right: 5%;
+}
+
+.bill #productbill{
+  text-align: center;
+  position: relative;
+  bottom: 35px;
+  font-size: 14px;
+}
+.bill .total{
+  margin-left: 5%;
+  position: relative;
+  bottom: 30px;
+}
+
+
 
 
 /* Menu */
