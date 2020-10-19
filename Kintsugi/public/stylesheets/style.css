@@ -351,6 +351,31 @@ footer p{
   top: 100px;
 }
 
+.containercart{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: row;
+  
+}
+
+.productscart{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.productcart1, .productcart2, .productcart3{
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  align-items: center;
+  
+  
+  
+}
 .productscart .cant{
   width: 40px;
   height: 40px;
@@ -362,28 +387,30 @@ footer p{
   padding-top: 10px;
   margin-top:130px;
   position: relative;
-  top: 80px;
-  left: 55px;
+  bottom: 50px;
 }
 
 .productscart img{
   border-radius: 1em;
-  position: relative;
-  bottom: 50px;
-  left: 135px;
+
 }
 
-.productscart h3, .description{
-  position: relative;
-  bottom: 245px;
-  left: 500px;
+.productscart h3{
+ position: relative;
+ left: 30px;
+} 
+
+.productscart .description{
   width: 300px;
+  
+  
 }
 
-.productscart .precio, .modify, .delete{
-  position: relative;
-  bottom: 390px;
-  left: 850px;
+.productscart .columna{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .productscart .modify{
@@ -397,26 +424,26 @@ footer p{
 }
 
 .productcart2{
-  position: relative;
-  bottom: 400px;
+  /*position: relative;
+  bottom: 400px;*/
 }
 
 .productcart3{
-  position: relative;
-  bottom: 800px;
+  /*position: relative;
+  bottom: 800px;*/
 }
 
 .productscart, .bill{
-  display: inline-block;
-  vertical-align: top;
+  /*display: inline-block;
+  vertical-align: top;*/
 }
 
 .bill{
   background-color: black;
   border-radius: 1em;
   width: 25%;
-  margin-left: 45%;
-  margin-top: 9%;
+  /*margin-left: 45%;
+  margin-top: 9%;*/
 }
 
 .bill h3{
