@@ -490,7 +490,7 @@ footer p{
 /* Menu */
 
 .container-menu{
-padding-top: 120px;
+padding-top: 100px;
 margin-left: 5%;
 margin-right:5%;
 }
@@ -512,7 +512,7 @@ background-color: black;
 border-radius: 15px;
 height: 60px;
 position: relative;
-bottom: 22px;
+bottom: 20px;
 display: flex;
 }
 .nav-menu ul{
@@ -540,29 +540,29 @@ display: flex;
 }
 .nav-menu hr{
   height: 95%x;
-  width: 3px;
+  width: 4px;
   border:0px;
   background-color: #0f1012
 }
 .container-pmenu{
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 20px;
-  height: 580px;
-  padding: 0px 55px;
+  height: 600px;
+  padding: 0px 45px;
   margin-bottom: 20px;
 }
 .titulos-pmenu{
   display: flex;
   justify-content: space-between;
-  margin-bottom: -8px;
+  margin-bottom: -10px;
 }
 .titulos-pmenu h3{
   font-size: 38px;
   letter-spacing: 0;
 }
 .titulos-pmenu p{
-  padding-top: 20px;
-  font-size: 25px;
+  padding-top: 25px;
+  font-size: 22px;
 }
 .products-menu{
   display: flex;
@@ -578,5 +578,15 @@ display: flex;
   border-radius: 20px;
 }
 .products-menu p{
-  font-size: 24px;
+  font-size: 20px;
+  line-height: 29px;
+}
+.products-menu i{
+  position: relative;
+  bottom: 58px;
+  left: 195px;
+  font-size: 18px;
+}
+.products-menu i:hover{
+color: #EA5457;  
 }
