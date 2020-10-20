@@ -10,6 +10,10 @@
   font-family: "MonumentExtended-Ultrabold";
   src: url(../fonts/MonumentExtended-Ultrabold.otf)
 }
+@font-face{
+  font-family: "MonumentExtended-Regular";
+  src: url(../fonts/MonumentExtended-Regular.otf)
+}
 body {
   font: 14px "SF-Pro-Text-Regular", Helvetica, Arial, sans-serif;
   margin: 0;
@@ -18,19 +22,20 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100%;
+  background-repeat: repeat-y;
   color: #FFFFFF;
 }
 h1, h2{
-  font-family: "MonumentExtended-Ultrabold";
+  font-family: "MonumentExtended-Ultrabold", sans-serif;
   font-size: 36px;
   letter-spacing: 1.3pt;
 }
 p{
-  font-family: "SF-Pro-Text-Regular";
+  font-family: "SF-Pro-Text-Regular", sans-serif;
   font-size: 18px;
 }
 h3{
-font-family: "SF-Pro-Display-Regular";
+font-family: "SF-Pro-Display-Regular", sans-serif;
 font-size: 22px;
 letter-spacing: 0.5pt;
 font-weight: 300;
@@ -139,8 +144,9 @@ nav a:hover{
 }
 
 .button {
-  background-color: #EA5457;
+  font-family: "SF-Pro-Text-Regular", sans-serif;
   color: white;
+  background-color: #EA5457;
   border: none;
   padding: 6px 20px;
   text-align: center;
@@ -218,8 +224,9 @@ footer p{
 }
 
 .datos form input{
+  font-family: "SF-Pro-Text-Regular", sans-serif;
   border-radius: 57px;
-  background-color: #626262;
+  background-color: #4e4e4e;
   border: none;
   width: 70%;
   height: 30px;
@@ -227,7 +234,7 @@ footer p{
   text-align: center;
 }
 .formulario input:hover{
-  background-color: grey;
+  background-color: rgb(34, 34, 34);
 }
 .formulario input:focus{
   background-color:white;
@@ -244,6 +251,8 @@ footer p{
   bottom: 6px;
 }
 .formulario button{
+  font-family: "SF-Pro-Text-Regular", sans-serif;
+  color: white;
   margin-left: 50%;
   background-color: #EA5457;
   border-radius: 57px;
@@ -252,6 +261,7 @@ footer p{
   width: 20%;
   position:relative;
   top: 30px;
+  cursor: pointer;
 }
 
 #already, #noAccount{
@@ -589,4 +599,126 @@ display: flex;
 }
 .products-menu i:hover{
 color: #EA5457;  
+}
+
+
+/* product add */
+.main-formulario{
+  background-color: #151617;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 30px;
+}
+#form-logo{
+  width: 138px;
+  height: 111px;
+}
+.main-formulario h1{
+  font-family: "MonumentExtended-Regular", sans-serif;
+  font-weight: 300;
+  font-size: 48px;
+  letter-spacing: 1pt;
+}
+#form-jap-kintsugi{
+  width: 109px;
+  height: 49px;
+  margin-top: -22px;
+  margin-bottom: 50px;
+}
+.container-form{
+  margin-top: 10px;
+  padding-top: 25px;
+  background-color: black;
+  width: 70%;
+  height: 1850px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container-form form{
+  text-align: center;
+}
+.container-form h3{
+  text-align: center;
+  font-size: 32px;
+  letter-spacing: 0;
+  margin-bottom: 14px;
+  margin-top: 55px;
+}
+.container-form form input{
+  font-family: "SF-Pro-Text-Regular", sans-serif;
+  border-radius: 57px;
+  background-color: #4E4e4e;
+  border: none;
+  width: 500px;
+  height: 35px;
+  margin: 10px;
+  text-align: center;
+}
+.container-form .formulario p{
+  font-size: 18px;
+  margin-top: -5px;
+  color: #C7C7C7;
+}
+.container-form .formulario form button{
+  font-family: "SF-Pro-Text-Regular", sans-serif;
+  background-color: #EA5457;
+  color: white;
+  border: 0px;
+  padding: 6px 20px;
+  text-align: center;
+  text-decoration: none;
+  margin: 40px 2px;
+  cursor: pointer;
+  border-radius: 20px;
+  width: 170px;
+}
+.container-form .formulario form button:hover{
+  background-color: #A8CA55
+}
+input, select, textarea{
+  color: #ffffff;
+}
+textarea:focus, input:focus {
+  color: #000000;
+}
+.container-form #desc{
+  height: 150px;
+  border-radius: 20px;
+}
+#form-foto1{
+  width: 640px;
+  height: 235px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+#form-foto2{
+  width: 398px;
+  height: 144px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+#add-img{
+  width: 398px;
+  height: 144px;
+  background-color:#4e4e4e;
+  border-radius: 20px;
+  margin-top: 20px;
+  padding-left: 35px;
+  padding-top: 58px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+#add-img:hover{
+  background-color: rgb(34, 34, 34);
+}
+.container-form a{
+  text-decoration: none;
+  font-size: 12px;
+  color: white;
+}
+.container-form a:hover{
+  color: #A8CA55;
 }
