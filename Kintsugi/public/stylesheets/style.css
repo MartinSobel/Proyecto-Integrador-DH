@@ -159,19 +159,51 @@ nav a:hover{
 
 /* Product details */
 #product-main{
-  margin-left: 5%;
+  width: 30%;
+  margin: 7% 5%;
   display: inline-block;
+}
+
+#product-main span{
+  position: relative;
+  top: 50px;
+}
+
+#mult{
+  background-color: #814142;
+}
+
+#price{
+  font-weight: bold;
+  margin-left: 90%;
 }
 
 #product-description{
   display: inline-block;
-  flex-wrap: wrap;
+  width: 30%;
 }
 
 #cart-options{
   justify-content: center;
   padding-left: 5%;
   display: inline-block;
+}
+
+#back{
+  margin-left: 25%;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#add{
+  width: 75%;
+}
+
+#product_image{
+  display: block;
+  width: 50%;
+  margin: 3% auto;
 }
 
 /* Footer */
