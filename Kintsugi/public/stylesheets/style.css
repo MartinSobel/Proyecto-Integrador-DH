@@ -197,34 +197,37 @@ footer p{
 }
 
 /* Register y Log in*/
-.datos h2{
-  font-family: "MonumentExtended-Ultrabold";
-  font-size:58px;
+
+.containerlogin{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+}
+
+.datos{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 30%;
+  position: relative;
+  margin-top: 85px;
+}
+
+.datos .titulacion p{
+  width: 80%;
 }
 
 .titulacion img{
-  width: 278px;
-  margin-left: 45%;
-  bottom: 40px;
-  position: relative;
-}
-.titulacion #loginjapo{
-  margin-left: 37%;
-}
-.titulacion p{
-  position: relative;
-  bottom: 20px;
-}
-
-.datos h3{
-  text-align: center;
+  width: 50%;
+  margin-left: 120px;
 }
 .datos form{
   text-align: center;
 }
-
 .datos form input{
-  font-family: "SF-Pro-Text-Regular", sans-serif;
   border-radius: 57px;
   background-color: #4e4e4e;
   border: none;
@@ -240,113 +243,108 @@ footer p{
   background-color:white;
 }
 
+.finform {
+  align-self: flex-start;
+}
 .finform p{
   font-size: 12px;
-  bottom: 10%;
-  
 }
-.finform{
-  margin-left: 13%;
-  position:relative;
-  bottom: 6px;
-}
+
 .formulario button{
   font-family: "SF-Pro-Text-Regular", sans-serif;
   color: white;
-  margin-left: 50%;
   background-color: #EA5457;
   border-radius: 57px;
   border: none;
   height: 30px;
   width: 20%;
-  position:relative;
-  top: 30px;
   cursor: pointer;
+  position: absolute;
+  right: 15px;
 }
 
-#already, #noAccount{
+.datos #already, #noAccount{
   color: #A8CA55;
-  margin-left: 35%;
   font-size: 14px;
-  position: relative;
-  top: 10px;
-  font-family: "SF-Pro-Text-Regular";
+  align-self: center;
+  cursor: pointer;
+  margin-bottom: 70px;
 }
 
-.datos .formulario p{
-  font-size: 8px;
+.imgder {
+  display: flex;
+  flex-direction: row;
+  height: 95vh;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  width: 55%;
+  margin-top: 60px;
 }
 
-.datos{
-  width: 30%;
-  margin-left: 4%;
-
-}
 .imgder img{
   border-radius: 1em;
   
 }
-.imgder {
-  width: 49%;
-  margin-left: 4%;
+#sign1{
+  align-self: flex-start;
+  position: relative;
+  width: 60%;
   
 }
-.datos, .imgder{
-  display: inline-block;
-  vertical-align: top;
-  margin-left: 4%;
-  margin-top: 10%;
-}
-#sign1{
-  box-sizing: border-box;
-  position: relative;
-  left: 5%;
-  width: 95%;
-}
 #sign2{
-  box-sizing: border-box;
   position: relative;
-  left: 45%;
-  bottom: 150px;
-  width: 75%;
+  align-self: flex-end;
+  width: 50%;
+  bottom: 100px;
+  left: 200px;
+  
 }
 #sign3{
-  box-sizing: border-box;
+  align-self: flex-start;
   position: relative;
-  left: 15%;
-  width: 90%;
-  bottom: 70px;
+  width: 60%;
+  left: 30px;
+  bottom: 50px;
 }
 #sign4{
-  box-sizing: border-box;
   position: relative;
-  left: 65%;
-  bottom: 250px;
-  width: 55%;
+  align-self: flex-end;
+  justify-self: center;
+  width: 40%;
+  right: 50px;
+  
 }
 
 #login1{
-  width: 87%;
-  margin-top: 15%;
+  width: 60%;
+  align-self: flex-start;
+  justify-self: center;
+  position: relative;
+  bottom: 70px;
+  left: 15px;
 }
 
 #login2{
   transform: rotate(90deg);
-  width: 37%;
+  width: 26%;
   position: relative;
-  left: 80%;
-  bottom: 187px;
+  align-self: center;
+  bottom: 67px;
 }
 #login3{
-  width: 50%;
+  width: 34%;
   position: relative;
-  bottom: 90px;
+  align-self: flex-start;
+  right: 40px;
+  bottom: 50px;
 }
 #login4{
-  width: 58%;
+  width: 38%;
   position: relative;
-  bottom: 260px;
-  left: 54%;
+  align-self: flex-end;
+  left: 0px;
+  bottom: 50px;
 }
 
 /* Cart */
@@ -482,6 +480,7 @@ footer p{
   font-size: 18px;
   margin-top: 10px;
   margin-bottom: 25px;
+  cursor: pointer;
 }
 
 /* Menu */
