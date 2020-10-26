@@ -97,7 +97,8 @@ nav a:hover{
 .home-cards{
   background-color: rgba(0, 0, 0, 0.9);
   display: flex;
-  margin: 1%;
+  margin: 2% auto;
+  width: 90%;
   border-radius: 15px;
 }
 
@@ -157,8 +158,11 @@ nav a:hover{
 }
 
 @media (max-width: 1000px){
-  nav{
+  li{
     display: none;
+  }
+  #banner{
+    padding-top: 15%;
   }
   .home-cards{
     flex-direction: column;
@@ -179,13 +183,17 @@ nav a:hover{
   }
   #mano{
     position: inherit;
-    width: 100%;
+    width: 80vw;
+  }
+  #plato{
+    width: 80vw;
   }
   .home-text-2{
     display: block;
     width: 80%;
   }
   #product-main{
+    padding-top: 20px;
     flex-direction: column;
   }
   #product-description{
