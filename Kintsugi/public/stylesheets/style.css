@@ -440,7 +440,7 @@ footer p{
   bottom: 50px;
 }
 
-@media (max-width: 768px){
+@media (max-width: 800px){
   #sign2{
     left:80px;
     bottom: 40px;
@@ -466,24 +466,33 @@ footer p{
 
 }
 
-@media (max-width: 576px){
+@media (max-width: 400px){
   .containerlogin{
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 100vw;
+    margin-left: 50px;
   }
   .datos .titulacion p{
     width: 70vw;
   }
+  .formulario{
+    width: 80vw;
+    align-items: center;
+  }
 .finform{
-  left: -20px;
+  margin-left: -80px;
   width: 100vw;
+  }
+  .datos a{
+    margin-left: -90px;
   }
   .imgder{
     width: 100%;
     justify-content: center;
-    align-items: flex-start;
-    margin-top: 0px;
+    align-items: center;
+    margin-top: -60px;
     position: relative;
     bottom: 80px;
   }
@@ -501,7 +510,7 @@ footer p{
 }
 
 .titulocart img{
-  width: 13%;
+  width: 220px;
   margin-left: 7%;
   position: relative;
   bottom: 15px;
@@ -625,42 +634,54 @@ footer p{
   cursor: pointer;
 }
 
-@media (max-width: 768px){
-  .productcart{
-    flex-wrap: wrap;
-    align-items: center;
+@media (max-width: 800px){
+  .titulocart img{
+    margin-left: 90px;
   }
-  .productcart .columna, .productcart .description{
-    position: relative;
-    bottom: 70px;
-  
-  }
-  .productscart{
-    width: 60vw;
-    justify-content:center;
-  }
-   .bill .productofinal :nth-child(3){
-     position: relative;
-     bottom: 20px;
-   }
-
-}
-
-@media (max-width: 576px){
   .containercart{
     flex-direction: column;
     align-items: center;
     width: 100vw;
   }
   .productscart{
-    width: 100%;
+    width: 90%;
+  }
+  .productcart{
+    justify-content: space-evenly;
+  }
+  .productcart h3{
+    text-align: center;
+  }
+  .bill{
+    width: 60%;
+    margin-bottom: 50px;
+  }
+
+}
+
+@media (max-width: 400px){
+  .containercart{
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+  }
+  .productscart{
+    width: 90%;
+    justify-content: flex-start;
+    
   }
   .productcart{
     width: 100%;
+    flex-wrap: wrap;
   }
+  .productcart .description, .productcart .columna{
+    margin-top: -60px;
+  }
+  
   .bill{
     width: 60vw;
     margin-bottom: 50px;
+    margin-top: 40px;
   }
 }
 
