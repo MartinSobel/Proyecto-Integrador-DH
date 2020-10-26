@@ -559,7 +559,7 @@ footer p{
   font-family: "SF-Pro-Text-Regular";
   font-size: 18px;
   height: 30px;
-  width: 50%;
+  width: 110px;
   color: white; 
   font-family: "SF-Pro-Text-Regular";
   font-size: 18px;
@@ -571,16 +571,41 @@ footer p{
 @media (max-width: 768px){
   .productcart{
     flex-wrap: wrap;
+    align-items: center;
+  }
+  .productcart .columna, .productcart .description{
     position: relative;
+    bottom: 70px;
+  
   }
   .productscart{
-    justify-content: flex-start;
-    
+    width: 60vw;
+    justify-content:center;
   }
+   .bill .productofinal :nth-child(3){
+     position: relative;
+     bottom: 20px;
+   }
+
 }
 
 @media (max-width: 576px){
-
+  .containercart{
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+  }
+  .productscart{
+    width: 100%;
+  }
+  .productcart{
+    width: 100%;
+    background-color: violet; 
+  }
+  .bill{
+    width: 60vw;
+    margin-bottom: 50px;
+  }
 }
 
 
