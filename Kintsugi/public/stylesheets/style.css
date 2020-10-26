@@ -32,7 +32,6 @@ h1, h2{
 }
 p{
   font-family: "SF-Pro-Text-Regular", sans-serif;
-  font-size: 18px;
 }
 h3{
 font-family: "SF-Pro-Display-Regular", sans-serif;
@@ -108,7 +107,7 @@ nav a:hover{
 
 #plato{
   margin: 2%;
-  width: 40%;
+  width: 40vw;
 }
 
 #up{
@@ -155,6 +154,56 @@ nav a:hover{
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 20px;
+}
+
+@media (max-width: 1000px){
+  nav{
+    display: none;
+  }
+  .home-cards{
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .home-text{
+    width: 80%;
+  }
+  .home-cards img{
+    width: 100vh;
+    align-self: center;
+  }
+  #up{
+    display: none;
+  }
+  #wasabi{
+    display: none;
+  }
+  #mano{
+    position: inherit;
+    width: 100%;
+  }
+  .home-text-2{
+    display: block;
+    width: 80%;
+  }
+  #product-main{
+    flex-direction: column;
+  }
+  #product-description{
+    display: inherit;
+    width: 100% !important;
+    margin-top: 10%;
+  }
+  #details{
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 0px 20px;
+  }
+  #product-main {
+    width: 80% !important;
+  }
+  #back{
+    margin-left: 3% !important;
+  }
 }
 
 /* Product details */
