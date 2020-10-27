@@ -14,6 +14,7 @@
   font-family: "MonumentExtended-Regular";
   src: url(../fonts/MonumentExtended-Regular.otf)
 }
+
 body {
   font: 14px "SF-Pro-Text-Regular", Helvetica, Arial, sans-serif;
   margin: 0;
@@ -25,6 +26,12 @@ body {
   background-repeat: repeat-y;
   color: #FFFFFF;
 }
+
+@media (max-width: 400px){
+body{
+  background-image: url("/images/fondo-mobile.jpg");}
+}
+
 h1, h2{
   font-family: "MonumentExtended-Ultrabold", sans-serif;
   font-size: 36px;
@@ -40,7 +47,32 @@ letter-spacing: 0.5pt;
 font-weight: 300;
 }
 
-/* Navbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  background-color:#0f1012;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+  background-color: #4e4e4e
+}
+.container-pmenu::-webkit-scrollbar-track{
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0);
+}
+.container-pmenu::-webkit-scrollbar {
+  width: 6px;
+}
+
+/*===================================
+ Navbar
+===================================*/
+
 nav{
   font-size: 18px;
   display: flex;
@@ -87,61 +119,64 @@ nav a:hover{
 }
 
 
-/* Home */
+/*===================================
+ Home
+===================================*/
+
 #banner{
   position: relative;
   padding-top: 7%;
   width: 100%;
 }
 
-.home-cards{
+.home-cards, .home-cards-2{
   background-color: rgba(0, 0, 0, 0.9);
   display: flex;
-  margin: 2% auto;
-  width: 90%;
+  margin: 30px auto;
+  padding: 20px;
+  width: 85%;
   border-radius: 15px;
+  justify-content: space-evenly;
 }
 
-.home-cards img{
-  border-radius: 10px;
+.home-img-1{
+display: flex;
+justify-content: flex-end;
 }
 
-#plato{
-  margin: 2%;
-  width: 40vw;
+#home-img-s1{
+align-items: flex-end;
+align-self: center;
+width: 786px;
+height: 411px;
 }
 
-#up{
-  box-sizing: border-box;
-  position: relative;
-  left: 100px;
-  margin-top: 1%;
-  width: 15%;
-  height: 15%;
+.home-text, .home-text-2{
+  padding-left: 20px;
+  padding-right: 15px;
+  margin-bottom: 20px;
+  width: 35%;
+  align-self: center;
+  letter-spacing: 0.1pt;
+}
+.home-text h2, .home-text-2 h2{
+margin-bottom: -10px;
+}
+.home-text p, .home-text-2 p{
+  font-size: 16px;
 }
 
-#wasabi{
-  width: 30%;
-  height: 80%;
-}
-
-#mano{
-  height: 50%;
-  position: relative;
-  right: 10%;
-  bottom: 2%;
-}
-
-.home-text{
-  padding: 2% 0% 2% 2%;
-  width: 40%;
-  display: inline-block;
-}
-
-.home-text-2{
-  padding: 2% 0% 2% 2%;
+.home-img-2{
   display: flex;
+  order: -1;
+  }
+
+#home-img-s2{
+  align-self: center;
+  width: 718px;
+  height: 322px;
 }
+
 
 .button {
   font-family: "SF-Pro-Text-Regular", sans-serif;
@@ -155,6 +190,9 @@ nav a:hover{
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 20px;
+}
+
+@media (max-width: 1305px){
 }
 
 @media (max-width: 1000px){
@@ -175,23 +213,16 @@ nav a:hover{
     width: 100vh;
     align-self: center;
   }
-  #up{
-    display: none;
-  }
-  #wasabi{
-    display: none;
-  }
-  #mano{
-    position: inherit;
-    width: 80vw;
-  }
-  #plato{
-    width: 80vw;
-  }
   .home-text-2{
     display: block;
     width: 80%;
   }
+
+
+/*===================================
+ Product details
+===================================*/
+
   #product-main{
     padding-top: 20px;
     flex-direction: column;
@@ -214,7 +245,6 @@ nav a:hover{
   }
 }
 
-/* Product details */
 #product-main{
   width: 30%;
   margin: 7% 5%;
@@ -263,7 +293,11 @@ nav a:hover{
   margin: 3% auto;
 }
 
-/* Footer */
+
+/*===================================
+Footer
+===================================*/
+
 footer{
   background-color: black;
   text-align: center;
@@ -292,7 +326,7 @@ footer p{
   justify-content: space-evenly;
   align-items: flex-start;
   flex-wrap: wrap;
-
+  padding-top: 50px;
 }
 
 .datos{
@@ -311,7 +345,7 @@ footer p{
 
 .titulacion img{
   width: 50%;
-  margin-left: 120px;
+  margin: -15px 0px 5px 120px;
 }
 .datos form{
   text-align: center;
@@ -320,7 +354,7 @@ footer p{
   border-radius: 57px;
   background-color: #4e4e4e;
   border: none;
-  width: 70%;
+  width: 95%;
   height: 30px;
   margin: 10px auto;
   text-align: center;
@@ -330,6 +364,9 @@ footer p{
 }
 .formulario input:focus{
   background-color:white;
+}
+.containerlogin .formulario{
+padding-top: 40px;
 }
 
 .finform {
@@ -350,6 +387,8 @@ footer p{
   height: 30px;
   width: 100px;
   cursor: pointer;
+}
+#button-login-register{
   position: relative;
   right: 15px;
   left: 140px;
@@ -498,7 +537,10 @@ footer p{
   }
 }
 
-/* Cart */
+
+/*===================================
+Cart
+===================================*/
 
 .cart{
   display: flex;
@@ -686,21 +728,24 @@ footer p{
 }
 
 
-/* Menu */
+/*===================================
+ Menu
+===================================*/
 
 .container-menu{
-padding-top: 100px;
+padding-top: 90px;
 margin-left: 5%;
 margin-right:5%;
 }
 .titulo-menu{
   display: flex;
+  margin-bottom: -18px;
 }
 .titulo-menu img{
   width: 194px;
   height: 69px;
   position: relative;
-  top: 59px;
+  top: 58px;
   left: 38px
 }
 .titulo-menu h2{
@@ -749,12 +794,14 @@ display: flex;
   height: 600px;
   padding: 0px 45px;
   margin-bottom: 20px;
+  overflow-x: hidden;
 }
 .titulos-pmenu{
   display: flex;
   justify-content: space-between;
   margin-bottom: -10px;
 }
+
 .titulos-pmenu h3{
   font-size: 38px;
   letter-spacing: 0;
@@ -765,11 +812,12 @@ display: flex;
 }
 .products-menu{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
+  height: 600px;
 }
 .single-pmenu{
-  width: 300px;
+  width: 280px;
 }
 .products-menu img{
   width: 217px;
@@ -790,8 +838,15 @@ display: flex;
 color: #EA5457;  
 }
 
+@media (max-width: 1410px){
 
-/* product add */
+}
+
+
+/*===================================
+ Product add
+===================================*/
+
 .main-formulario{
   background-color: #151617;
   display: flex;
