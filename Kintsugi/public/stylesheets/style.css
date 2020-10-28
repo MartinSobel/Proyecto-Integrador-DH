@@ -192,11 +192,8 @@ margin-bottom: -10px;
   border-radius: 20px;
 }
 
-@media (max-width: 1305px){
-}
-
 @media (max-width: 1200px){
-  li{
+  nav ul li{
     display: none;
   }
   #banner{
@@ -336,7 +333,9 @@ footer p{
   color: #626262;
 }
 
-/* Register y Log in*/
+/* ==========================
+ Register y Log in
+ ============================*/
 
 .containerlogin{
   display: flex;
@@ -750,7 +749,7 @@ Cart
 ===================================*/
 
 .container-menu{
-padding-top: 90px;
+padding-top: 80px;
 margin-left: 5%;
 margin-right:5%;
 }
@@ -805,6 +804,14 @@ display: flex;
   border:0px;
   background-color: #0f1012
 }
+.nav-menu i{
+  display: none;
+  color: white;
+}
+.nav-menu i:hover{
+  color: #EA5457;
+  cursor: pointer;
+}
 .container-pmenu{
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 20px;
@@ -853,12 +860,94 @@ display: flex;
 }
 .products-menu i:hover{
 color: #EA5457;  
+cursor: pointer;
 }
 
 @media (max-width: 1410px){
-
+  .nav-menu i{
+    display: flex;
+    color: white;
+    padding-right: 10px;
+  }
+  .nav-menu hr{
+    background-color: black;
+  }
+  #dessert{
+    display: none;
+  }
+  #drinks{
+    display: none;
+  }
 }
-
+@media (max-width: 1130px){
+  .nav-menu i{
+    display: flex;
+    color: white;
+    padding-right: 10px;
+  }
+  .nav-menu hr{
+    background-color: black;
+  }
+  .nav-menu ul li:nth-child(+n+2){
+    display: none;
+  }
+  #dessert{
+    display: none;
+  }
+  #drinks{
+    display: none;
+  }
+  .titulo-menu{
+    margin-top: -15px;
+    margin-bottom: 5px;
+  }
+  .titulo-menu img{
+    width: 146px;
+    height: 52px;
+    position: relative;
+    top: 49px;
+    left: 30px
+  }
+  .titulo-menu h2{
+    font-size: 50px;
+  }
+  .titulos-pmenu h3{
+    font-size: 28px;
+    margin-right: 10px;
+  }
+  .titulos-pmenu p{
+    font-size: 18px;
+    padding-top: 20px;
+  }
+}
+@media (max-width: 400px){
+  .titulo-menu{
+    margin-top: -15px;
+    margin-bottom: 5px;
+  }
+  .titulo-menu img{
+    width: 115px;
+    height: 41px;
+    position: relative;
+    top: 41px;
+    left: 24px
+  }
+  .titulo-menu h2{
+    font-size: 40px;
+    padding-left: 5px;
+  }
+  .titulos-pmenu h3{
+    font-size: 26px;
+  }
+  .titulos-pmenu p{
+    font-size: 16px;
+    padding-top: 20px;
+  }
+  .products-menu p{
+    font-size: 16px;
+    line-height: 29px;
+  }
+}
 
 /*===================================
  Product add
@@ -982,4 +1071,24 @@ textarea:focus, input:focus {
 }
 .container-form a:hover{
   color: #A8CA55;
+}
+
+@media (max-width: 1050px){
+  #form-foto1{
+    width: 413px;
+    height: 152px;
+  }
+  .container-form{
+    width: 90%;
+  }
+}
+
+@media (max-width: 700px){
+  #form-foto1{
+    width: 413px;
+    height: 152px;
+  }
+  .container-form{
+    width: 98%;
+  }
 }
