@@ -230,7 +230,7 @@ margin-bottom: -10px;
   #product-description{
     display: inherit;
     width: 100% !important;
-    margin-top: 10%;
+    margin-top: 10px;
   }
   #details{
     flex-wrap: wrap;
@@ -291,6 +291,7 @@ margin-bottom: -10px;
   display: block;
   width: 50%;
   margin: 3% auto;
+  border-radius: 10px;
 }
 
 
