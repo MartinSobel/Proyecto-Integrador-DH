@@ -1,32 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="shortcut icon" href="/images/logo-icon.png">
-    <link rel='stylesheet' href='/stylesheets/style.css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link href="/fonts/MonumentExtended-Ultrabold.otf" rel="stylesheet">
-    <link href="/fonts/SF-Pro-Text-Regular.otf" rel="stylesheet">
-    <link href="/fonts/SF-Pro-Display-Medium.otf" rel="stylesheet">
+  <%- include('./partials/head')  %>
 </head>
 <body>
  
-    <nav>
-        <ul>
-          <img src="/images/logo.png" alt="">
-          <li><a href="/">Home</a></li>
-          <li><a href="/menu">Menu</a></li>
-          <li><a href="">Location</a></li>
-          <li><a href="">Contact</a></li>
-        </ul>
-        <ul>
-          <li><a href=""><i class="fas fa-search"></i></a></li>
-          <li><a href="/product_cart"><i class="fas fa-shopping-cart"></i></a></li>
-          <li><a href="">Login<i class="fas fa-user-circle"></i></a></li>
-        </ul>
-      </nav>
+  <%- include('./partials/header')  %>
 
   <div class="containerlogin">
     <main class="datos">
@@ -60,13 +39,7 @@
     </aside>
   </div>
 
-    <footer>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-facebook-f"></i>
-        <i class="fab fa-twitter"></i>
-        <p>Copyright Kintsugi 2020 - A project by Martin Sobel, Angie Rodriguez & Agustin Posse</p>
-      </footer>
+  <%- include('./partials/footer')  %>
 
- 
 </body>
 </html>
