@@ -12,17 +12,17 @@
 
         <div class="nav-menu">
             <ul>
-              <li><a class="selected-nav-menu" href="#">Upload product</a></li>
+              <li><a class="selected-nav-menu" href="/products/product_add">Upload product</a></li>
             </ul>
             <ul>
-              <li><a href="#">Edit product</a></li>
+              <li><a href="/products/product_edit">Edit product</a></li>
             </ul>
           </div>
         
         <div class="container-form">
             <div class="formulario">
                 
-                <form action="/" method="GET">
+                <form action="/products/createProduct" method="POST" enctype="multipart/form-data">
                     <h3>Product name</h3>
                     <input type="text" id="name" name="name" placeholder="English"><br>
                     <input type="text" id="jap" name="jap" placeholder="Japanese"><br>
@@ -38,7 +38,7 @@
                     <p>Max 2 MB each, .jpg format</p>
                     <img src="/images/fotos-sushi/producto-middle.jpg" id="form-foto1"><br>
                     <img src="/images/fotos-sushi/producto-left.jpg" id="form-foto2"><br>
-                    <input type="file" id="add-img" name="add-img"><br>
+                    <input type="file" id="add-img" name="img"><br>
 
                     <button type="submit">Upload product</button><br><br>
                     <a href="#">Restore changes</a>
@@ -46,12 +46,10 @@
                 </form>
                 
             </div>
-            
-
-
+          
 
         </div>
-        <%- include('./partials/footer')  %>
+
     </main>
 </body>
 </html>

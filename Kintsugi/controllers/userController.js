@@ -4,6 +4,12 @@ const userController = {
     },
     renderRegister: function (req, res, next) {
         return res.render("register");
+    },
+    logged: function (req, res, next) {
+        return res.render("index");
+    },
+    registered: function (req, res, next) {
+        return res.render("index");
     }
 }
 
