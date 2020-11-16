@@ -9,6 +9,9 @@ const productController = {
     renderProductEdit: function (req, res, next) {
         return res.render("product_edit");
     },
+    renderProductEditDetail: function (req, res, next) {
+        return res.render("product_edit_detail");
+    },
     renderProductDetail: function (req, res, next) {
         return res.render("product_detail");
     },
@@ -24,7 +27,7 @@ const productController = {
         category: req.body.cat,
         image: req.body.img,
         }
-        return res.render("product_add");
+        return res.render("product_edit");
     }
 }
 

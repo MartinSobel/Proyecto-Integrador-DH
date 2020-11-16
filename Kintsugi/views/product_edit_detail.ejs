@@ -12,10 +12,10 @@
 
         <div class="nav-menu">
             <ul>
-              <li><a class="selected-nav-menu" href="/products/product_add">Upload product</a></li>
+              <li><a href="/products/product_add">Upload product</a></li>
             </ul>
             <ul>
-              <li><a href="/products/product_edit">Edit product</a></li>
+              <li><a class="selected-nav-menu" href="/products/product_edit">Edit product</a></li>
             </ul>
           </div>
         
@@ -23,24 +23,23 @@
             <div class="formulario">
                 
                 <form action="/products/createProduct" method="POST" enctype="multipart/form-data">
+                    <br><br>
+                    <img src="/images/fotos-sushi/producto-middle.jpg" id="form-foto1"><br>
+                    <img src="/images/fotos-sushi/producto-left.jpg" id="form-foto2"><br>
+                    <img src="/images/fotos-sushi/producto-right.jpg" id="form-foto2"><br><br>
+                    <p>Click the picture to edit or delete</p>
                     <h3>Product name</h3>
-                    <input type="text" id="name" name="name" placeholder="English"><br>
-                    <input type="text" id="jap" name="jap" placeholder="Japanese"><br>
+                    <input type="text" id="name" name="name" value="Product name"><br>
                     <h3>Description</h3>
                     <p>Max. 200 characters</p>
                     <input type="text" id="desc" name="desc" maxlength = "200"><br>
                     <h3>Price</h3>
                     <p>Only numbers</p>
-                    <input type="text" id="add-price" name="price"><br>
+                    <input type="text" id="add-price" name="price" value="500"><br>
                     <h3>Category</h3>
-                    <input type="text" id="cat" name="cat"><br>
-                    <h3>Pictures</h3>
-                    <p>Max 2 MB each, .jpg format</p>
-                    <img src="/images/fotos-sushi/producto-middle.jpg" id="form-foto1"><br>
-                    <img src="/images/fotos-sushi/producto-left.jpg" id="form-foto2"><br>
-                    <input type="file" id="add-img" name="img"><br><br>
+                    <input type="text" id="cat" name="cat"><br><br>
 
-                    <button type="submit">Upload product</button><br>
+                    <button type="submit">Save changes</button><br>
                     <a href="#">Restore changes</a>
                 
                 </form>

@@ -107,6 +107,7 @@ nav ul img{
   align-self: center;
   width: 70px;
   height: 56px;
+  padding-right: 10px;
 }
 
 nav a{
@@ -118,6 +119,26 @@ nav a:hover{
   color: white;
 }
 
+#treslineas{
+  display: none;
+}
+
+@media (max-width: 1200px){
+  nav ul li:nth-child(-n+3){
+    display: none;
+  }
+  #hide-it{
+    display: none;
+  }
+  #treslineas{
+    display: flex;
+    font-size: 26px;
+  }
+  nav ul li{
+    padding-left: 0px;
+    padding-right: 30px;
+  }
+}
 
 /*===================================
  Home
@@ -193,9 +214,6 @@ margin-bottom: -10px;
 }
 
 @media (max-width: 1200px){
-  nav ul li{
-    display: none;
-  }
   #banner{
     padding-top: 15%;
   }
@@ -749,7 +767,7 @@ Cart
 ===================================*/
 
 .container-menu{
-padding-top: 80px;
+padding-top: 90px;
 margin-left: 5%;
 margin-right:5%;
 }
@@ -1091,4 +1109,38 @@ textarea:focus, input:focus {
   .container-form{
     width: 98%;
   }
+}
+
+/*===================================
+ Product edit
+===================================*/
+
+.products-edit{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  height: 600px;
+  margin-right: -70px;
+  margin-top: 20px;
+  padding: 40px 40px;
+}
+.products-edit img{
+  width: 217px;
+  height: 122px;
+  border-radius: 20px;
+}
+.products-edit p{
+  font-size: 20px;
+  line-height: 29px;
+  margin-bottom: 40px;
+}
+.products-edit i{
+  position: relative;
+  bottom: 62px;
+  left: 195px;
+  font-size: 18px;
+}
+.products-edit i:hover{
+color: #EA5457;  
+cursor: pointer;
 }
