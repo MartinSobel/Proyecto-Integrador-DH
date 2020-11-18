@@ -36,3 +36,23 @@
 
 ## 5. Dejar de hacer
 -Ser obsesivos con el detalle
+
+
+# *Retrospectiva Sprint 4 Ej 1*
+
+## 1. Comenzar a hacer
+-Si tenemos tiempo libre, ayudar a los demás que estén complicados haciendo parte de sus tareas
+
+## 2. Hacer más
+-En las weeklys hablar más del proyecto integrador
+-Coordinar para hacer juntos las partes difíciles de backend
+
+## 3. Continuar haciendo
+-Mantener las weeklys de lunes 5pm
+
+## 4. Hacer menos
+-No postergar tareas pendientes
+
+## 5. Dejar de hacer
+
+
