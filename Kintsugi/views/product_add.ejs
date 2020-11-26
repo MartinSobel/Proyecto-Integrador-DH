@@ -12,20 +12,20 @@
 
         <div class="nav-menu">
             <ul>
-              <li><a class="selected-nav-menu" href="/products/product_add">Upload product</a></li>
+              <li><a class="selected-nav-menu" href="/product_manager/add">Upload product</a></li>
             </ul>
             <ul>
-              <li><a href="/products/product_edit">Edit product</a></li>
+              <li><a href="/product_manager/">Edit product</a></li>
             </ul>
           </div>
         
         <div class="container-form">
             <div class="formulario">
                 
-                <form action="/products/createProduct" method="POST" enctype="multipart/form-data">
+                <form action="/product_manager/store" method="POST">
                     <h3>Product name</h3>
-                    <input type="text" id="name" name="name" placeholder="English"><br>
-                    <input type="text" id="jap" name="jap" placeholder="Japanese"><br>
+                    <input type="text" id="id" name="id" placeholder="Product ID"><br>
+                    <input type="text" id="name" name="name" placeholder="Name"><br>
                     <h3>Description</h3>
                     <p>Max. 200 characters</p>
                     <input type="text" id="desc" name="desc" maxlength = "200"><br>

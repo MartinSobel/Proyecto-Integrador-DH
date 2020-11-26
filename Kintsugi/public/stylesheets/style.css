@@ -1084,8 +1084,8 @@ textarea:focus, input:focus {
 }
 .container-form a{
   text-decoration: none;
-  font-size: 12px;
-  color: white;
+  font-size: 14px;
+  color: #EA5457;
 }
 .container-form a:hover{
   color: #A8CA55;

@@ -1,16 +1,10 @@
+const fs = require('fs');
+var products = JSON.parse(fs.readFileSync(__dirname + "/../database/products.json"));
+
 
 const productController = {
     renderMenu: function (req, res, next) {
         return res.render("menu");
-    },
-    renderProductAdd: function (req, res, next) {
-        return res.render("product_add");
-    },
-    renderProductEdit: function (req, res, next) {
-        return res.render("product_edit");
-    },
-    renderProductEditDetail: function (req, res, next) {
-        return res.render("product_edit_detail");
     },
     renderProductDetail: function (req, res, next) {
         return res.render("product_detail");
@@ -18,17 +12,56 @@ const productController = {
     renderProductCart: function (req, res, next) {
         return res.render("product_cart");
     },
-    create: function(req, res, next){
-       var product = {
-        name: req.body.name,
-        nameJap: req.body.jap,
-        description: req.body.desc,
-        price: req.body.price,
-        category: req.body.cat,
-        image: req.body.img,
-        }
-        return res.render("product_edit");
-    }
+    renderProductManager: function (req, res, next) {
+        return res.render("product_edit", {products});
+    },
+    renderProductAdd: function (req, res, next) {
+        return res.render("product_add");
+    },
+    store: function(req, res, next) {
+        products.push(req.body);
+        let productsJSON = JSON.stringify(products);
+        fs.writeFileSync(__dirname + "/../database/products.json", productsJSON);
+        res.redirect("/product_manager/")
+    },
+    renderProductEdit: function (req, res, next) {
+            var idProduct = req.params.id;
+            var productFound;
+            for(var i=0;i < products.length;i++){
+                if(products[i].id == idProduct){
+                    productFound = products[i];
+                    break;
+                }
+            }
+            if(productFound){
+                res.render("product_edit_detail",{products, productFound})
+            }else{
+                res.send("No se encontró el producto");
+            }
+    },
+    update: function(req, res, next) {
+        var idProduct = req.params.id;
+        var editProducto2 = products.map(function(producto){
+            if(producto.id == idProduct){
+                let productoEditado = req.body;
+                productoEditado.id = idProduct;
+                return productoEditado;
+            }
+            return producto;
+        });
+        editProductsJSON = JSON.stringify(editProducto2);
+        fs.writeFileSync(__dirname + "/../database/products.json",editProductsJSON);
+        res.redirect("/product_manager/");
+    },
+    destroy: function(req,res,next){
+        var idProduct = req.params.id;
+        var productsDestroy = products.filter(function(product){
+            return product.id != idProduct;
+        });
+        productsDestroyJSON = JSON.stringify(productsDestroy);
+        fs.writeFileSync(__dirname + "/../database/products.json",productsDestroyJSON);
+        return res.redirect("/product_manager/");
+    },
 }
 
 module.exports = productController;
