@@ -15,7 +15,7 @@ const userController = {
         users.push(req.body);
         let usersJSON = JSON.stringify(users);
         fs.writeFileSync(__dirname + "/../database/users.json", usersJSON);
-        res.render("index");
+        res.redirect("/");
     }
 };
 
