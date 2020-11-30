@@ -22,11 +22,11 @@
         <div class="container-form">
             <div class="formulario">
                 
-                <form action="/product_manager/edit/<%= productFound.id %>" method="POST">
+                <form action="/product_manager/edit/<%= productFound.id %>" method="POST" enctype='multipart/form-data'>
                     <br><br>
                     <img src="/images/fotos-sushi/producto-middle.jpg" id="form-foto1"><br>
                     <img src="/images/fotos-sushi/producto-left.jpg" id="form-foto2"><br>
-                    <img src="/images/fotos-sushi/producto-right.jpg" id="form-foto2"><br><br>
+                    <input type="file" id="add-img" name="img"><br><br>
                     <p>Click the picture to edit or delete</p>
                     <h3>Product name</h3>
                     <input type="text" id="name" name="name" value="<%= productFound.name %>"><br>

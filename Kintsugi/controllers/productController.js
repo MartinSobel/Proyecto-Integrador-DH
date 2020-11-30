@@ -19,7 +19,15 @@ const productController = {
         return res.render("product_add");
     },
     store: function(req, res, next) {
-        products.push(req.body);
+        let newProduct= {
+            id: req.body.id,
+            name: req.body.name,
+            desc: req.body.desc,
+            price: req.body.price,
+            cat: req.body.cat,
+            img: req.files[0].filename
+        }
+        products.push(newProduct);
         let productsJSON = JSON.stringify(products);
         fs.writeFileSync(__dirname + "/../database/products.json", productsJSON);
         res.redirect("/product_manager/")
