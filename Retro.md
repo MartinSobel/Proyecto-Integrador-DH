@@ -55,7 +55,7 @@
 
 ## 5. Dejar de hacer
 
-# *Retrospectiva Sprint 5 y & Ej 1*
+# *Retrospectiva Sprint 5 y 6 Ej 1*
 
 ## 1. Comenzar a hacer
 - Lo que nos quedó de responsive
