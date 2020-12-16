@@ -55,4 +55,22 @@
 
 ## 5. Dejar de hacer
 
+# *Retrospectiva Sprint 5 y & Ej 1*
+
+## 1. Comenzar a hacer
+- Lo que nos quedó de responsive
+- Cuando no haya clase, conectarnos a laburar en conjunto y motivarnos
+
+## 2. Hacer más
+- Weeklys
+- Si tenemos tiempo libre, avanzar con el proyecto
+
+
+## 3. Continuar haciendo
+- Trabajando en equipo
+
+## 4. Hacer menos
+- Postergar
+
+## 5. Dejar de hacer
 
