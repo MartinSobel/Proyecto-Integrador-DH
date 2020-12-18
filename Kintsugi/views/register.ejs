@@ -18,11 +18,12 @@
 
         <div class="formulario">
             <h3>Please, fill in below with your information</h3>
-            <form action="/users/register" method="POST">
+            <form action="/users/register" method="POST" enctype="multipart/form-data">
                 <input type="text" id="name" name="name" placeholder="Name"><br>
                 <input type="tel" id="phone" name="phone" placeholder="Phone"><br>
                 <input type="email" id="email" name="email" placeholder="Email"><br>
                 <input type="password" id="password" name="password" placeholder="Password"><br><br>
+                <input type="file" id="add-img-user" name="avatar"><br><br>
                 <button id="button-login-register" type="submit">Sign Up</button>
             </form>
         </div>

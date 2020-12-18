@@ -403,6 +403,18 @@ footer p{
 padding-top: 40px;
 }
 
+#add-img-user{
+  height: 40px;
+  background-color:#4e4e4e;
+  border-radius: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+#add-img-user:hover{
+  background-color: rgb(34, 34, 34);
+}
+
 .finform {
   align-self: flex-start;
   position: relative;
