@@ -13,10 +13,10 @@ const productController = {
         return res.render("product_cart");
     },
     renderProductManager: function (req, res, next) {
-        return res.render("product_edit", {products});
+        return res.render("pm_index", {products});
     },
     renderProductAdd: function (req, res, next) {
-        return res.render("product_add");
+        return res.render("pm_add");
     },
     store: function(req, res, next) {
         let newProduct= {
@@ -42,7 +42,7 @@ const productController = {
                 }
             }
             if(productFound){
-                res.render("product_edit_detail",{products, productFound})
+                res.render("pm_edit",{products, productFound})
             }else{
                 res.send("No se encontró el producto");
             }
