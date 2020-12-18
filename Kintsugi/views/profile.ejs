@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./partials/head')  %>
+</head>
+<body>
+ 
+  <%- include('./partials/header')  %>
+
+  <div class="containerlogin">
+    <main class="datos">
+
+        <div class="titulacion">
+            <h2>Profile</h2>
+        </div>
+
+        <div class="formulario">
+            <h3>My profile</h3>
+            <form action="/users/register" method="POST" enctype="multipart/form-data">
+                <input type="text" id="name" name="name" placeholder="Name" required><br>
+                <input type="tel" id="phone" name="phone" placeholder="Phone" required><br>
+                <input type="email" id="email" name="email" placeholder="Email" required><br>
+                <input type="password" id="password" name="password" placeholder="Password" required><br><br>
+                <button id="button-login-register" type="submit">Edit</button>
+            </form>
+        </div>
+
+        <div class="finform">
+               <p> </p><br>
+        </div>
+
+        <a href="/users/login" id="already"> </a>
+        
+    </main>
+  </div>
+
+  <%- include('./partials/footer')  %>
+
+</body>
+</html>

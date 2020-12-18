@@ -21,4 +21,6 @@ router.post('/register', upload.any() , userController.registered);
 router.get('/login', userController.renderLogin);
 router.post('/logged', userController.logged);
 
+router.get('/profile', userController.renderProfile);
+
 module.exports = router;

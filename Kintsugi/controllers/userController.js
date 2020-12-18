@@ -31,6 +31,9 @@ const userController = {
         let usersJSON = JSON.stringify(users);
         fs.writeFileSync(__dirname + "/../database/users.json", usersJSON);
         res.redirect("/");
+    },
+    renderProfile: function(req, res, next){
+        return res.render('profile');
     }
 };
 
