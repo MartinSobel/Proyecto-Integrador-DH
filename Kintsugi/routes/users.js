@@ -19,6 +19,6 @@ router.get('/register', userController.renderRegister);
 router.post('/register', upload.any() , userController.registered);
 
 router.get('/login', userController.renderLogin);
-router.post('/logged', userController.renderLogin);
+router.post('/logged', userController.logged);
 
 module.exports = router;

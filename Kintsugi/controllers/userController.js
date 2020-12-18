@@ -10,7 +10,14 @@ const userController = {
         return res.render("register");
     },
     logged: function (req, res, next) {
-        return res.render("index");
+        for (let i = 0 ; i < users.length ; i++){
+            if (req.body.email == users[i].email){
+                if(bcrypt.compareSync(req.body.password, users[i].password) ){
+                    return res.redirect("/");
+                } else return res.redirect("/users/login");
+            } else return res.redirect("/users/login");
+        }
+        
     },
     registered: function (req, res, next) {
         let newUser = {
