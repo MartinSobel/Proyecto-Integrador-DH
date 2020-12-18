@@ -13,11 +13,11 @@ const userController = {
         for (let i = 0 ; i < users.length ; i++){
             if (req.body.email == users[i].email){
                 if(bcrypt.compareSync(req.body.password, users[i].password) ){
+                    req.session.logged = 'logged';
                     return res.redirect("/");
                 } else return res.redirect("/users/login");
             } else return res.redirect("/users/login");
         }
-        
     },
     registered: function (req, res, next) {
         let newUser = {
