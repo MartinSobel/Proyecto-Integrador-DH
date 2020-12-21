@@ -1,6 +1,7 @@
 const fs = require ('fs');
 var users = JSON.parse(fs.readFileSync(__dirname + "/../database/users.json"));
 let bcrypt = require('bcrypt');
+const { validationResult } = require('express-validator');
 
 const userController = {
     renderLogin: function (req, res, next) {
@@ -27,6 +28,11 @@ const userController = {
         }
     },
     registered: function (req, res, next) {
+        let errors = validationResult(req);
+        if (!errors.isEmpty()){
+            return res.render('render', {errors: errors.errors});
+        }
+
         let newUser = {
             name: req.body.name,
             phone: req.body.phone,

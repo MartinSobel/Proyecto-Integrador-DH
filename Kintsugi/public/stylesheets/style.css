@@ -355,6 +355,10 @@ footer p{
  Register y Log in
  ============================*/
 
+.error{
+  color: red;
+}
+
 .containerlogin{
   display: flex;
   justify-content: space-evenly;

@@ -18,6 +18,9 @@
 
         <div class="formulario">
             <h3>Please, fill in below with your information</h3>
+            <% if(typeof errors != 'undefined'){ %>
+              <p class="error">errors.msg</p>
+            <% } %>
             <form action="/users/register" method="POST" enctype="multipart/form-data">
                 <input type="text" id="name" name="name" placeholder="Name" required><br>
                 <input type="tel" id="phone" name="phone" placeholder="Phone" required><br>
