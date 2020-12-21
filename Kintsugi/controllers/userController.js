@@ -10,10 +10,17 @@ const userController = {
         return res.render("register");
     },
     logged: function (req, res, next) {
+        if (req.body.remember != undefined){
+            console.log('cookie');
+            res.cookie('remember', req.body.email, { maxAge: 60000 });
+        }
         for (let i = 0 ; i < users.length ; i++){
             if (req.body.email == users[i].email){
                 if(bcrypt.compareSync(req.body.password, users[i].password) ){
                     req.session.logged = 'logged';
+                    if (req.body.remember != undefined){
+                        res.cookie('remember', req.body.email, {maxAge: 2592000000});
+                    }
                     return res.redirect("/");
                 } else return res.redirect("/users/login");
             } else return res.redirect("/users/login");

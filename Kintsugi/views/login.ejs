@@ -19,12 +19,11 @@
             <form action="/users/logged" method="POST">
                 <input type="email" id="email" name="email" placeholder="Email" required><br>
                 <input type="password" id="password" name="password" placeholder="Password" required><br>
+                <label for="remember">Remember Me</label>
+                <input type="checkbox" name="remember">
                 <button id="button-login-register" type="submit" required>Enter</button>
+                
             </form>
-        </div>
-            
-        <div class="finform">
-                <p><input type="radio" name="remember" value="yes"> Remember Me</p>       
         </div>
         <a href="/users/register" id="noAccount">I don't have an account</a>
         
