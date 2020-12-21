@@ -8,6 +8,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 const logMiddleware = require('../middlewares/logMiddleware');
 
 let { check, validationResult, body} = require('express-validator');
+const { compareSync } = require('bcrypt');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -23,6 +24,8 @@ var upload = multer({ storage: storage })
 router.get('/register',userController.renderRegister);
 
 router.post('/register', [body('email').custom(function(value){
+  console.log(value);
+
   const fs = require ('fs');
   let usersJSON = fs.readFileSync(__dirname + "/../database/users.json", {encoding: 'utf-8'});
   let users;
