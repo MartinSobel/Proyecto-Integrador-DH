@@ -21,12 +21,12 @@
             <% if(typeof errors != 'undefined'){ %>
               <p class="error">errors.msg</p>
             <% } %>
-            <form action="/users/register" method="POST" enctype="multipart/form-data">
+            <form action="/users/register" method="POST">
                 <input type="text" id="name" name="name" placeholder="Name" required><br>
                 <input type="tel" id="phone" name="phone" placeholder="Phone" required><br>
                 <input type="email" id="email" name="email" placeholder="Email" required><br>
                 <input type="password" id="password" name="password" placeholder="Password" required><br><br>
-                <input type="file" id="add-img-user" name="avatar" required><br><br>
+                
                 <button id="button-login-register" type="submit">Sign Up</button>
             </form>
         </div>

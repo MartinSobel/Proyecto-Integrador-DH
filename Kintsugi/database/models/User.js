@@ -19,9 +19,6 @@ module.exports = (sequelize, DataTypes) => {
         email: {
             type: DataTypes.STRING
         },
-        avatar: {
-            type: DataTypes.STRING
-        }
     };
 
     let config = {

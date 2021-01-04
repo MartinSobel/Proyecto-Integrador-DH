@@ -40,7 +40,7 @@ router.post('/register', [body('email').custom(function(value){
       return false;
     } else { return true; }
   }
-}).withMessage('User already exists with that email')] , upload.any(), userController.registered);
+}).withMessage('User already exists with that email')], userController.registered);
 
 router.get('/login', logMiddleware, userController.renderLogin);
 router.post('/logged',userController.logged);

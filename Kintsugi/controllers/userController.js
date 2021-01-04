@@ -16,7 +16,7 @@ const userController = {
             console.log('cookie');
             res.cookie('remember', req.body.email, { maxAge: 60000 });
         }
-        for (let i = 0 ; i < users.length ; i++){
+        /*for (let i = 0 ; i < users.length ; i++){
             if (req.body.email == users[i].email){
                 if(bcrypt.compareSync(req.body.password, users[i].password) ){
                     req.session.logged = 'logged';
@@ -26,7 +26,20 @@ const userController = {
                     return res.redirect("/");
                 } else return res.redirect("/users/login");
             } else return res.redirect("/users/login");
-        }
+        }*/
+        db.User.findOne({
+            where:{
+                email: req.body.email
+            }
+        }).then((result)=>{
+            if(bcrypt.compareSync(req.body.password, result.password) ){
+                req.session.logged = 'logged';
+                if (req.body.remember != undefined){
+                    res.cookie('remember', req.body.email, {maxAge: 2592000000});
+                }
+                return res.redirect("/");
+            } else return res.redirect("/users/login");
+        })
     },
     registered: function (req, res, next) {
         let errors = validationResult(req);
@@ -39,8 +52,9 @@ const userController = {
             phone: req.body.phone,
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10),
-            avatar: req.files[0].filename
+            
         });
+        
         
         // let newUser = {
         //     name: req.body.name,

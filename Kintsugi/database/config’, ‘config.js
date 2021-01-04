@@ -1,10 +1,11 @@
 module.exports ={
   "development": {
     "username": "root",
-    "password": null,
-    "database": "kintsugi_db",
+    "password": "root",
+    "database": "kintsugi",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "port": 8889
   },
   "test": {
     "username": "root",
