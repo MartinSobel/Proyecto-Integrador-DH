@@ -19,7 +19,7 @@ const productController = {
         return res.render("pm_add");
     },
     store: function(req, res, next) {
-        let newProduct= {
+        db.Product.create= {
             id: req.body.id,
             name: req.body.name,
             desc: req.body.desc,

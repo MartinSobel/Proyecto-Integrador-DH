@@ -70,7 +70,22 @@ const userController = {
         res.redirect("/");
     },
     renderProfile: function(req, res, next){
-        return res.render('profile');
+        db.User.findByPk(req.params.id).then(function(user){
+            res.render('profile', {user});
+        })
+    },
+    editProfile: function(req, res, next){
+        db.User.update({
+            name: req.body.name,
+            phone: req.body.phone,
+            email: req.body.email,
+        },{
+        where: {
+            id: req.params.id
+            }
+        }).then(function(){
+            res.redirect("/users/profile/"+ req.params.id)
+        })
     }
 };
 
