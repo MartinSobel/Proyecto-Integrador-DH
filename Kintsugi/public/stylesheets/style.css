@@ -445,13 +445,19 @@ padding-top: 40px;
   top: 30px;
 }
 
-.datos #already, #noAccount{
+#button-profile {
+  position: relative;
+  top: 10px;
+  margin-top: 20px;
+}
+
+.datos #already, #noAccount {
   color: #A8CA55;
   font-size: 14px;
   align-self: center;
   cursor: pointer;
   margin-bottom: 70px;
-}
+} 
 
 .imgder {
   display: flex;

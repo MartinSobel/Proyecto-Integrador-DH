@@ -85,7 +85,11 @@ const userController = {
             }
         }).then(function(){
             res.redirect("/users/profile/"+ req.params.id)
-        })
+        }).catch(function(error){
+            console.log(error)
+            res.send('error')
+            });
+        
     }
 };
 
