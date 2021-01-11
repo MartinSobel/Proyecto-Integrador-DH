@@ -24,7 +24,6 @@
                 
                 <form action="/product_manager/store" method="POST" enctype="multipart/form-data">
                     <h3>Product name</h3>
-                    <input type="text" id="id" name="id" placeholder="Product ID"><br>
                     <input type="text" id="name" name="name" placeholder="Name"><br>
                     <h3>Description</h3>
                     <p>Max. 200 characters</p>
@@ -33,7 +32,17 @@
                     <p>Only numbers</p>
                     <input type="text" id="add-price" name="price"><br>
                     <h3>Category</h3>
-                    <input type="text" id="cat" name="cat"><br>
+                    <div class="select">
+                    <select name="cat" id="format">
+                      <option value="1">Rolls</option>
+                      <option value="2">Mixed</option>
+                      <option value="3">Snacks</option>
+                      <option value="4">Salads</option>
+                      <option value="5">Tempura</option>
+                      <option value="6">Dessert</option>
+                      <option value="7">Drinks</option>
+                    </select>
+                    </div><br>
                     <h3>Pictures</h3>
                     <p>Max 2 MB each, .jpg format</p>
                     <img src="/images/fotos-sushi/producto-middle.jpg" id="form-foto1"><br>

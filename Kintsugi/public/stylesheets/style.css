@@ -438,17 +438,46 @@ padding-top: 40px;
   width: 100px;
   cursor: pointer;
 }
-#button-login-register{
+
+#button-login{
   position: relative;
   right: 15px;
+  left: 90px;
+  top: -35px;
+}
+
+#button-login-register{
+  position: relative;
   left: 140px;
-  top: 30px;
+  top: 5px;
+}
+
+#rem-checkbox {
+  position: relative;
+  right: 170px;
+}
+
+#rememberMe {
+  position: relative;
+  right: 40px;
+  top: -40px;
 }
 
 #button-profile {
   position: relative;
   top: 10px;
   margin-top: 20px;
+}
+
+.containerlogin .datos #logout{
+  color: #EA5457;
+  font-size: 14px;
+  align-self: center;
+  cursor: pointer;
+  position: relative;
+  top: 30px;
+  left: 60px;
+  text-decoration: none;
 }
 
 .datos #already, #noAccount {
@@ -553,7 +582,6 @@ padding-top: 40px;
 
   .finform{
     bottom: 40px;
-    left: 10px;
   }
   .formulario button{
     margin-right: 180px;
@@ -1131,6 +1159,51 @@ textarea:focus, input:focus {
   .container-form{
     width: 98%;
   }
+}
+
+select {
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  -ms-appearance:none;
+  appearance:none;
+  outline:0;
+  box-shadow:none;
+  border:0!important;
+  background:  #4e4e4e;
+  background-image: none;
+  flex: 1;
+  padding: 0 .5em;
+  padding-left: 230px;
+  color:#fff;
+  cursor:pointer;
+  font-size: 1em;
+}
+select::-ms-expand {
+  display: none;
+}
+.select {
+  position: relative;
+  display: inline-flex;
+  width: 500px;
+  height: 40px;
+  line-height: 3;
+  background: #4e4e4e ;
+  overflow: hidden;
+  border-radius: 30px;
+}
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #2b2e2e;
+  cursor:pointer;
+  pointer-events:none;
+  transition:.25s all ease;
+}
+.select:hover::after {
+  color: #EA5457;
 }
 
 /*===================================

@@ -22,22 +22,30 @@
         <div class="container-form">
             <div class="formulario">
                 
-                <form action="/product_manager/edit/<%= productFound.id %>" method="POST" enctype='multipart/form-data'>
+                <form action="/product_manager/edit/<%= product.id %>" method="POST" enctype='multipart/form-data'>
                     <br><br>
-                    <img src="/images/fotos-sushi/producto-middle.jpg" id="form-foto1"><br>
-                    <img src="/images/fotos-sushi/producto-left.jpg" id="form-foto2"><br>
-                    <input type="file" id="add-img" name="img"><br><br>
-                    <p>Click the picture to edit or delete</p>
+                    <img src="/images/my-uploads/<%= products.image %>" id="form-foto2"><br>
+                    <input type="file" id="add-img" name="img"><br><br><br><br>
                     <h3>Product name</h3>
-                    <input type="text" id="name" name="name" value="<%= productFound.name %>"><br>
+                    <input type="text" id="name" name="name" value="<%= product.name %>"><br>
                     <h3>Description</h3>
                     <p>Max. 200 characters</p>
-                    <input type="text" id="desc" name="desc" value="<%= productFound.desc %>"><br>
+                    <input type="text" id="desc" name="desc" value="<%= product.description %>"><br>
                     <h3>Price</h3>
                     <p>Only numbers</p>
-                    <input type="text" id="add-price" name="price" value="<%= productFound.price %>"><br>
+                    <input type="text" id="add-price" name="price" value="<%= product.price %>"><br>
                     <h3>Category</h3>
-                    <input type="text" id="cat" name="cat" value="<%= productFound.cat %>"><br><br>
+                    <div class="select">
+                      <select name="cat" id="format">
+                        <option value="1">Rolls</option>
+                        <option value="2">Mixed</option>
+                        <option value="3">Snacks</option>
+                        <option value="4">Salads</option>
+                        <option value="5">Tempura</option>
+                        <option value="6">Dessert</option>
+                        <option value="7">Drinks</option>
+                      </select>
+                      </div>
 
                     <button type="submit">Save changes</button><br>
                     <a href="/product_manager/destroy/<%= productFound.id %>">Delete product</a>

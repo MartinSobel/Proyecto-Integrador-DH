@@ -12,10 +12,7 @@ const userController = {
         return res.render("register");
     },
     logged: function (req, res, next) {
-        if (req.body.remember != undefined){
-            console.log('cookie');
-            res.cookie('remember', req.body.email, { maxAge: 60000 });
-        }
+
         /*for (let i = 0 ; i < users.length ; i++){
             if (req.body.email == users[i].email){
                 if(bcrypt.compareSync(req.body.password, users[i].password) ){
@@ -34,11 +31,15 @@ const userController = {
         }).then((result)=>{
             if(bcrypt.compareSync(req.body.password, result.password) ){
                 req.session.logged = 'logged';
+                req.session.email = req.body.email
                 if (req.body.remember != undefined){
                     res.cookie('remember', req.body.email, {maxAge: 2592000000});
                 }
                 return res.redirect("/");
             } else return res.redirect("/users/login");
+        }).catch(function(e){
+            console.log(e);
+            return res.redirect("/users/login");
         })
     },
     registered: function (req, res, next) {
@@ -54,7 +55,6 @@ const userController = {
             password: bcrypt.hashSync(req.body.password, 10),
             
         });
-        
         
         // let newUser = {
         //     name: req.body.name,
@@ -89,8 +89,15 @@ const userController = {
             console.log(error)
             res.send('error')
             });
-        
-    }
+    },
+    logout: function(req, res, next){
+         res.status(200).clearCookie('connect.sid', {
+            path: '/'
+         });
+        req.session.destroy(function (err) {
+        res.redirect('/');
+             });
+        }
 };
 
 module.exports = userController;

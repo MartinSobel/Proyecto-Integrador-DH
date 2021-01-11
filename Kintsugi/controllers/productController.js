@@ -1,4 +1,5 @@
 const fs = require('fs');
+const db = require('../database/models');
 var products = JSON.parse(fs.readFileSync(__dirname + "/../database/products.json"));
 
 
@@ -13,23 +14,22 @@ const productController = {
         return res.render("product_cart");
     },
     renderProductManager: function (req, res, next) {
+        db.Product.findAll().then(function(products){
         return res.render("pm_index", {products});
+        })
     },
     renderProductAdd: function (req, res, next) {
         return res.render("pm_add");
     },
     store: function(req, res, next) {
-        db.Product.create= {
-            id: req.body.id,
+        
+        db.Product.create({
             name: req.body.name,
-            desc: req.body.desc,
+            description: req.body.desc,
             price: req.body.price,
-            cat: req.body.cat,
-            img: req.files[0].filename
-        }
-        products.push(newProduct);
-        let productsJSON = JSON.stringify(products);
-        fs.writeFileSync(__dirname + "/../database/products.json", productsJSON);
+            category_id: req.body.cat,
+            image: req.files[0].filename
+        })
         res.redirect("/product_manager/")
     },
     renderProductEdit: function (req, res, next) {

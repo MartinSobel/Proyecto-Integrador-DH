@@ -6,7 +6,7 @@ function logMiddleware(req, res, next){
     } else {
         db.User.findOne({
             where: {
-                email: req.cookies.remember
+                email: req.session.email
             }
         }).then(function(resultado){
             res.redirect('/users/profile/'+ resultado.id);
