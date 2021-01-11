@@ -33,42 +33,38 @@ const productController = {
         res.redirect("/product_manager/")
     },
     renderProductEdit: function (req, res, next) {
-            var idProduct = req.params.id;
-            var productFound;
-            for(var i=0;i < products.length;i++){
-                if(products[i].id == idProduct){
-                    productFound = products[i];
-                    break;
-                }
-            }
-            if(productFound){
-                res.render("pm_edit",{products, productFound})
-            }else{
+            db.Product.findByPk(req.params.id).then(function(product){
+                return res.render("pm_edit",{product}) 
+            }).catch(function(error){
+                console.log(error)
                 res.send("No se encontró el producto");
-            }
-    },
+            })
+        },
+
     update: function(req, res, next) {
-        var idProduct = req.params.id;
-        var editProducto2 = products.map(function(producto){
-            if(producto.id == idProduct){
-                let productoEditado = req.body;
-                productoEditado.id = idProduct;
-                return productoEditado;
+        db.Product.update({
+            name: req.body.name,
+            description: req.body.desc,
+            price: req.body.price,
+            category_id: req.body.cat,
+            image: req.files[0].filename
+        },{
+        where: {
+            id: req.params.id
             }
-            return producto;
-        });
-        editProductsJSON = JSON.stringify(editProducto2);
-        fs.writeFileSync(__dirname + "/../database/products.json",editProductsJSON);
-        res.redirect("/product_manager/");
+        }).then(function(){
+            res.redirect("/product_manager/edit/"+ req.params.id)
+        }).catch(function(error){
+            console.log(error)
+            res.send('error')
+            });
     },
     destroy: function(req,res,next){
-        var idProduct = req.params.id;
-        var productsDestroy = products.filter(function(product){
-            return product.id != idProduct;
-        });
-        productsDestroyJSON = JSON.stringify(productsDestroy);
-        fs.writeFileSync(__dirname + "/../database/products.json",productsDestroyJSON);
-        return res.redirect("/product_manager/");
+        db.Product.destroy({
+            where:{id:req.params.id}
+        }).then(function(){
+            return res.redirect("/product_manager/");
+        })
     },
 }
 
