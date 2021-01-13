@@ -19,12 +19,15 @@
         <div class="formulario">
             <h3>Please, fill in below with your information</h3>
             <% if(typeof errors != 'undefined'){ %>
-              <p class="error">errors.msg</p>
+              <% for (let i = 0; i < errors.length; i++) { %>
+                <p class="error"><%= errors[i].msg %></p>
+                <% } %>
+              
             <% } %>
             <form action="/users/register" method="POST">
                 <input type="text" id="name" name="name" placeholder="Name" required><br>
                 <input type="tel" id="phone" name="phone" placeholder="Phone" required><br>
-                <input type="email" id="email" name="email" placeholder="Email" required><br>
+                <input type="email" id="email" name="email" placeholder="Email" ><br>
                 <input type="password" id="password" name="password" placeholder="Password" required><br><br>
                 
                 <button id="button-login-register" type="submit">Sign Up</button>

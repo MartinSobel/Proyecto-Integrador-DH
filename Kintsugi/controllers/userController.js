@@ -1,8 +1,9 @@
 const fs = require ('fs');
 var users = JSON.parse(fs.readFileSync(__dirname + "/../database/users.json"));
 let bcrypt = require('bcrypt');
-const { validationResult } = require('express-validator');
+
 const db = require('../database/models');
+const {check, validationResult, body} = require ('express-validator');
 
 const userController = {
     renderLogin: function (req, res, next) {
@@ -12,19 +13,7 @@ const userController = {
         return res.render("register");
     },
     logged: function (req, res, next) {
-
-        /*for (let i = 0 ; i < users.length ; i++){
-            if (req.body.email == users[i].email){
-                if(bcrypt.compareSync(req.body.password, users[i].password) ){
-                    req.session.logged = 'logged';
-                    if (req.body.remember != undefined){
-                        res.cookie('remember', req.body.email, {maxAge: 2592000000});
-                    }
-                    return res.redirect("/");
-                } else return res.redirect("/users/login");
-            } else return res.redirect("/users/login");
-        }*/
-        db.User.findOne({
+         db.User.findOne({
             where:{
                 email: req.body.email
             }
@@ -43,9 +32,11 @@ const userController = {
         })
     },
     registered: function (req, res, next) {
-        let errors = validationResult(req);
+       
+        const errors = validationResult(req);
         if (!errors.isEmpty()){
-            return res.render('render', {errors: errors.errors});
+            console.log(errors);
+            return res.render('register', {errors: errors.errors});
         }
 
         db.User.create({
@@ -99,5 +90,6 @@ const userController = {
              });
         }
 };
+
 
 module.exports = userController;

@@ -21,7 +21,7 @@ router.get('/add', productController.renderProductAdd);
 router.post('/store', upload.any(), productController.store);
 
 router.get('/edit/:id?', productController.renderProductEdit);
-router.post("/edit/:id", productController.update);
+router.post('/edit/:id', upload.any(), productController.update);
 
 router.get('/destroy/:id', productController.destroy);
 

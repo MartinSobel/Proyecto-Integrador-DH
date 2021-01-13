@@ -42,12 +42,13 @@ const productController = {
         },
 
     update: function(req, res, next) {
+        console.log(req.body.desc);
         db.Product.update({
             name: req.body.name,
             description: req.body.desc,
             price: req.body.price,
             category_id: req.body.cat,
-            image: "hola"
+            image: req.files[0].filename
         },{
         where: {
             id: req.params.id
