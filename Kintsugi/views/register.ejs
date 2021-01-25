@@ -22,20 +22,23 @@
               <% for (let i = 0; i < errors.length; i++) { %>
                 <p class="error"><%= errors[i].msg %></p>
                 <% } %>
-              
             <% } %>
-            <form action="/users/register" method="POST">
-                <input type="text" id="name" name="name" placeholder="Name" required><br>
-                <input type="tel" id="phone" name="phone" placeholder="Phone" required><br>
-                <input type="email" id="email" name="email" placeholder="Email" ><br>
-                <input type="password" id="password" name="password" placeholder="Password" required><br><br>
-                
-                <button id="button-login-register" type="submit">Sign Up</button>
-            </form>
-        </div>
 
-        <div class="finform">
-               <p><input type="checkbox" name="newsletter" value="yes">I want to receive exclusive news</p><br>
+            <form action="/users/register" method="POST" class="form-validation">
+                <input type="text" id="name" name="name" placeholder="Name" class="input-control"><br>
+                <div class="error-msg"></div>
+                <input type="tel" id="phone" name="phone" placeholder="Phone" class="input-control"><br>
+                <div class="error-msg"></div>
+                <input type="email" id="email" name="email" placeholder="Email" class="input-control"><br>
+                <div class="error-msg"></div>
+                <input type="password" id="password" name="password" placeholder="Password" class="input-control"><br>
+                <div class="error-msg"></div><br>
+                
+                <input type="checkbox" name="newsletter" value="1" id="news-checkbox"><label id="recieve-news">I want to receive exclusive news</label>
+                <button id="button-register" type="submit">Sign Up</button>
+                
+            </form>
+            <br>
         </div>
 
         <a href="/users/login" id="already"> I already have an account</a>
@@ -50,6 +53,6 @@
   </div>
 
   <%- include('./partials/footer')  %>
-
+  <script src="/js/form-validation.js"></script>
 </body>
 </html>

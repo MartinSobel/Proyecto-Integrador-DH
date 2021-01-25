@@ -13,7 +13,7 @@ const userController = {
         return res.render("register");
     },
     logged: function (req, res, next) {
-         db.User.findOne({
+        db.User.findOne({
             where:{
                 email: req.body.email
             }
@@ -25,17 +25,16 @@ const userController = {
                     res.cookie('remember', req.body.email, {maxAge: 2592000000});
                 }
                 return res.redirect("/");
-            } else return res.redirect("/users/login");
+            } else return res.render("login", {msg: "User or password incorrect"});
         }).catch(function(e){
             console.log(e);
-            return res.redirect("/users/login");
+            return res.render("login", {msg: "User or password incorrect"});
         })
     },
     registered: function (req, res, next) {
        
-        const errors = validationResult(req);
+        let errors = validationResult(req);
         if (!errors.isEmpty()){
-            console.log(errors);
             return res.render('register', {errors: errors.errors});
         }
 
@@ -46,18 +45,6 @@ const userController = {
             password: bcrypt.hashSync(req.body.password, 10),
             
         });
-        
-        // let newUser = {
-        //     name: req.body.name,
-        //     phone: req.body.phone,
-        //     email: req.body.email,
-        //     password: bcrypt.hashSync(req.body.password, 10),
-        //     avatar: req.files[0].filename
-        // }
-        // users.push(newUser);
-        // let usersJSON = JSON.stringify(users);
-        // fs.writeFileSync(__dirname + "/../database/users.json", usersJSON);
-
         res.redirect("/");
     },
     renderProfile: function(req, res, next){

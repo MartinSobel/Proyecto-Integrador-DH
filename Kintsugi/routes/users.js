@@ -9,25 +9,20 @@ const db = require('../database/models');
 const authMiddleware = require('../middlewares/authMiddleware');
 const logMiddleware = require('../middlewares/logMiddleware');
 
-
 const { compareSync } = require('bcrypt');
    
-
 router.get('/register', userController.renderRegister);
-router.post('/register', [body('email').custom(function(value){
-    
-    db.User.findOne({
+router.post('/register', body('email').custom(value => {
+    return db.User.findOne({
         where:{
             email: value
         }
-    }).then((result)=>{
-       if(result == value ){
-           return false;
-       }else{
-           return true;
-       }
-    }).withMessage ('User already exists')
-})], userController.registered);
+    }).then(user => {
+      if (user) {
+        return Promise.reject('User already exists');
+      }
+    });
+  }), userController.registered);
 
 router.get('/login',logMiddleware, userController.renderLogin);
 router.post('/logged', userController.logged);

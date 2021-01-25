@@ -356,7 +356,7 @@ footer p{
  ============================*/
 
 .error{
-  color: red;
+  color: #EA5457;
 }
 
 .containerlogin{
@@ -441,26 +441,40 @@ padding-top: 40px;
 
 #button-login{
   position: relative;
-  right: 15px;
-  left: 90px;
-  top: -35px;
+  left: 80px;
+  top: -3px;
 }
 
-#button-login-register{
+#button-register{
   position: relative;
-  left: 140px;
-  top: 5px;
+  left: 38px;
+  top: -5px;
 }
 
 #rem-checkbox {
   position: relative;
-  right: 170px;
+  right: 78px;
+  width: 20px;
+  height: 20px;
 }
 
 #rememberMe {
   position: relative;
-  right: 40px;
-  top: -40px;
+  right: 67px;
+  top: -5px;
+}
+
+#news-checkbox {
+  position: relative;
+  right: 35px;
+  width: 20px;
+  height: 20px;
+}
+
+#recieve-news {
+  position: relative;
+  right: 25px;
+  top: -5px;
 }
 
 #button-profile {
@@ -580,9 +594,6 @@ padding-top: 40px;
     right: 16px;
   }
 
-  .finform{
-    bottom: 40px;
-  }
   .formulario button{
     margin-right: 180px;
   }
@@ -620,6 +631,7 @@ padding-top: 40px;
     bottom: 80px;
   }
 }
+
 
 
 /*===================================
@@ -1236,4 +1248,17 @@ select::-ms-expand {
 .products-edit i:hover{
 color: #EA5457;  
 cursor: pointer;
+}
+
+/*===========================
+JS FRONT
+===========================*/
+
+.error-msg{
+  color: #EA5457;
+}
+
+.invalid-input{
+  border: 1px solid #EA5457 !important;
+
 }
