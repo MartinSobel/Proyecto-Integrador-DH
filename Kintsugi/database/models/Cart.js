@@ -12,6 +12,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         total: {
             type: DataTypes.INTEGER
+        },
+        status: {
+            type: DataTypes.INTEGER
         }
     };
 
