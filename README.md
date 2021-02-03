@@ -1,4 +1,4 @@
-# Grupo #12: (nombre pendiente)
+# Grupo #12: Kintsugi
 
 ## Temática del Marketplace:
 Nuestro producto consiste en un sitio que permitirá comercializar platos de comida oriental. La **audiencia** objetiva serán jóvenes de clase media y alta. Para adaptarnos a este público, utilizaremos una **estética** moderna, atractiva, respetando una paleta de [colores](https://coolors.co/f4d8cd-edb183-2e282a-f15152-bdf7b7).

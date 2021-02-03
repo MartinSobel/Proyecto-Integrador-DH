@@ -7,29 +7,31 @@
     <%- include('./partials/header')  %>
     <div id="details">
       <div id="product-main">
-          <h1>Product title</h1>
-          <img src="/images/jap-product-title.png" alt="" style="width: 50%; float: right;">
-          <span>Category</span>
-          <span id="price">$123</span>
+          <h1><%= product.name %></h1>
+          <img src="/images/jap-product-title.png" alt="" id="product_title_jap">
+          <!-- <span><%= product.category_id %></span> -->
+          <span id="price">$<%= product.price %></span>
       </div>
       <div id="product-description">
-          <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem numquam qui cumque!
-            Corrupti ut itaque minima placeat voluptate.Delectus ducimus quibusdam, inventore sequi
-            rerum reiciendis.</h5>
+        <%= product.description %>
       </div>
     
     <div id="cart-options">
-        <a href="" class="button" id="add">Add to cart</a>
-        <div>
+        <form action="/products/addToCart/<%= product.id %>" method="POST">
+          <button type="submit">Add to cart</button>
+          <!-- <a href="/products/addToCart/<%= product.id %>" class="button" id="add">Add to cart</a> -->
+        </form>
+        
+        <!-- <div>
             <i class="fas fa-minus button"></i>
             <span class="button" id="mult">x1</span>
             <i class="fas fa-plus button"></i>
-        </div>
-        <a href="/menu" id="back">Back to menu</a>
+        </div> -->
+        <a href="/products/menu" id="back">Back to menu</a>
     </div>
   </div>
     
-    <img src="/images/fotos-sushi/producto-middle.jpg" alt="" id="product_image">
+    <img src="/images/my-uploads/<%= product.image %>" alt="" id="product_image">
 
     <%- include('./partials/footer')  %>
 </body>

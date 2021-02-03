@@ -4,7 +4,9 @@ var router = express.Router();
 
 router.get('/menu', productController.renderMenu);
 
-router.get('/product_cart', productController.renderProductCart);
-router.get('/product_detail', productController.renderProductDetail);
+router.get('/cart', productController.renderProductCart);
+router.get('/detail/:id', productController.renderProductDetail);
+
+router.post('/addToCart/:id', productController.addToCart);
 
 module.exports = router;

@@ -5,10 +5,18 @@ var products = JSON.parse(fs.readFileSync(__dirname + "/../database/products.jso
 
 const productController = {
     renderMenu: function (req, res, next) {
-        return res.render("menu");
+        db.Product.findAll().then(function(products){
+            return res.render("menu", {products});
+        })
+    },
+    addToCart: function (req, res, next){
+        // Logica para agregar al carrito
+        return res.render("product_cart");
     },
     renderProductDetail: function (req, res, next) {
-        return res.render("product_detail");
+        db.Product.findByPk(req.params.id).then(function(product){
+            res.render('product_detail', {product});
+        })
     },
     renderProductCart: function (req, res, next) {
         return res.render("product_cart");
@@ -22,7 +30,6 @@ const productController = {
         return res.render("pm_add");
     },
     store: function(req, res, next) {
-        
         db.Product.create({
             name: req.body.name,
             description: req.body.desc,
@@ -40,7 +47,6 @@ const productController = {
                 res.send("No se encontró el producto");
             })
         },
-
     update: function(req, res, next) {
         console.log(req.body.desc);
         db.Product.update({

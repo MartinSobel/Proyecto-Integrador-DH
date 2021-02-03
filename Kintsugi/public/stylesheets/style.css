@@ -282,6 +282,10 @@ margin-bottom: -10px;
     display: inline-block;
 }
 
+#product_title_jap{
+  width: 300px;
+}
+
 #product-main span{
   position: relative;
   top: 50px;
@@ -293,22 +297,21 @@ margin-bottom: -10px;
 
 #price{
   font-weight: bold;
-  margin-left: 90%;
+  /* margin-left: 90%; */
 }
 
 #product-description{
-  display: inline-block;
-  width: 30%;
+  /* display: inline-block; */
+  width: 200px;
 }
 
 #cart-options{
+  margin-top: 20px;
   justify-content: center;
-  padding-left: 5%;
   display: inline-block;
 }
 
 #back{
-  margin-left: 25%;
   color: white;
   font-weight: bold;
   text-decoration: none;

@@ -38,46 +38,17 @@
         <p>Sort by <i class="fas fa-caret-down"></i></p>
       </div>
       <div class="products-menu">
-      <div class="single-pmenu">
-          <img src="/images/fotos-sushi/cart-1.jpg" class="foto-sushi-menu">
-          <p>Product name<br>$500</p>
-          <i class="fas fa-plus"></i>
-      </div>
+
+        <% products.forEach(function(products){ %>
+
         <div class="single-pmenu">
-          <img src="/images/fotos-sushi/cart-2.jpg" class="foto-sushi-menu">
-          <p>Product name<br>$500</p>
-          <i class="fas fa-plus"></i>
+            <img src="/images/my-uploads/<%= products.image %>" class="foto-sushi-menu">
+            <p><%= products.name %><br>$<%= products.price %></p>
+            <a href="/products/detail/<%= products.id %>"><i class="fas fa-plus"></i></a>
         </div>
-        <div class="single-pmenu">
-          <img src="/images/fotos-sushi/cart-3.jpg" class="foto-sushi-menu">
-          <p>Product name<br>$500</p>
-          <i class="fas fa-plus"></i>
-        </div>
-        <div class="single-pmenu">
-          <img src="/images/fotos-sushi/cart-1.jpg" class="foto-sushi-menu">
-          <p>Product name<br>$500</p>
-          <i class="fas fa-plus"></i>
-        </div>
-        <div class="single-pmenu">
-          <img src="/images/fotos-sushi/cart-2.jpg" class="foto-sushi-menu">
-          <p>Product name<br>$500</p>
-          <i class="fas fa-plus"></i>
-        </div>
-        <div class="single-pmenu">
-          <img src="/images/fotos-sushi/cart-3.jpg" class="foto-sushi-menu">
-          <p>Product name<br>$500</p>
-          <i class="fas fa-plus"></i>
-        </div>
-        <div class="single-pmenu">
-          <img src="/images/fotos-sushi/cart-1.jpg" class="foto-sushi-menu">
-          <p>Product name<br>$500</p>
-          <i class="fas fa-plus"></i>
-        </div> 
-        <div class="single-pmenu">
-          <img src="/images/fotos-sushi/cart-2.jpg" class="foto-sushi-menu">
-          <p>Product name<br>$500</p>
-          <i class="fas fa-plus"></i>
-        </div> 
+
+        <% }); %>
+
       </div>
     </div>
 
