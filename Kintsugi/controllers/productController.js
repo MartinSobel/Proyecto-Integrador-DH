@@ -10,7 +10,20 @@ const productController = {
         })
     },
     addToCart: function (req, res, next){
-        // Logica para agregar al carrito
+        db.Cart.findOne({
+            where:{
+                user_id: req.session.id
+            }
+        }).then((result)=>{
+            if(result != null){
+                result.addProduct(req.params.id)
+            } else {
+                db.Cart.create({
+                    user_id: req.session.id,
+                    
+                })
+            }
+        })
         return res.render("product_cart");
     },
     renderProductDetail: function (req, res, next) {

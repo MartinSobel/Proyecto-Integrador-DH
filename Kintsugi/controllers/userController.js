@@ -21,6 +21,13 @@ const userController = {
             if(bcrypt.compareSync(req.body.password, result.password) ){
                 req.session.logged = 'logged';
                 req.session.email = req.body.email
+                db.User.findOne({
+                    where: {
+                        email: req.body.email
+                    }
+                }).then(function(result){
+                    req.session.id = result.id
+                })
                 if (req.body.remember != undefined){
                     res.cookie('remember', req.body.email, {maxAge: 2592000000});
                 }
@@ -69,12 +76,9 @@ const userController = {
             });
     },
     logout: function(req, res, next){
-         res.status(200).clearCookie('connect.sid', {
-            path: '/'
-         });
-        req.session.destroy(function (err) {
+        res.cookie('remember', '', {maxAge: 0})
+        req.session.destroy();
         res.redirect('/');
-             });
         }
 };
 

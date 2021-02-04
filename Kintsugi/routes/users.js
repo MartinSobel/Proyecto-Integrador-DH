@@ -24,7 +24,7 @@ router.post('/register', body('email').custom(value => {
     });
   }), userController.registered);
 
-router.get('/login',logMiddleware, userController.renderLogin);
+router.get('/login', logMiddleware, userController.renderLogin);
 router.post('/logged', userController.logged);
 
 router.get('/profile/:id', authMiddleware, userController.renderProfile);
