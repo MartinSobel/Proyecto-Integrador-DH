@@ -10,18 +10,35 @@ const productController = {
         })
     },
     addToCart: function (req, res, next){
+        // Consultamos si el usuario tiene un carrito creando en la base de datos
         db.Cart.findOne({
             where:{
-                user_id: req.session.id
+                user_id: req.session.id,
+                // status: 'open'
             }
         }).then((result)=>{
+            // Si hay un carrito creado, agrega el producto
             if(result != null){
-                result.addProduct(req.params.id)
+                // result.addProduct(req.params.id)
+            // Si no, crea el carrito
             } else {
-                db.Cart.create({
-                    user_id: req.session.id,
-                    
+                db.Cart_Product.create({
+                    id: 1,
+                    cart_id: 1,
+                    product_id: 1
                 })
+                // db.Cart.create({
+                //     user_id: req.session.id,
+                // }).then(function(res){
+                //     res.addProduct(req.params.id)
+                //     db.Cart.update({
+                //         total: '1'
+                //     },{
+                //         where: {
+                //             user_id: req.session.id,
+                //         }
+                //     })
+                // })
             }
         })
         return res.render("product_cart");
