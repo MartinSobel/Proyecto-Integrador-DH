@@ -10,8 +10,10 @@ function rememberMiddleware(req, res, next){
                 email: req.cookies.remember
             }
         }).then(function(resultado){
-            req.session.logged = 'logged'
+            req.session.logged = resultado
+            next();
         })
+    } else {
         next();
     }
 }

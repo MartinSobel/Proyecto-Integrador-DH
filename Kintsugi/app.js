@@ -12,6 +12,7 @@ var productManagerRouter = require('./routes/product_manager');
 var apiRouter = require('./routes/api/data');
 
 var rememberMiddleware = require('./middlewares/rememberMiddleware');
+var headMiddleware = require('./middlewares/headMiddleware');
 
 var app = express();
 
@@ -26,13 +27,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(rememberMiddleware);
+app.use(headMiddleware);
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/product_manager', productManagerRouter);
 app.use('/api/data', apiRouter);
 
-app.use(rememberMiddleware);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
