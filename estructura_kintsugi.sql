@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.3
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:8889
--- Tiempo de generación: 03-02-2021 a las 18:50:13
--- Versión del servidor: 5.7.26
--- Versión de PHP: 7.4.2
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 08-02-2021 a las 22:18:08
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -30,7 +31,7 @@ CREATE TABLE `cart` (
   `id` int(255) NOT NULL,
   `user_id` int(255) NOT NULL,
   `total` int(100) NOT NULL,
-  `status` int(11) NOT NULL DEFAULT '1'
+  `status` enum('open','closed') NOT NULL DEFAULT 'open'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -180,6 +181,7 @@ ALTER TABLE `cart_product`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -11,35 +11,43 @@ const productController = {
     },
     addToCart: function (req, res, next){
         // Consultamos si el usuario tiene un carrito creando en la base de datos
-        db.Cart.findOne({
-            where:{
-                user_id: req.session.user.id,
-                // status: 'open'
+        db.User.findOne({
+            where: {
+                email: req.session.email
             }
-        }).then((result)=>{
-            // Si hay un carrito creado, agrega el producto
-            if(result != null){
-                db.Cart_Product.create({
-                    cart_id: result.id,
-                    product_id: req.params.id
-                })
-            // Si no, crea el carrito
-            } else {
-                db.Cart.create({
-                    user_id: req.session.id
-                }).then(function(res){
-                    console.log('RESSSSSSS: ' + res.id);
+        }).then(function(result){
+            req.session.userid = result.id;
+            db.Cart.findOne({
+                where:{
+                    user_id: req.session.userid,
+                    status: 'open',
+                }
+            }).then((result)=>{
+                // Si hay un carrito creado, agrega el producto
+                if(result != null){
                     db.Cart_Product.create({
-                        cart_id: res.id,
+                        cart_id: result.id,
                         product_id: req.params.id
                     })
-                }).catch(function(error){
-                    console.log('ERRRRRRORRR' + error)
-                    res.send(error);
-                })
-            }
+                    return res.render("product_cart");
+                // Si no, crea el carrito y agrega el producto
+                } else {
+                    db.Cart.create({
+                        user_id: req.session.userid
+                    }).then(function(res){
+                        db.Cart_Product.create({
+                            cart_id: res.id,
+                            product_id: req.params.id
+                        })
+                    }).catch(function(error){
+                        console.log('ERRRRRRORRR  ' + error)
+                    })
+                    return res.render("product_cart");
+                }
+            })
         })
-        return res.render("product_cart");
+
+        
     },
     renderProductDetail: function (req, res, next) {
         db.Product.findByPk(req.params.id).then(function(product){
