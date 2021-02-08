@@ -26,7 +26,7 @@ const userController = {
                         email: req.body.email
                     }
                 }).then(function(result){
-                    req.session.id = result.id
+                    req.session.user = result
                 })
                 if (req.body.remember != undefined){
                     res.cookie('remember', req.body.email, {maxAge: 2592000000});

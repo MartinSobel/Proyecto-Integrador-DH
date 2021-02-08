@@ -13,32 +13,30 @@ const productController = {
         // Consultamos si el usuario tiene un carrito creando en la base de datos
         db.Cart.findOne({
             where:{
-                user_id: req.session.id,
+                user_id: req.session.user.id,
                 // status: 'open'
             }
         }).then((result)=>{
             // Si hay un carrito creado, agrega el producto
             if(result != null){
-                // result.addProduct(req.params.id)
+                db.Cart_Product.create({
+                    cart_id: result.id,
+                    product_id: req.params.id
+                })
             // Si no, crea el carrito
             } else {
-                db.Cart_Product.create({
-                    id: 1,
-                    cart_id: 1,
-                    product_id: 1
+                db.Cart.create({
+                    user_id: req.session.id
+                }).then(function(res){
+                    console.log('RESSSSSSS: ' + res.id);
+                    db.Cart_Product.create({
+                        cart_id: res.id,
+                        product_id: req.params.id
+                    })
+                }).catch(function(error){
+                    console.log('ERRRRRRORRR' + error)
+                    res.send(error);
                 })
-                // db.Cart.create({
-                //     user_id: req.session.id,
-                // }).then(function(res){
-                //     res.addProduct(req.params.id)
-                //     db.Cart.update({
-                //         total: '1'
-                //     },{
-                //         where: {
-                //             user_id: req.session.id,
-                //         }
-                //     })
-                // })
             }
         })
         return res.render("product_cart");
