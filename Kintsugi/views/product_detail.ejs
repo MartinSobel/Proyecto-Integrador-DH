@@ -10,7 +10,7 @@
           <h1><%= product.name %></h1>
           <img src="/images/jap-product-title.png" alt="" id="product_title_jap">
           <!-- <span><%= product.category_id %></span> -->
-          <span id="price">$<%= product.price %></span>
+          <h3 id="price">$<%= product.price %></h3>
       </div>
       <div id="product-description">
         <%= product.description %>
@@ -21,7 +21,6 @@
           <button type="submit">Add to cart</button>
           <!-- <a href="/products/addToCart/<%= product.id %>" class="button" id="add">Add to cart</a> -->
         </form>
-        
         <!-- <div>
             <i class="fas fa-minus button"></i>
             <span class="button" id="mult">x1</span>

@@ -20,7 +20,7 @@ const productController = {
             db.Cart.findOne({
                 where:{
                     user_id: req.session.userid,
-                    status: 'open',
+                    status: 'open'
                 }
             }).then((result)=>{
                 // Si hay un carrito creado, agrega el producto
@@ -29,25 +29,37 @@ const productController = {
                         cart_id: result.id,
                         product_id: req.params.id
                     })
+                    db.Product.findByPk(req.params.id)
+                        .then(function(prod){
+                            db.Cart.update({total: result.total + prod.price}, {
+                                where: {
+                                  id: result.id
+                                }
+                            })
+                    });
                     return res.render("product_cart");
                 // Si no, crea el carrito y agrega el producto
                 } else {
                     db.Cart.create({
                         user_id: req.session.userid
-                    }).then(function(res){
+                    }).then(function(result){
                         db.Cart_Product.create({
-                            cart_id: res.id,
+                            cart_id: result.id,
                             product_id: req.params.id
                         })
-                    }).catch(function(error){
-                        console.log('ERRRRRRORRR  ' + error)
-                    })
-                    return res.render("product_cart");
+                        db.Product.findByPk(req.params.id)
+                        .then(function(prod){
+                            db.Cart.update({total: prod.price}, {
+                                where: {
+                                  user_id: req.session.userid
+                                }
+                            })
+                        })
+                        return res.render("product_cart");
+                    }) 
                 }
             })
-        })
-
-        
+        })  
     },
     renderProductDetail: function (req, res, next) {
         db.Product.findByPk(req.params.id).then(function(product){

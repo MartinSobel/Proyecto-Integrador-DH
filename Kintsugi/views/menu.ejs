@@ -42,9 +42,12 @@
         <% products.forEach(function(products){ %>
 
         <div class="single-pmenu">
-            <img src="/images/my-uploads/<%= products.image %>" class="foto-sushi-menu">
+          <a href="/products/detail/<%= products.id %>"><img src="/images/my-uploads/<%= products.image %>" class="foto-sushi-menu"></a>
             <p><%= products.name %><br>$<%= products.price %></p>
-            <a href="/products/detail/<%= products.id %>"><i class="fas fa-plus"></i></a>
+            <form action="/products/addToCart/<%= products.id %>" method="POST">
+            <button type="submit" class="buttonPlus"><i class="fas fa-plus"></i></button>
+            </form>
+            <a href="/products/detail/<%= products.id %>"><i class="fas fa-info-circle"></i></a>
         </div>
 
         <% }); %>
