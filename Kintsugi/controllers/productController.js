@@ -67,20 +67,18 @@ const productController = {
         })
     },
     renderProductCart: function (req, res, next) {
+        let productsArr = []
         // ENCONTRAR EL CARRITO ABIERTO DEL USUARIO LOGUEADO
-        console.log("EMAAAILLL " + req.session.email)
         db.User.findOne({
             where: {
                 email: req.session.email
             }
         }).then(function(result){
-            console.log("USUARIOOOO " + result.id)
             db.Cart.findOne({
                 where: {
                     user_id: result.id
                 }
             }).then(function(carrito){
-                console.log("CARRITOOOO " + carrito.id)
                 // EXTRAER ID DE ESE CARRITO y EXTRAER TODOS LOS PRODUCTS ID DENTRO DE ESE CART-PRODUCT
                 db.Cart_Product.findAll({
                     where: {
@@ -88,20 +86,24 @@ const productController = {
                     }
                 }).then(function(prods){
                     // CONSEGUIR TODOS LOS PRODUCTOS A PARTIR DE CADA PROD ID 
-                    console.log("PRODUCTOOOOO " + prods[0].product_id)
-                    let productsArr = []
                     for (let i = 0; i < prods.length; i++) {
                         db.Product.findByPk(prods[i].product_id)
-                            .then(function(prod){
-                                products.push(prod)
-                            })   
-                    } console.log("ARRAY DE PRODSSS " + productsArr)
+                             .then(function(product){
+                                productsArr.push({
+                                    id: product.id,
+                                    name: product.name,
+                                    price: product.price,
+                                    description: product.description,
+                                    image: product.image,
+                                    category_id: product.category_id,
+                                 })
+                             })
+                    } console.log("ARRAY DE PRODS uno " + productsArr)
+                    // ENVIAR ESOS PRODUCTS ID A LA VISTA
+                    return res.render("product_cart", {productsArr});
                 })
             })
         })
-        // ENVIAR ESOS PRODUCTS ID A LA VISTA
-        return res.render("product_cart");
-            
     },
     renderProductManager: function (req, res, next) {
         db.Product.findAll().then(function(products){
