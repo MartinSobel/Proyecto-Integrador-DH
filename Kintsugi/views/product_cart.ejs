@@ -14,16 +14,20 @@
 
     <main class="containercart">
       <div class="productscart">
+        <% for(let i = 0 ; i < cart.products.length ; i++){ %>
           <div class="productcart">
-            <img src="/images/fotos-sushi/cart-1.jpg">
-            <h3>Product Name</h3>
-            <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam est accusantium eum itaque sapiente provident ad, rem aliquam?</p>
+            <img src="/images/my-uploads/<%= cart.products[i].image %>">
+            <h3><%= cart.products[i].name %></h3>
+            <p class="description"><%= cart.products[i].description %></p>
               <div class="columna">
-                <p class="precio">$500<p>
-                <p class="modify">Modify</p>
+                <p class="precio">$<%= cart.products[i].price %><p>
+                  <form action="/products/addAnother/<%= cart.products[i].id %>" method="POST">
+                    <button type="submit" class="buttonPlus"><a class="modify">Add another</a></button>
+                  </form>
                 <p class="delete">Delete</p>
               </div>
-          </div>                     
+          </div>   
+        <% } %>    
       </div>
             <div class="bill">
               <h3>Your bill</h3><br>

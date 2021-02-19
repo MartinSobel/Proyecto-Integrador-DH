@@ -10,4 +10,6 @@ router.get('/detail/:id', productController.renderProductDetail);
 
 router.post('/addToCart/:id', productController.addToCart);
 
+router.post('/addAnother/:id', productController.addAnother);
+
 module.exports = router;

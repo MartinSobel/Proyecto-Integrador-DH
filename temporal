@@ -1,0 +1,25 @@
+.then(function(carrito){
+                // EXTRAER ID DE ESE CARRITO y EXTRAER TODOS LOS PRODUCTS ID DENTRO DE ESE CART-PRODUCT
+                db.Cart_Product.findAll({
+                    where: {
+                        cart_id: carrito.id
+                    }
+                }).then(function(prods){
+                    // CONSEGUIR TODOS LOS PRODUCTOS A PARTIR DE CADA PROD ID 
+                    for (let i = 0; i < prods.length; i++) {
+                        db.Product.findByPk(prods[i].product_id)
+                             .then(function(product){
+                                productsArr.push({
+                                    id: product.id,
+                                    name: product.name,
+                                    price: product.price,
+                                    description: product.description,
+                                    image: product.image,
+                                    category_id: product.category_id,
+                                 })
+                             })
+                    } console.log("ARRAY DE PRODS uno " + productsArr)
+                    // ENVIAR ESOS PRODUCTS ID A LA VISTA
+                    return res.render("product_cart", {productsArr});
+                })
+            })

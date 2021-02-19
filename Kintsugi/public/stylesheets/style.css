@@ -729,11 +729,13 @@ Cart
 .productscart .modify{
   font-size: 15px;
   color: #A8CA55;
+  cursor: pointer;
 }
 
 .productscart .delete{
   font-size: 15px;
   color: #EA5457;
+  cursor: pointer;
 }
 
 .bill{
