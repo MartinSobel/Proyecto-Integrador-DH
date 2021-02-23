@@ -62,7 +62,6 @@ const productController = {
         })  
     },
     addAnother: function (req, res, next){
-        // Consultamos si el usuario tiene un carrito creando en la base de datos
         db.User.findOne({
             where: {
                 email: req.session.email
@@ -75,7 +74,6 @@ const productController = {
                     status: 'open'
                 }
             }).then((result)=>{
-                // Si hay un carrito creado, agrega el producto
                 db.Cart_Product.create({
                     cart_id: result.id,
                     product_id: req.params.id
@@ -92,11 +90,6 @@ const productController = {
             })
         })  
     },
-    renderProductDetail: function (req, res, next) {
-        db.Product.findByPk(req.params.id).then(function(product){
-            res.render('product_detail', {product});
-        })
-    },
     renderProductCart: function (req, res, next) {
         db.User.findOne({
             where: {
@@ -108,8 +101,14 @@ const productController = {
                     user_id: result.id
                 }, include: [{association: 'products'}]
             }).then(cart => {
+                console.log(cart)
                 res.render("product_cart", {cart})
             })
+        })
+    },
+    renderProductDetail: function (req, res, next) {
+        db.Product.findByPk(req.params.id).then(function(product){
+            res.render('product_detail', {product});
         })
     },
     renderProductManager: function (req, res, next) {

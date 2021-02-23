@@ -17,12 +17,14 @@
         <% for(let i = 0 ; i < cart.products.length ; i++){ %>
           <div class="productcart">
             <img src="/images/my-uploads/<%= cart.products[i].image %>">
-            <h3><%= cart.products[i].name %></h3>
-            <p class="description"><%= cart.products[i].description %></p>
-              <div class="columna">
-                <p class="precio">$<%= cart.products[i].price %><p>
+            <div class="columna1">
+              <h3><%= cart.products[i].name %></h3>
+              <p class="description"><%= cart.products[i].description %></p>
+              <p class="precio">$<%= cart.products[i].price %></p>
+            </div>
+              <div class="columna2">
                   <form action="/products/addAnother/<%= cart.products[i].id %>" method="POST">
-                    <button type="submit" class="buttonPlus"><a class="modify">Add another</a></button>
+                    <button type="submit" class="buttonPlus"><a class="add-another">Add another</a></button>
                   </form>
                 <p class="delete">Delete</p>
               </div>
@@ -31,24 +33,16 @@
       </div>
             <div class="bill">
               <h3>Your bill</h3><br>
+              <% for(let i = 0 ; i < cart.products.length ; i++){ %>
                 <div class="productofinal">
                   <p class="cantbill">X1</p>
-                  <p>Product name</p>
-                  <p>$500</p>
+                  <p><%= cart.products[i].name %></p>
+                  <p>$<%= cart.products[i].price %></p>
                 </div>
-                <div class="productofinal">
-                  <p class="cantbill">X1</p>
-                  <p>Product name</p>
-                  <p>$500</p>
-                </div>
-                <div class="productofinal">
-                  <p class="cantbill">X1</p>
-                  <p>Product name</p>
-                  <p>$500</p>
-                </div>
+              <% } %>   
                 <div class="total">
-                  <p>Final price:</p>
-                  <p>$1500</p>
+                  <h3>Final price:</h3>
+                  <h3>$<%= cart.total %></h3>
                 </div>
               <button type="submit">Checkout</button>
             </div>

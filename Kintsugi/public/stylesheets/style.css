@@ -350,7 +350,7 @@ footer{
   background-color: black;
   text-align: center;
   padding: 1px;
-  position: fixed;
+  /* position: fixed; */
   left: 0;
   bottom: 0;
   width: 100%;
@@ -669,11 +669,13 @@ Cart
 .titulocart img{
   width: 220px;
   margin-left: 7%;
+  margin-bottom: 10px;
   position: relative;
   bottom: 15px;
 }
 
 .containercart{
+
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
@@ -684,56 +686,69 @@ Cart
 }
 
 .productscart{
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: flex-start;
   flex-direction: column;
-  width: 70%;
+  width: 60%;
+  border-radius: 1em;
+  padding-top: 40px;
+  margin-bottom: 40px;
 }
 
 .productcart{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   flex-direction: row;
   align-items: center;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .productscart img{
   border-radius: 1em;
-  width: 20%;
+  width: 25%;
 
 }
 
 .productcart .precio{
-  position: relative;
-  top: 20px;
+  margin-top: 20px;
+  font-size: 12pt;
 }
 
 .productscart .description{
+  color: #a3a3a3;
+  margin-top: -10px;
   width: 300px;  
 }
 
-.productscart .columna{
+.productscart .columna1{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.productscart .columna2{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 2%;
-  margin-bottom: 2%;
 }
 
-.productscart .modify{
-  font-size: 15px;
+.productscart .add-another{
+  font-family: "SF-Pro-Text-Regular";
+  font-size: 12pt;
   color: #A8CA55;
   cursor: pointer;
 }
 
 .productscart .delete{
-  font-size: 15px;
+  margin-top: 30px;
+  font-size: 10pt;
   color: #EA5457;
   cursor: pointer;
 }
@@ -748,25 +763,34 @@ Cart
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 20px;
   margin-right: 50px;
   margin-left: 25px;
+  margin-bottom: 125px;
 }
 
-.productofinal, .total{
+.productofinal{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  width: 100%;
+  width: 80%;
+}
+.total{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 80%;
+  margin-top: 20px;
 }
 
 .bill .cantbill{
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color:#838383;
+  background-color:#333333;
   text-align: center;
   box-sizing: border-box;
   padding-top: 7px;
