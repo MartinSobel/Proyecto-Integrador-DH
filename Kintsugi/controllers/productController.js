@@ -102,7 +102,38 @@ const productController = {
                 }, include: [{association: 'products'}]
             }).then(cart => {
                 console.log(cart)
-                res.render("product_cart", {cart})
+                db.Cart_Product.findAll({where:{cart_id: cart.id}})
+                    .then(cartprod => {
+                        var prodsid = []
+                        for(let i = 0 ; i < cartprod.length ; i++){
+                            prodsid.push(cartprod[i].product_id)
+                        }
+
+                        function countArray(original) {
+                            var compressed = [];
+                            var copy = original.slice(0);
+                            for (var i = 0; i < original.length; i++) {
+                                var myCount = 0;	
+                                for (var w = 0; w < copy.length; w++) {
+                                    if (original[i] == copy[w]) {
+                                        myCount++;
+                                        delete copy[w];
+                                    }
+                                }
+                                if (myCount > 0) {
+                                    var a = new Object();
+                                    a.id = original[i];
+                                    a.count = myCount;
+                                    compressed.push(a);
+                                }
+                            }
+                            return compressed;
+                        };
+                        
+                        var prodCount = countArray(prodsid);
+
+                        res.render("product_cart", {cart, prodCount})
+                    })
             })
         })
     },

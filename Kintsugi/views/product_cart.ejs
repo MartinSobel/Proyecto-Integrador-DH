@@ -23,6 +23,7 @@
               <p class="precio">$<%= cart.products[i].price %></p>
             </div>
               <div class="columna2">
+                  <p class="precio"><%= prodCount[i].count %> units</p>
                   <form action="/products/addAnother/<%= cart.products[i].id %>" method="POST">
                     <button type="submit" class="buttonPlus"><a class="add-another">Add another</a></button>
                   </form>
@@ -35,7 +36,7 @@
               <h3>Your bill</h3><br>
               <% for(let i = 0 ; i < cart.products.length ; i++){ %>
                 <div class="productofinal">
-                  <p class="cantbill">X1</p>
+                  <p class="cantbill">x<%= prodCount[i].count %></p>
                   <p><%= cart.products[i].name %></p>
                   <p>$<%= cart.products[i].price %></p>
                 </div>
