@@ -418,14 +418,26 @@ footer p{
   position: relative;
   margin-top: 85px;
 }
+.datos a{
+  width: 180px;
+  text-align: left;
+}
 
 .datos .titulacion p{
-  width: 80%;
+  width: 300px;
+  text-align: left;
+  
 }
 
 .titulacion img{
   width: 50%;
-  margin: -15px 0px 5px 120px;
+  margin: -15px, 0px, 5px, 120px;
+}
+.formulario{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: -50px;
 }
 .datos form{
   text-align: center;
@@ -461,14 +473,12 @@ padding-top: 40px;
   background-color: rgb(34, 34, 34);
 }
 
-.finform {
-  align-self: flex-start;
-  position: relative;
-  bottom: 5px;
+.form-validation {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
-.finform p{
-  font-size: 12px;
-}
+
 
 .formulario button{
   font-family: "SF-Pro-Text-Regular", sans-serif;
@@ -482,42 +492,26 @@ padding-top: 40px;
 }
 
 #button-login{
-  position: relative;
-  left: 80px;
-  top: -3px;
+  align-self: flex-end;
+  
 }
 
 #button-register{
-  position: relative;
-  left: 38px;
-  top: -5px;
+  align-self: flex-end;
 }
 
-#rem-checkbox {
-  position: relative;
-  right: 78px;
-  width: 20px;
-  height: 20px;
+#rem-checkbox, #news-checkbox {
+  align-items: flex-start;
 }
 
-#rememberMe {
-  position: relative;
-  right: 67px;
-  top: -5px;
+#rememberMe, #recieve-news{
+  text-align:start;
+  align-self: flex-start;
+  margin-left: 40px;
+  margin-top: -30px;
 }
 
-#news-checkbox {
-  position: relative;
-  right: 35px;
-  width: 20px;
-  height: 20px;
-}
 
-#recieve-news {
-  position: relative;
-  right: 25px;
-  top: -5px;
-}
 
 #button-profile {
   position: relative;
@@ -563,35 +557,35 @@ padding-top: 40px;
 #sign1{
   align-self: flex-start;
   position: relative;
-  width: 60%;
+  width: 55%;
   
 }
 #sign2{
   position: relative;
-  align-self: flex-end;
-  width: 50%;
+  align-self: center;
+  width: 40%;
   bottom: 100px;
-  left: 200px;
+  right: 100px;
   
 }
 #sign3{
   align-self: flex-start;
   position: relative;
-  width: 60%;
+  width: 40%;
   left: 30px;
-  bottom: 50px;
+  top: 40px;
 }
 #sign4{
   position: relative;
   align-self: flex-end;
   justify-self: center;
-  width: 40%;
+  width: 20%;
   right: 50px;
   
 }
 
 #login1{
-  width: 60%;
+  width: 40%;
   align-self: flex-start;
   justify-self: center;
   position: relative;
@@ -620,9 +614,12 @@ padding-top: 40px;
   left: 0px;
   bottom: 50px;
 }
+@media (max-width: 1300px){
+
+}
 
 @media (max-width: 800px){
-  #sign2{
+  /*#sign2{
     left:80px;
     bottom: 40px;
   }
@@ -635,12 +632,21 @@ padding-top: 40px;
 
   #login3{
     right: 16px;
-  }
+  }*/
 
   .formulario button{
-    margin-right: 180px;
+    align-self: flex-end;
+    margin-top: 20px;
   }
-
+  .imgder{
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    margin-top: -60px;
+    position: relative;
+    bottom: 80px;
+  }
+  
 }
 
 @media (max-width: 400px){
@@ -658,7 +664,12 @@ padding-top: 40px;
     width: 80vw;
     align-items: center;
   }
-.finform{
+  .formulario button{
+    align-self: flex-end;
+    margin-top: 20px;
+  }
+  
+  .finform{
   margin-left: -80px;
   width: 100vw;
   }
@@ -666,7 +677,7 @@ padding-top: 40px;
     margin-left: -90px;
   }
   .imgder{
-    width: 100%;
+    width: 90%;
     justify-content: center;
     align-items: center;
     margin-top: -60px;
@@ -674,6 +685,8 @@ padding-top: 40px;
     bottom: 80px;
   }
 }
+
+
 
 
 
