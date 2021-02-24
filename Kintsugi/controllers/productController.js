@@ -90,6 +90,36 @@ const productController = {
             })
         })  
     },
+    deleteOne: function (req, res, next) {
+        db.User.findOne({
+            where: {
+                email: req.session.email
+            }
+        }).then(function(result){
+            req.session.userid = result.id;
+            db.Cart.findOne({
+                where:{
+                    user_id: req.session.userid,
+                    status: 'open'
+                }
+            }).then((result)=>{
+                db.Product.findByPk(req.params.id)
+                    .then(function(prod){
+                        db.Cart.update({total: result.total - prod.price}, {
+                            where: {
+                                id: result.id
+                            }
+                        })
+                });
+                db.Cart_Product.findOne({where:{product_id: req.params.id}})
+                    .then(prodToDelete =>{
+                        db.Cart_Product.destroy({where:{id: prodToDelete.id}})
+                        return res.redirect("/products/cart");
+                    })
+
+            })
+        }) 
+    },
     renderProductCart: function (req, res, next) {
         db.User.findOne({
             where: {

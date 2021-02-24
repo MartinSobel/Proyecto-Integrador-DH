@@ -6,13 +6,13 @@
   <body class="cart">
     
     <%- include('./partials/header')  %>
-      
+  <main>   
       <div class="titulocart">
         <h2>My cart</h2>
         <img src="/images/jap-my-cart.png">
       </div>
-
-    <main class="containercart">
+      <% if(cart.products.length != 0){ %> 
+    <div class="containercart">
       <div class="productscart">
         <% for(let i = 0 ; i < cart.products.length ; i++){ %>
           <div class="productcart">
@@ -29,7 +29,7 @@
                   </form>
                   <br>
                   <br>
-                  <form action="/products/addAnother/<%= cart.products[i].id %>" method="POST">
+                  <form action="/products/deleteOne/<%= cart.products[i].id %>" method="POST">
                     <button type="submit" class="buttonPlus"><a class="delete scale">Delete</a></button>
                   </form>
               </div>
@@ -51,8 +51,18 @@
                 </div>
               <button type="submit" class="btn">Checkout</button>
             </div>
-      </main>
-
+          </div>
+      <% } else { %>  
+        <div class="containercart">
+          <div class="container-empty">
+              <div class="productcart">
+                <h3>Your cart is empty</h3>
+              </div>
+              <a href="/products/menu" id="noAccount" class="scale">Go to menu</a>
+          </div>  
+        </div>        
+      <% } %> 
+  </main> 
   <%- include('./partials/footer')  %>
     
   </body>

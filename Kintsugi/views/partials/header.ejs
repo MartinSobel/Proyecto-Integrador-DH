@@ -8,7 +8,7 @@
     </ul>
     <ul>
       <li><a href="" class="scale"><i class="fas fa-search"></i></a></li>
-      <li><a href="/products/cart" class="scale"><i class="fas fa-shopping-cart"></i></a></li>
+      <li><a href="/products/cart" class="scale"><i class="fas fa-shopping-cart"></i><span class="qty-cart"><%= locals.qtyCart %></span></a></li>
 
       <% if(locals.userLogged == null){ %>
         <li><a href="/users/login" class="scale">Login   <i class="fas fa-sign-in-alt"></i></a></li>

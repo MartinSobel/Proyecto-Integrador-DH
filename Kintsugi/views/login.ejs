@@ -7,38 +7,40 @@
  
   <%- include('./partials/header')  %>
 
-  <div class="containerlogin">
-    <main class="datos">
-        <div class="titulacion">
-            <h2>Log in</h2>
-            <img src="/images/jap-log-in.png" id="loginjapo">
-            <p>Welcome back to Kintsugi! We are glad to see you again! </p>
+    <main class="containerlogin">
+        <div class="datos">
+            <div class="titulacion">
+                <h2>Log in</h2>
+                <img src="/images/jap-log-in.png" id="loginjapo">
+                <p>Welcome back to Kintsugi! We are glad to see you again! </p>
+            </div>
+            <div class="formulario"> 
+                <h3>Please, fill in below with your information</h3>
+                <% if(typeof msg != 'undefined'){ %>
+                    <p class="error"><%= msg %></p>
+                <% } %>
+                <form action="/users/logged" method="POST" class="form-validation">
+                    <input type="email" id="email" name="email" placeholder="Email" class="input-control"><br>
+                    <div class="error-msg"></div>
+                    <input type="password" id="password" name="password" placeholder="Password" class="input-control"><br>
+                    <div class="error-msg"></div><br>
+                    <div class="rem-checkbox">
+                        <input type="checkbox" name="remember" ><label id="rememberMe">Remember Me</label>
+                    </div>
+                    <button id="button-login" type="submit" class="btn"> Enter </button>
+                </form>
+            </div>
+            <br>
+            <a href="/users/register" id="noAccount" class="scale">I don't have an account</a>
+            
         </div>
-        <div class="formulario"> 
-            <h3>Please, fill in below with your information</h3>
-            <% if(typeof msg != 'undefined'){ %>
-                <p class="error"><%= msg %></p>
-            <% } %>
-            <form action="/users/logged" method="POST" class="form-validation">
-                <input type="email" id="email" name="email" placeholder="Email" class="input-control"><br>
-                <div class="error-msg"></div>
-                <input type="password" id="password" name="password" placeholder="Password" class="input-control"><br>
-                <div class="error-msg"></div><br>
-                <input type="checkbox" id="rem-checkbox" name="remember" ><label id="rememberMe">Remember Me</label>
-                <button id="button-login" type="submit" class="btn"> Enter </button>
-            </form>
-        </div>
-        <br>
-        <a href="/users/register" id="noAccount" class="scale">I don't have an account</a>
-        
-    </main>
-    <aside class="imgder">
-        <img src="/images/fotos-sushi/login-1-grande.jpg" alt="sushi 1 grande" id="login1"><br>
-        <img src="/images/fotos-sushi/login-2-chica.jpg" alt="sushi 2 chica" id="login2"><br>
-        <img src="/images/fotos-sushi/login-1-chica.jpg" alt="sushi 1 chica" id="login3"><br>
-        <img src="/images/fotos-sushi/login-2-grande.jpg" alt="sushi 2 grande" id="login4">
-     </aside>
-  </div>  
+        <aside class="imgder">
+            <img src="/images/fotos-sushi/login-1-grande.jpg" alt="sushi 1 grande" id="login1"><br>
+            <img src="/images/fotos-sushi/login-2-chica.jpg" alt="sushi 2 chica" id="login2"><br>
+            <img src="/images/fotos-sushi/login-1-chica.jpg" alt="sushi 1 chica" id="login3"><br>
+            <img src="/images/fotos-sushi/login-2-grande.jpg" alt="sushi 2 grande" id="login4">
+        </aside>
+    </main>  
 
   <%- include('./partials/footer')  %>
   <script src="/js/form-validation.js"></script>

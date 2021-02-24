@@ -7,58 +7,59 @@
     <main>
       <%- include('./partials/header')  %>
 
-     <div class="container-menu">
+      <div class="container-menu">
 
-     <div class="titulo-menu">
-       <h2>Menu</h2>
-       <img src="/images/jap-menu.png" id="loginjapo">
-     </div>
-
-
-    <div class="nav-menu">
-      <ul>
-        <li><a class="selected-nav-menu" href="#">Suggested</a></li>
-        <li><a href="#" class="scale">Rolls</a></li>
-        <li><a href="#" class="scale">Mixed</a></li>
-        <li><a href="#" class="scale">Snacks</a></li>
-        <li><a href="#" class="scale">Salads</a></li>
-        <li><a href="#" class="scale">Tempura</a></li>
-      </ul>
-      <hr>
-      <ul>
-        <li><a href="#" id="dessert" class="scale">Dessert</a></li>
-        <li><a href="#" id="drinks" class="scale">Drinks</a></li>
-        <i class="fas fa-plus"></i>
-      </ul>
-    </div>
-
-    <div class="container-pmenu">
-      <div class="titulos-pmenu">
-        <h3>Suggested dishes</h3>
-        <div class="scale"><p>Sort by <i class="fas fa-caret-down"></i></p></div>
+      <div class="titulo-menu">
+        <h2>Menu</h2>
+        <img src="/images/jap-menu.png" id="loginjapo">
       </div>
-      <div class="products-menu">
 
-        <% products.forEach(function(products){ %>
 
-        <div class="single-pmenu">
-          <a href="/products/detail/<%= products.id %>"><img src="/images/my-uploads/<%= products.image %>" class="foto-sushi-menu"></a>
-            <p><%= products.name %><br>$<%= products.price %></p>
-            <form action="/products/addToCart/<%= products.id %>" method="POST">
-            <button type="submit" class="buttonPlus"><i class="fas fa-plus"></i></button>
-            </form>
-            <a href="/products/detail/<%= products.id %>"><i class="fas fa-info-circle"></i></a>
+      <div class="nav-menu">
+        <ul>
+          <li><a class="selected-nav-menu" href="#">Suggested</a></li>
+          <li><a href="#" class="scale">Rolls</a></li>
+          <li><a href="#" class="scale">Mixed</a></li>
+          <li><a href="#" class="scale">Snacks</a></li>
+          <li><a href="#" class="scale">Salads</a></li>
+          <li><a href="#" class="scale">Tempura</a></li>
+        </ul>
+        <hr>
+        <ul>
+          <li><a href="#" id="dessert" class="scale">Dessert</a></li>
+          <li><a href="#" id="drinks" class="scale">Drinks</a></li>
+          <i class="fas fa-plus"></i>
+        </ul>
+      </div>
+
+      <div class="container-pmenu">
+        <div class="titulos-pmenu">
+          <h3>Suggested dishes</h3>
+          <div class="scale"><p>Sort by <i class="fas fa-caret-down"></i></p></div>
         </div>
+        <div class="products-menu">
 
-        <% }); %>
+          <% products.forEach(function(products){ %>
 
+          <div class="single-pmenu">
+            <a href="/products/detail/<%= products.id %>"><img src="/images/my-uploads/<%= products.image %>" class="foto-sushi-menu"></a>
+              <p><%= products.name %><br>$<%= products.price %></p>
+              <form action="/products/addToCart/<%= products.id %>" method="POST">
+              <button type="submit" class="buttonPlus"><i class="fas fa-plus"></i></button>
+              </form>
+              <a href="/products/detail/<%= products.id %>"><i class="fas fa-info-circle"></i></a>
+          </div>
+
+          <% }); %>
+
+        </div>
       </div>
+
     </div>
 
-  
-    </div>
+    </main>
 
     <%- include('./partials/footer')  %>
-    </main>
+
   </body>
 </html>

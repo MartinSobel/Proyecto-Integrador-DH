@@ -13,6 +13,7 @@ var apiRouter = require('./routes/api/data');
 
 var rememberMiddleware = require('./middlewares/rememberMiddleware');
 var headMiddleware = require('./middlewares/headMiddleware');
+var qtyMiddleware = require('./middlewares/qtyMiddleware');
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(rememberMiddleware);
 app.use(headMiddleware);
+app.use(qtyMiddleware);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

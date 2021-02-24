@@ -25,6 +25,14 @@ body {
   background-size: 100%;
   background-repeat: repeat-y;
   color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+}
+html, body{
+  height: 100%;
+ }
+main {
+  flex: 1 0 auto;
 }
 
 @media (max-width: 400px){
@@ -140,6 +148,12 @@ nav a:hover{
 
 #treslineas{
   display: none;
+}
+
+.qty-cart{
+  color: #A8CA55;
+  font-family: "SF-Pro-Display-Regular";
+  margin-left: 8px;
 }
 
 @media (max-width: 1200px){
@@ -373,10 +387,10 @@ footer{
   background-color: black;
   text-align: center;
   padding: 1px;
-  /* position: fixed; */
   left: 0;
   bottom: 0;
   width: 100%;
+  flex-shrink: 0;
 }
 
 footer i{
@@ -448,7 +462,6 @@ footer p{
   border: none;
   width: 95%;
   height: 30px;
-  margin: 10px auto;
   text-align: center;
 }
 .formulario input:hover{
@@ -500,8 +513,9 @@ padding-top: 40px;
   align-self: flex-end;
 }
 
-#rem-checkbox, #news-checkbox {
-  align-items: flex-start;
+.rem-checkbox, #news-checkbox {
+  display: flex;
+  align-self: flex-start;
 }
 
 #rememberMe, #recieve-news{
@@ -734,6 +748,16 @@ Cart
   padding-top: 40px;
   margin-bottom: 40px;
 }
+.container-empty{
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 90%;
+  border-radius: 1em;
+  padding-top: 40px;
+}
+
 
 .productcart{
   display: flex;
