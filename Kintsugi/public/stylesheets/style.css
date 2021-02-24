@@ -69,6 +69,25 @@ font-weight: 300;
   width: 6px;
 }
 
+.scale:hover{
+  transition-duration: 0.1s !important;
+  transition-timing-function: ease-in !important;
+  display:block !important;
+  transform: scale(1.1, 1.1); 
+  -ms-transform: scale(1.1, 1.1);
+  -webkit-transform: scale(1.1, 1.1);
+  -moz-transform: scale(1.1, 1.1);
+  -o-transform: scale(1.1, 1.1) ;
+}
+
+.btn:hover{
+  transition-duration: 0.12s !important;
+  transition-timing-function: ease-in !important;
+  background-color: #121213 !important;
+  border: 2px solid #EA5457 !important;
+}
+
+
 /*===================================
  Navbar
 ===================================*/
@@ -212,6 +231,12 @@ margin-bottom: -10px;
   cursor: pointer;
   border-radius: 20px;
 }
+.button:hover{
+  background-color: #121213;
+  transition-duration: 0.12s !important;
+  transition-timing-function: ease-in !important;
+  border: 2px solid #EA5457 !important;
+}
 
 @media (max-width: 1200px){
   #banner{
@@ -273,9 +298,7 @@ margin-bottom: -10px;
   #product-main {
     width: 80% !important;
   }
-  #back:hover{
-    color:#A8CA55;
-  }
+
   #product-main{
     width: 30%;
     margin-top: 130px;
@@ -324,9 +347,9 @@ margin-bottom: -10px;
 }
 
 #back{
-  color: white;
-  font-weight: bold;
+  color: #A8CA55;
   text-decoration: none;
+  font-family: "SF-Pro-Text-Regular";
 }
 
 #add{
@@ -514,6 +537,7 @@ padding-top: 40px;
 }
 
 .datos #already, #noAccount {
+  text-decoration: none;
   color: #A8CA55;
   font-size: 14px;
   align-self: center;
@@ -747,11 +771,12 @@ Cart
 }
 
 .productscart .delete{
-  margin-top: 30px;
+  font-family: "SF-Pro-Text-Regular";
   font-size: 10pt;
   color: #EA5457;
   cursor: pointer;
 }
+
 
 .bill{
   padding-top: 20px;
@@ -1167,9 +1192,7 @@ display: flex;
   border-radius: 20px;
   width: 170px;
 }
-.container-form .formulario form button:hover{
-  background-color: #A8CA55
-}
+
 input, select, textarea{
   color: #ffffff;
 }
@@ -1208,9 +1231,6 @@ textarea:focus, input:focus {
   text-decoration: none;
   font-size: 14px;
   color: #EA5457;
-}
-.container-form a:hover{
-  color: #A8CA55;
 }
 
 @media (max-width: 1050px){
@@ -1293,7 +1313,7 @@ select::-ms-expand {
 }
 .products-edit img{
   width: 217px;
-  height: 122px;
+  height: 146px;
   border-radius: 20px;
 }
 .products-edit p{
@@ -1301,14 +1321,14 @@ select::-ms-expand {
   line-height: 29px;
   margin-bottom: 40px;
 }
-.products-edit i{
+.products-edit a{
   position: relative;
   bottom: 62px;
   left: 195px;
   font-size: 18px;
 }
 .products-edit i:hover{
-color: #EA5457;  
+color: #464646;  
 cursor: pointer;
 }
 
@@ -1324,3 +1344,5 @@ JS FRONT
   border: 1px solid #EA5457 !important;
 
 }
+
+

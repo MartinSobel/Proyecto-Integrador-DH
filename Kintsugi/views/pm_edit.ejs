@@ -12,10 +12,10 @@
 
         <div class="nav-menu">
             <ul>
-              <li><a href="/product_manager/add">Upload product</a></li>
+              <li><a href="/product_manager/add" class="scale">Upload product</a></li>
             </ul>
             <ul>
-              <li><a class="selected-nav-menu" href="/product_manager/">Edit product</a></li>
+              <li><a class="selected-nav-menu scale" href="/product_manager/" >Edit product</a></li>
             </ul>
           </div>
         
@@ -48,8 +48,8 @@
                       </div>
                       <br>
 
-                    <button type="submit">Save changes</button><br>
-                    <a href="/product_manager/destroy/<%= product.id %>">Delete product</a>
+                    <button type="submit" class="btn">Save changes</button><br>
+                    <a href="/product_manager/destroy/<%= product.id %>" class="scale">Delete product</a>
                 
                 </form>
                 

@@ -1,19 +1,19 @@
 <nav>
     <ul>
       <img src="/images/logo.png" alt="">
-      <li><a href="/">Home</a></li>
-      <li><a href="/products/menu">Menu</a></li>
-      <li><a href="" id="hide-it">Location</a></li>
-      <li><a href="" id="hide-it">Contact</a></li>
+      <li><a href="/" class="scale">Home</a></li>
+      <li><a href="/products/menu" class="scale">Menu</a></li>
+      <li><a href="" id="hide-it" class="scale">Location</a></li>
+      <li><a href="" id="hide-it" class="scale">Contact</a></li>
     </ul>
     <ul>
-      <li><a href=""><i class="fas fa-search"></i></a></li>
-      <li><a href="/products/cart"><i class="fas fa-shopping-cart"></i></a></li>
+      <li><a href="" class="scale"><i class="fas fa-search"></i></a></li>
+      <li><a href="/products/cart" class="scale"><i class="fas fa-shopping-cart"></i></a></li>
 
       <% if(locals.userLogged == null){ %>
-        <li><a href="/users/login">Login   <i class="fas fa-sign-in-alt"></i></a></li>
+        <li><a href="/users/login" class="scale">Login   <i class="fas fa-sign-in-alt"></i></a></li>
       <% } else { %>
-        <li><a href="/users/login"><%= locals.userLogged %><i class="fas fa-user-circle"></i></a></li>
+        <li><a href="/users/login" class="scale"><%= locals.userLogged %><i class="fas fa-user-circle"></i></a></li>
       <% } %>
 
       

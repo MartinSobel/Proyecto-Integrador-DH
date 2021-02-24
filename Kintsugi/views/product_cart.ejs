@@ -25,9 +25,13 @@
               <div class="columna2">
                   <p class="precio"><%= prodCount[i].count %> units</p>
                   <form action="/products/addAnother/<%= cart.products[i].id %>" method="POST">
-                    <button type="submit" class="buttonPlus"><a class="add-another">Add another</a></button>
+                    <button type="submit" class="buttonPlus"><a class="add-another scale">Add another</a></button>
                   </form>
-                <p class="delete">Delete</p>
+                  <br>
+                  <br>
+                  <form action="/products/addAnother/<%= cart.products[i].id %>" method="POST">
+                    <button type="submit" class="buttonPlus"><a class="delete scale">Delete</a></button>
+                  </form>
               </div>
           </div>   
         <% } %>    
@@ -45,7 +49,7 @@
                   <h3>Final price:</h3>
                   <h3>$<%= cart.total %></h3>
                 </div>
-              <button type="submit">Checkout</button>
+              <button type="submit" class="btn">Checkout</button>
             </div>
       </main>
 

@@ -101,7 +101,6 @@ const productController = {
                     user_id: result.id
                 }, include: [{association: 'products'}]
             }).then(cart => {
-                console.log(cart)
                 db.Cart_Product.findAll({where:{cart_id: cart.id}})
                     .then(cartprod => {
                         var prodsid = []

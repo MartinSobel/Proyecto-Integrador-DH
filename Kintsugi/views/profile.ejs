@@ -11,16 +11,15 @@
     <main class="datos">
 
         <div class="titulacion">
-            <h2>Profile</h2>
+            <h2>My profile</h2>
         </div>
 
         <div class="formulario">
-            <h3>My profile</h3>
             <form action="/users/profile/<%= user.id %>" method="POST">       
                 <input type="text" id="name" name="name" value="<%= user.name %>"><br>
                 <input type="tel" id="phone" name="phone" value="<%= user.phone %>"><br>
                 <input type="email" id="email" name="email" value="<%= user.email %>"><br>
-                <button id="button-profile" type="submit">Edit</button>
+                <button id="button-profile" type="submit" class="btn">Edit</button>
             </form>
             <a href="/users/logout" id="logout">Log out</a>
 
