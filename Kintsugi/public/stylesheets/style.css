@@ -14,7 +14,9 @@
   font-family: "MonumentExtended-Regular";
   src: url(../fonts/MonumentExtended-Regular.otf)
 }
-
+*{
+  box-sizing: content-box;
+}
 body {
   font: 14px "SF-Pro-Text-Regular", Helvetica, Arial, sans-serif;
   margin: 0;
@@ -50,7 +52,7 @@ p{
 }
 h3{
 font-family: "SF-Pro-Display-Regular", sans-serif;
-font-size: 22px;
+font-size: 20px;
 letter-spacing: 0.5pt;
 font-weight: 300;
 }
@@ -417,20 +419,20 @@ footer p{
 
 .containerlogin{
   display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   padding-top: 50px;
+  
 }
 
 .datos{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
-  width: 30%;
-  position: relative;
+  align-items: flex-start;
   margin-top: 85px;
+  width: 30%;
 }
 .datos a{
   width: 180px;
@@ -440,27 +442,29 @@ footer p{
 .datos .titulacion p{
   width: 300px;
   text-align: left;
-  
 }
 
 .titulacion img{
-  width: 50%;
-  margin: -15px, 0px, 5px, 120px;
+  width: 200px;;
 }
 .formulario{
   display: flex;
   flex-direction: column;
-  position: relative;
   margin-top: -50px;
 }
-.datos form{
-  text-align: center;
+.formulario h3{
+  font-size: 18px;
+  margin-top:10px;
 }
-.datos form input{
+.datos form{
+  
+  margin-top: 10px;
+}
+.datos form .input-control{
   border-radius: 57px;
   background-color: #4e4e4e;
   border: none;
-  width: 95%;
+  width: 300px;;
   height: 30px;
   text-align: center;
 }
@@ -490,8 +494,8 @@ padding-top: 40px;
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
-
 
 .formulario button{
   font-family: "SF-Pro-Text-Regular", sans-serif;
@@ -499,9 +503,10 @@ padding-top: 40px;
   background-color: #EA5457;
   border-radius: 57px;
   border: none;
-  height: 30px;
-  width: 100px;
+  height: 30px!important;
+  width: 100px!important;
   cursor: pointer;
+  line-height: 0!important;
 }
 
 #button-login{
@@ -513,16 +518,14 @@ padding-top: 40px;
   align-self: flex-end;
 }
 
-.rem-checkbox, #news-checkbox {
-  display: flex;
-  align-self: flex-start;
-}
+
 
 #rememberMe, #recieve-news{
-  text-align:start;
-  align-self: flex-start;
-  margin-left: 40px;
-  margin-top: -30px;
+  
+  
+  /*position: relative;
+  right: 270px;
+  top: 7px;*/
 }
 
 
@@ -549,154 +552,55 @@ padding-top: 40px;
   color: #A8CA55;
   font-size: 14px;
   align-self: center;
+  margin-right: 80px;
   cursor: pointer;
   margin-bottom: 70px;
 } 
 
 .imgder {
   display: flex;
-  flex-direction: row;
-  height: 95vh;
+  flex-direction: column;
+  height: 65vh;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  width: 55%;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 .imgder img{
   border-radius: 1em;
   
 }
-#sign1{
-  align-self: flex-start;
-  position: relative;
-  width: 55%;
-  
-}
-#sign2{
-  position: relative;
-  align-self: center;
-  width: 40%;
-  bottom: 100px;
-  right: 100px;
-  
-}
-#sign3{
-  align-self: flex-start;
-  position: relative;
-  width: 40%;
-  left: 30px;
-  top: 40px;
-}
-#sign4{
-  position: relative;
-  align-self: flex-end;
-  justify-self: center;
-  width: 20%;
-  right: 50px;
-  
+.carousel-inner img{
+  width: 450px!important;
+  height:200px !important;
 }
 
-#login1{
-  width: 40%;
-  align-self: flex-start;
-  justify-self: center;
-  position: relative;
-  bottom: 70px;
-  left: 15px;
-}
-
-#login2{
-  transform: rotate(90deg);
-  width: 26%;
-  position: relative;
-  align-self: center;
-  bottom: 67px;
-}
-#login3{
-  width: 34%;
-  position: relative;
-  align-self: flex-start;
-  right: 40px;
-  bottom: 50px;
-}
-#login4{
-  width: 38%;
-  position: relative;
-  align-self: flex-end;
-  left: 0px;
-  bottom: 50px;
-}
 @media (max-width: 1300px){
 
 }
 
-@media (max-width: 800px){
-  /*#sign2{
-    left:80px;
-    bottom: 40px;
-  }
-  #sign3{
-    bottom: 0px;
-  }
-  #sign4{
-    top: 40px;
-  }
-
-  #login3{
-    right: 16px;
-  }*/
-
-  .formulario button{
-    align-self: flex-end;
-    margin-top: 20px;
-  }
-  .imgder{
-    width: 90%;
-    justify-content: center;
-    align-items: center;
-    margin-top: -60px;
-    position: relative;
-    bottom: 80px;
-  }
-  
-}
-
-@media (max-width: 400px){
+@media (max-width: 1000px){
   .containerlogin{
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100vw;
-    margin-left: 50px;
+    
   }
-  .datos .titulacion p{
-    width: 70vw;
-  }
-  .formulario{
-    width: 80vw;
-    align-items: center;
-  }
-  .formulario button{
-    align-self: flex-end;
-    margin-top: 20px;
+
+  .imgder{
+    margin-top: -40px;
   }
   
-  .finform{
-  margin-left: -80px;
-  width: 100vw;
-  }
-  .datos a{
-    margin-left: -90px;
-  }
-  .imgder{
-    width: 90%;
-    justify-content: center;
-    align-items: center;
-    margin-top: -60px;
-    position: relative;
-    bottom: 80px;
+}
+
+@media (max-width: 400px){
+  
+  .carousel-inner img{
+    width: 350px!important;
+    height:150px !important;
+    
   }
 }
 

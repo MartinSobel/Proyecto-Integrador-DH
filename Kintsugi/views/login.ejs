@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <%- include('./partials/head')  %>
 </head>
 <body>
@@ -25,7 +26,7 @@
                     <input type="password" id="password" name="password" placeholder="Password" class="input-control"><br>
                     <div class="error-msg"></div><br>
                     <div class="rem-checkbox">
-                        <input type="checkbox" name="remember" ><label id="rememberMe">Remember Me</label>
+                        <label id="rememberMe"><input type="checkbox" name="remember"><span> Remember Me</span></label>
                     </div>
                     <button id="button-login" type="submit" class="btn"> Enter </button>
                 </form>
@@ -35,13 +36,31 @@
             
         </div>
         <aside class="imgder">
-            <img src="/images/fotos-sushi/login-1-grande.jpg" alt="sushi 1 grande" id="login1"><br>
-            <img src="/images/fotos-sushi/login-2-chica.jpg" alt="sushi 2 chica" id="login2"><br>
-            <img src="/images/fotos-sushi/login-1-chica.jpg" alt="sushi 1 chica" id="login3"><br>
-            <img src="/images/fotos-sushi/login-2-grande.jpg" alt="sushi 2 grande" id="login4">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" src="/images/fotos-sushi/login-1-grande.jpg" alt="First slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="/images/fotos-sushi/login-2-chica.jpg" alt="Second slide">
+                  </div>
+                </div>
+              </div>
+              <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" src="/images/fotos-sushi/login-1-chica.jpg" alt="First slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="/images/fotos-sushi/login-2-grande.jpg" alt="Second slide">
+                  </div>
+                </div>
+              </div>
         </aside>
     </main>  
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <%- include('./partials/footer')  %>
   <script src="/js/form-validation.js"></script>
 
