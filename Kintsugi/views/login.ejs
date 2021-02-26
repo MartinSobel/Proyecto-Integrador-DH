@@ -9,7 +9,8 @@
   <%- include('./partials/header')  %>
 
     <main class="containerlogin">
-        <div class="datos">
+      <div class="container-dataimg-izq">
+        <div class="datos-login">
             <div class="titulacion">
                 <h2>Log in</h2>
                 <img src="/images/jap-log-in.png" id="loginjapo">
@@ -21,20 +22,20 @@
                     <p class="error"><%= msg %></p>
                 <% } %>
                 <form action="/users/logged" method="POST" class="form-validation">
-                    <input type="email" id="email" name="email" placeholder="Email" class="input-control"><br>
+                    <input type="email" id="email" name="email" placeholder="Email" class="input-control">
                     <div class="error-msg"></div>
-                    <input type="password" id="password" name="password" placeholder="Password" class="input-control"><br>
-                    <div class="error-msg"></div><br>
+                    <input type="password" id="password" name="password" placeholder="Password" class="input-control">
+                    <div class="error-msg"></div>
                     <div class="rem-checkbox">
                         <label id="rememberMe"><input type="checkbox" name="remember"><span> Remember Me</span></label>
                     </div>
                     <button id="button-login" type="submit" class="btn"> Enter </button>
                 </form>
             </div>
-            <br>
-            <a href="/users/register" id="noAccount" class="scale">I don't have an account</a>
-            
+            <a href="/users/register" id="noAccount" class="scale">I don't have an account</a>            
         </div>
+      </div>
+      <div class="container-dataimg-der">
         <aside class="imgder">
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
@@ -57,6 +58,7 @@
                 </div>
               </div>
         </aside>
+      </div>
     </main>  
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

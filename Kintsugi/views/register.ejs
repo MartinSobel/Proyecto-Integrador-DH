@@ -9,12 +9,12 @@
   <%- include('./partials/header')  %>
 
   <main class="containerlogin">
-    <div class="datos">
-
+    <div class="container-dataimg-izq">
+      <div class="datos-register">
         <div class="titulacion">
             <h2>Sign Up</h2>
-            <img src="/images/jap-sign-up.png">
-            <p>Welcome to Kintsugi! We are very happy that you're joining us.You can receive exclusive news and discounts if you subscribe to our newsletter.  </p>
+            <img src="/images/jap-sign-up.png">      
+            <p>Welcome to Kintsugi! We are very happy that you're joining us. Receive exclusive news and discounts subscribing to our newsletter.  </p>
         </div>
 
         <div class="formulario">
@@ -26,52 +26,54 @@
             <% } %>
 
             <form action="/users/register" method="POST" class="form-validation">
-                <input type="text" id="name" name="name" placeholder="Name" class="input-control"><br>
+                <input type="text" id="name" name="name" placeholder="Name" class="input-control">
                 <div class="error-msg"></div>
-                <input type="tel" id="phone" name="phone" placeholder="Phone" class="input-control"><br>
+                <input type="tel" id="phone" name="phone" placeholder="Phone" class="input-control">
                 <div class="error-msg"></div>
-                <input type="email" id="email" name="email" placeholder="Email" class="input-control"><br>
+                <input type="email" id="email" name="email" placeholder="Email" class="input-control">
                 <div class="error-msg"></div>
-                <input type="password" id="password" name="password" placeholder="Password" class="input-control"><br>
-                <div class="error-msg"></div><br>
+                <input type="password" id="password" name="password" placeholder="Password" class="input-control">
+                <div class="error-msg"></div>
                 
                 <label id="recieve-news"><input type="checkbox" name="newsletter" value="1" id="news-checkbox"><span> I want to receive exclusive news</span></label>
                 <button id="button-register" type="submit" class="btn">Sign Up</button>
                 
             </form>
-            <br>
         </div>
-
-        <a href="/users/login" id="already" class="scale"> I already have an account</a>
-        
+        <a href="/users/login" id="already" class="scale">I already have an account</a>   
       </div>
-    <aside class="imgder">
-      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="/images/fotos-sushi/signup-1-grande.jpg" alt="First slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="/images/fotos-sushi/signup-1-chica.jpg" alt="Second slide">
-          </div>
-        </div>
-      </div>
-      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="/images/fotos-sushi/signup-2-grande.jpg" alt="First slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="/images/fotos-sushi/signup-2-chica.jpg" alt="Second slide">
+    </div>
+      <div class="container-dataimg-der">
+      <aside class="imgder">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="/images/fotos-sushi/signup-1-grande.jpg" alt="First slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="/images/fotos-sushi/signup-1-chica.jpg" alt="Second slide">
+            </div>
           </div>
         </div>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="/images/fotos-sushi/signup-2-grande.jpg" alt="First slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="/images/fotos-sushi/signup-2-chica.jpg" alt="Second slide">
+            </div>
+          </div>
+        </div>
+      </aside>
       </div>
-    </aside>
   </main>
+
+  <%- include('./partials/footer')  %>
+
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <%- include('./partials/footer')  %>
   <script src="/js/form-validation.js"></script>
 </body>
 </html>

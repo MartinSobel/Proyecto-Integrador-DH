@@ -15,23 +15,19 @@
         </div>
 
         <div class="formulario">
-            <form action="/users/profile/<%= user.id %>" method="POST">       
-                <input type="text" id="name" name="name" value="<%= user.name %>"><br>
-                <input type="tel" id="phone" name="phone" value="<%= user.phone %>"><br>
-                <input type="email" id="email" name="email" value="<%= user.email %>"><br>
+            <form action="/users/profile/<%= user.id %>" method="POST">
+                <h3>Name:</h3>       
+                <input type="text" id="name" name="name" value="<%= user.name %>" class="input-control"><br>
+                <h3>Phone:</h3>  
+                <input type="tel" id="phone" name="phone" value="<%= user.phone %>" class="input-control"><br>
+                <h3>E-mail:</h3>  
+                <input type="email" id="email" name="email" value="<%= user.email %>" class="input-control"><br>
                 <button id="button-profile" type="submit" class="btn">Edit</button>
             </form>
             <a href="/users/logout" id="logout">Log out</a>
-
         </div>
-
-        <div class="finform">
-               <p> </p><br>
-        </div>
-
-        <a href="/users/login" id="already"> </a>
         
-      </div>
+      </div>    
 
     </main>
   <%- include('./partials/footer')  %>

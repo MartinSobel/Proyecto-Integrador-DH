@@ -14,9 +14,7 @@
   font-family: "MonumentExtended-Regular";
   src: url(../fonts/MonumentExtended-Regular.otf)
 }
-*{
-  box-sizing: content-box;
-}
+
 body {
   font: 14px "SF-Pro-Text-Regular", Helvetica, Arial, sans-serif;
   margin: 0;
@@ -35,6 +33,16 @@ html, body{
  }
 main {
   flex: 1 0 auto;
+}
+
+/* *{
+box-sizing: content-box;
+} */
+
+ol,
+ul,
+dl {
+  margin-top: 17px;
 }
 
 @media (max-width: 400px){
@@ -83,6 +91,7 @@ font-weight: 300;
   transition-duration: 0.1s !important;
   transition-timing-function: ease-in !important;
   display:block !important;
+  text-decoration: none !important;
   transform: scale(1.1, 1.1); 
   -ms-transform: scale(1.1, 1.1);
   -webkit-transform: scale(1.1, 1.1);
@@ -97,6 +106,9 @@ font-weight: 300;
   border: 2px solid #EA5457 !important;
 }
 
+.btn{
+  font-size: 11pt;
+}
 
 /*===================================
  Navbar
@@ -134,7 +146,7 @@ nav ul li{
 
 nav ul img{
   align-self: center;
-  width: 70px;
+  /* width: 70px; */
   height: 56px;
   padding-right: 10px;
 }
@@ -423,29 +435,62 @@ footer p{
   align-items: center;
   flex-wrap: wrap;
   padding-top: 50px;
-  
+  margin-top: 40px;
 }
 
-.datos{
+.container-dataimg-izq{
+  background-color: rgba(0, 0, 0, 0.8);
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  padding-left: 70px;
+  padding-right: 30px;
+  height: 600px;
+  padding-bottom: 100px;
+}
+
+.container-dataimg-der{
+  background-color: rgba(0, 0, 0, 0.8);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding-left: 30px;
+  padding-right: 70px;
+  height: 600px;
+  padding-bottom: 100px;
+}
+
+.datos-register{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-start;
-  margin-top: 85px;
-  width: 30%;
-}
-.datos a{
-  width: 180px;
-  text-align: left;
+  margin-top: 60px;
+
 }
 
-.datos .titulacion p{
-  width: 300px;
+.datos-login{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin-top: 110px;
+
+}
+
+.titulacion{
+  width: 330px;
+}
+
+.titulacion p{
+  width: 330px;
   text-align: left;
+  color: #8d8d8d;
+  margin-bottom: 30px;
 }
 
 .titulacion img{
-  width: 200px;;
+  margin-left: 60px;
+  margin-bottom: 15px;
+  width: 200px;
 }
 .formulario{
   display: flex;
@@ -455,18 +500,18 @@ footer p{
 .formulario h3{
   font-size: 18px;
   margin-top:10px;
+  margin-bottom:10px;
 }
-.datos form{
-  
-  margin-top: 10px;
-}
-.datos form .input-control{
+
+.input-control{
   border-radius: 57px;
   background-color: #4e4e4e;
   border: none;
-  width: 300px;;
+  width: 100%;
   height: 30px;
   text-align: center;
+  margin-bottom: 7px;
+  margin-top: 7px;
 }
 .formulario input:hover{
   background-color: rgb(34, 34, 34);
@@ -504,36 +549,25 @@ padding-top: 40px;
   border-radius: 57px;
   border: none;
   height: 30px!important;
-  width: 100px!important;
   cursor: pointer;
   line-height: 0!important;
 }
 
-#button-login{
+#button-login, #button-register{
   align-self: flex-end;
-  
+  margin-top: -30px;
 }
 
-#button-register{
-  align-self: flex-end;
-}
-
-
-
-#rememberMe, #recieve-news{
-  
-  
-  /*position: relative;
-  right: 270px;
-  top: 7px;*/
-}
-
-
+ #rememberMe, #recieve-news{
+   margin-top: 20px;
+ }
 
 #button-profile {
   position: relative;
   top: 10px;
   margin-top: 20px;
+  left: 132px;
+  width: 70px;
 }
 
 .containerlogin .datos #logout{
@@ -541,20 +575,18 @@ padding-top: 40px;
   font-size: 14px;
   align-self: center;
   cursor: pointer;
-  position: relative;
-  top: 30px;
-  left: 60px;
   text-decoration: none;
+  margin-top: 30px;
 }
 
-.datos #already, #noAccount {
+#already, #noAccount {
   text-decoration: none;
   color: #A8CA55;
   font-size: 14px;
   align-self: center;
-  margin-right: 80px;
   cursor: pointer;
   margin-bottom: 70px;
+  margin-top: 20px;
 } 
 
 .imgder {
@@ -564,7 +596,6 @@ padding-top: 40px;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  margin-top: 30px;
 }
 
 .imgder img{
@@ -900,7 +931,7 @@ display: flex;
   cursor: pointer;
 }
 .container-pmenu{
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
   border-radius: 20px;
   height: 600px;
   padding: 0px 45px;
