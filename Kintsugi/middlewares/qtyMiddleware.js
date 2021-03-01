@@ -1,7 +1,8 @@
 const db = require('../database/models');
 
-function qtyMiddleware(req, res, next){
-    if (req.session.logged == 'logged'){
+
+function qtyMiddleware(req,res,next){
+    if(req.session.logged == 'logged'){
         db.User.findOne({
             where: {
                 email: req.session.email
@@ -11,7 +12,7 @@ function qtyMiddleware(req, res, next){
             db.Cart.findOne({
                 where:{
                     user_id: req.session.userid,
-                    status: 'open'
+                    status: 'open' 
                 }
             }).then(cart => {
                 db.Cart_Product.findAll({
@@ -20,10 +21,12 @@ function qtyMiddleware(req, res, next){
                     }
                 }).then(prods =>{
                     res.locals.qtyCart = prods.length
-                    next();
+                    next()
+                }).catch(function(e){
+                    console.log(e);
                 })
             })
-        })    
+        })
     } else {
         next();
     }

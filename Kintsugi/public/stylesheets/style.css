@@ -522,17 +522,6 @@ footer p{
 padding-top: 40px;
 }
 
-/*#add-img-user{
-  height: 40px;
-  background-color:#4e4e4e;
-  border-radius: 20px;
-  padding: 10px;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-#add-img-user:hover{
-  background-color: rgb(34, 34, 34);
-}*/
 
 .form-validation {
   width: 100%;
@@ -561,13 +550,6 @@ padding-top: 40px;
    margin-top: 20px;
  }
 
-/*#button-profile {
-  position: relative;
-  top: 10px;
-  margin-top: 20px;
-  left: 132px;
-  width: 70px;
-}*/
 
 .containerlogin .datos #logout{
   color: #EA5457;
