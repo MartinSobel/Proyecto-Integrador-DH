@@ -1309,6 +1309,18 @@ cursor: pointer;
 JS FRONT
 ===========================*/
 
+.gif-container{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.gif{
+  width: 250px;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
 .error-msg{
   color: #EA5457;
 }

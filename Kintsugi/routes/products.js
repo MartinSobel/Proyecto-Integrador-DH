@@ -8,6 +8,9 @@ router.get('/menu', authMiddleware, productController.renderMenu);
 router.get('/cart', authMiddleware, productController.renderProductCart);
 router.get('/detail/:id', productController.renderProductDetail);
 
+router.get('/checkout', productController.renderCheckout);
+router.post('/checkout', productController.closeCart);
+
 router.post('/addToCart/:id', productController.addToCart);
 
 router.post('/addAnother/:id', productController.addAnother);

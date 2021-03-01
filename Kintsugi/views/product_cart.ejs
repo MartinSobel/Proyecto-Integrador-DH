@@ -49,7 +49,9 @@
                   <h3>Final price:</h3>
                   <h3>$<%= cart.total %></h3>
                 </div>
-              <button type="submit" class="btn">Checkout</button>
+                <form action="/products/checkout" method="POST">
+                  <button type="submit" class="btn">Checkout</button>
+                </form>
             </div>
           </div>
       <% } else { %>  

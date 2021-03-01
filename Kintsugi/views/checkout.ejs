@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./partials/head')  %>
+  </head>
+  <body class="cart">
+    
+    <%- include('./partials/header')  %>
+  <main>   
+      <div class="titulocart">
+        <h2>Thank you for your purchase</h2>
+      </div>
+        <div class="containercart">
+          <div class="container-empty">
+              <div class="productcart">
+                <h3>Your order will arrive soon to your address. Hope you enjoy it!</h3>
+              </div>
+              <div class="gif-container">
+                <img class="gif" src="">
+              </div>
+              <a href="/products/menu" id="noAccount" class="scale">Back to home</a>
+          </div>  
+        </div>        
+  </main> 
+  <%- include('./partials/footer')  %>
+  <script>
+    window.addEventListener("load", function(){
+
+        var img = document.querySelector(".gif")
+
+        fetch("https://api.giphy.com/v1/gifs/random?api_key=sPllpZrSGmQaFUy30gcZiGmi3KtnsALY&tag=Sushi&rating=pg-13")
+        .then(response => {
+            return response.json();
+        })
+        .then(dataDecode =>{
+            console.log(dataDecode)
+            img.src = dataDecode.data.images.original.url
+        })
+        .catch(e => {console.log(e)})
+
+    })
+  </script>
+    
+  </body>
+</html>

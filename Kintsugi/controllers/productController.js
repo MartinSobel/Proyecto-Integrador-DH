@@ -102,21 +102,21 @@ const productController = {
                     user_id: req.session.userid,
                     status: 'open'
                 }
-            }).then((result)=>{
+            }).then((cart)=>{
                 db.Product.findByPk(req.params.id)
                     .then(function(prod){
-                        db.Cart.update({total: result.total - prod.price}, {
+                        db.Cart.update({total: cart.total - prod.price}, {
                             where: {
-                                id: result.id
+                                id: cart.id
                             }
                         })
-                });
-                db.Cart_Product.findOne({where:{product_id: req.params.id}})
+                }).then(e => {
+                    db.Cart_Product.findOne({where:{product_id: req.params.id, cart_id: cart.id}})
                     .then(prodToDelete =>{
                         db.Cart_Product.destroy({where:{id: prodToDelete.id}})
                         return res.redirect("/products/cart");
                     })
-
+                })
             })
         }) 
     },
@@ -128,7 +128,8 @@ const productController = {
         }).then(function(result){
             db.Cart.findOne({
                 where: {
-                    user_id: result.id
+                    user_id: result.id,
+                    status: "open"
                 }, include: [{association: 'products'}]
             }).then(cart => {
                 db.Cart_Product.findAll({where:{cart_id: cart.id}})
@@ -163,6 +164,10 @@ const productController = {
 
                         res.render("product_cart", {cart, prodCount})
                     })
+            }).catch(function(e){
+                console.log(e)
+                var cart = {products: []}
+                res.render("product_cart", {cart})
             })
         })
     },
@@ -170,6 +175,30 @@ const productController = {
         db.Product.findByPk(req.params.id).then(function(product){
             res.render('product_detail', {product});
         })
+    },
+    closeCart: function (req, res, next) {
+        db.User.findOne({
+            where: {
+                email: req.session.email
+            }
+        }).then(function(result){
+            db.Cart.findOne({
+                where:{
+                    user_id: req.session.userid,
+                    status: 'open'
+                }
+            }).then(cart => {
+                db.Cart.update({status: "closed"}, {
+                    where: {
+                        id: cart.id
+                    }
+                })
+                res.redirect('/products/checkout')
+            }).catch(e =>{console.log(e)})
+        })
+    },
+    renderCheckout: function (req, res, next) {
+        return res.render("checkout");
     },
     renderProductManager: function (req, res, next) {
         db.Product.findAll().then(function(products){
@@ -186,8 +215,11 @@ const productController = {
             price: req.body.price,
             category_id: req.body.cat,
             image: req.files[0].filename
+        }).then(e =>{
+            res.redirect("/product_manager/")
+        }).catch(function(e){
+            console.log("CATCH DE PM ADD > STORE" + e)
         })
-        res.redirect("/product_manager/")
     },
     renderProductEdit: function (req, res, next) {
             db.Product.findByPk(req.params.id).then(function(product){
