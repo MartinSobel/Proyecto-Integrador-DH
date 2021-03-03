@@ -5,5 +5,6 @@ router.get('/users', dataApiController.users);
 router.get('/products', dataApiController.products);
 router.get('/sales', dataApiController.sales);
 router.get('/status', dataApiController.status);
+router.get('/categories', dataApiController.categories);
 
 module.exports=router

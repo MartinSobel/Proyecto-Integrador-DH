@@ -77,23 +77,19 @@ let dataApiController = {
                     })
             })   
     },
-    products: function(req,res){
-        db.Product.findAll()
-        .then(function(products){
-            for(let i = 0; i<products.length; i++){
-                products[i].setDataValue("endpoint", "/api/data/products/" + products[i].id)
-            }
-            let answer = {
-                meta: {
-                    status: 200,
-                    total: products.length,
-                    url: "/api/data/products"
-                },
-                data: products
-            };
-            res.json(answer);
-        })
-    }
+    categories: function(req,res){
+        db.Category.findAll()
+            .then(function(categories){
+                let answer = {
+                    meta: {
+                        status: 200,
+                    },
+                    data: categories 
+                };
+                res.json(answer);
+            })
+    },
+    
     
 }
 module.exports= dataApiController;
