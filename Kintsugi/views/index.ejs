@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <%- include('./partials/head')  %>
   </head>
   <body>
     <main>
       <%- include('./partials/header')  %>
 
-      <img src="/images/home-banner.jpg" alt="" id="banner">
+      <div class="logo-container">
+
+        <div id="carouselHome" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="/images/home-carrusel1.jpg" alt="First slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="/images/home-carrusel2.jpg" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="/images/home-carrusel3.jpg" alt="Third slide">
+            </div>
+          </div>
+        </div>
+        <div class="logo-home">
+          <h3>Welcome to</h3>
+          <h1>Kintsugi</h1>
+          <img src="/images/jap-kintsugi.png">
+        </div>
+
+      </div>
 
       <div class="home-cards">
         <div class="home-text">
           <h2>The best experience</h2><br>
           <p> Sushi is traditionally made with medium-grain white rice, though it can be prepared with brown rice or short-grain rice. It is very often prepared with seafood, such as squid, eel, yellowtail, salmon, tuna or imitation crab meat. Many types of sushi are vegetarian.
           </p><br>
-          <a href="" class="button">View products</a>
+          <a href="/products/menu" class="button">View products</a>
         </div>
         <div class="home-img-1">
           <img src="/images/fotos-sushi/home-S1.png" alt="" id="home-img-s1">
@@ -26,7 +48,7 @@
           <h2>Exclusive dishes</h2><br>
           <p> Sushi is traditionally made with medium-grain white rice, though it can be prepared with brown rice or short-grain rice. It is very often prepared with seafood, such as squid, eel, yellowtail, salmon, tuna or imitation crab meat. Many types of sushi are vegetarian.
           </p><br>
-          <a href="" class="button">View products</a>
+          <a href="/products/menu" class="button">View products</a>
         </div>
         <div class="home-img-2">
           <img src="/images/fotos-sushi/home-S2.png" alt="" id="home-img-s2">
@@ -35,5 +57,8 @@
 
     </main>
     <%- include('./partials/footer')  %>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
