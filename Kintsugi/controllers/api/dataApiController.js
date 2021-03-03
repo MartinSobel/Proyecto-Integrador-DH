@@ -53,6 +53,47 @@ let dataApiController = {
             };
             res.json(answer);
         })
+    },
+    status: function(req,res){
+        let answer = {
+            meta: {
+                status: 200,
+                url: "/api/data/status"
+            },
+            data: {
+            }
+        };
+        db.Product.findAll()
+            .then(function(products){
+                answer.data.totalProducts = products.length;
+                db.User.findAll()
+                    .then(function(users){
+                        answer.data.totalUsers = users.length;
+                        db.Cart.findAll()
+                            .then(function(carts){
+                                answer.data.totalCarts = carts.length;
+                                res.json(answer);
+                            })
+                    })
+            })   
+    },
+    products: function(req,res){
+        db.Product.findAll()
+        .then(function(products){
+            for(let i = 0; i<products.length; i++){
+                products[i].setDataValue("endpoint", "/api/data/products/" + products[i].id)
+            }
+            let answer = {
+                meta: {
+                    status: 200,
+                    total: products.length,
+                    url: "/api/data/products"
+                },
+                data: products
+            };
+            res.json(answer);
+        })
     }
+    
 }
 module.exports= dataApiController;
