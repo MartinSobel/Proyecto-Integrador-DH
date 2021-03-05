@@ -25,7 +25,7 @@
                 <form action="/product_manager/edit/<%= product.id %>" method="POST" enctype='multipart/form-data'>
                     <br><br>
                     <img src="/images/my-uploads/<%= product.image %>" id="form-foto2"><br>
-                    <input type="file" id="add-img" name="img"><br><br><br><br>
+                    <input type="file" id="add-img" name="img" value="<%= product.image %>"><br><br><br><br>
                     <h3>Product name</h3>
                     <input type="text" id="name" name="name" value="<%= product.name %>"><br>
                     <h3>Description</h3>

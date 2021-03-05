@@ -272,29 +272,65 @@ const productController = {
             })
         },
     update: function(req, res, next) {
-        console.log(req.body.desc);
-        db.Product.update({
-            name: req.body.name,
-            description: req.body.desc,
-            price: req.body.price,
-            category_id: req.body.cat,
-            image: req.files[0].filename
-        },{
-        where: {
-            id: req.params.id
-            }
-        }).then(function(){
-            res.redirect("/product_manager/")
-        }).catch(function(error){
-            console.log(error)
-            res.send('error')
-            });
+        if(req.files[0] == undefined){
+        db.Product.findByPk(req.params.id)
+        .then(prod =>{
+            db.Product.update({
+                name: req.body.name,
+                description: req.body.desc,
+                price: req.body.price,
+                category_id: req.body.cat,
+                image: prod.image
+            },{
+            where: {id: req.params.id}
+                }).then(function(){
+                    res.redirect("/product_manager/")
+                }).catch(function(error){
+                    console.log(error)
+                    res.send('error')
+                    });
+        }) } else {
+            db.Product.update({
+                name: req.body.name,
+                description: req.body.desc,
+                price: req.body.price,
+                category_id: req.body.cat,
+                image: req.files[0].filename
+            },{
+            where: {id: req.params.id}
+                }).then(function(){
+                    res.redirect("/product_manager/")
+                }).catch(function(error){
+                    console.log(error)
+                    res.send('error')
+                    });
+        }
     },
     destroy: function(req,res,next){
-        db.Product.destroy({
-            where:{id:req.params.id}
-        }).then(function(){
-            return res.redirect("/product_manager/");
+        db.Cart_Product.findAll({
+            where:{product_id: req.params.id}
+        }).then(carts =>{
+            console.log("CAAAARTTSSS" + carts)
+            db.Cart_Product.destroy({
+                where: {product_id: req.params.id}
+            }).then(e =>{
+                var cartsid = []
+                for (let i = 0; i < carts.length; i++) {
+                    cartsid.push(carts[i].cart_id)  
+                }
+                console.log("CAAAARTTSSS IIDDD" + cartsid)
+                db.Cart.destroy({
+                    where:{id:cartsid, status: "open"}
+                }).then(e =>{
+                    db.Product.destroy({
+                        where:{id: req.params.id}
+                        }).then(function(){
+                            return res.redirect("/product_manager/");
+                    })
+                })
+            })
+        }).catch(e =>{
+            console.log(e)
         })
     },
 }

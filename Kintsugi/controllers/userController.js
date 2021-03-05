@@ -35,20 +35,21 @@ const userController = {
         })
     },
     registered: function (req, res, next) {
-       
         let errors = validationResult(req);
         if (!errors.isEmpty()){
             return res.render('register', {errors: errors.errors});
+        } else {
+            db.User.create({
+                name: req.body.name,
+                phone: req.body.phone,
+                email: req.body.email,
+                password: bcrypt.hashSync(req.body.password, 10),
+            }).then(e =>{
+                req.session.logged = 'logged'
+                req.session.email = req.body.email
+                res.redirect("/");
+            })
         }
-
-        db.User.create({
-            name: req.body.name,
-            phone: req.body.phone,
-            email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 10),
-            
-        });
-        res.redirect("/");
     },
     renderProfile: function(req, res, next){
         db.User.findByPk(req.params.id).then(function(user){
