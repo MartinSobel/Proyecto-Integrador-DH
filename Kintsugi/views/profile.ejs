@@ -20,10 +20,14 @@
                 <input type="text" id="name" name="name" value="<%= user.name %>" class="input-control"><br>
                 <h3>Phone:</h3>  
                 <input type="tel" id="phone" name="phone" value="<%= user.phone %>" class="input-control"><br>
-                <h3>E-mail:</h3>  
-                <input type="email" id="email" name="email" value="<%= user.email %>" class="input-control"><br>
                 <button id="button-profile" type="submit" class="btn">Edit</button>
             </form>
+
+            <% if(typeof msg != 'undefined'){ %>
+              <p class="error"><%= msg %></p>
+            <% } %>
+            <a href="/product_manager" id="prod-manager" class="scale">Product Manager</a>
+
             <a href="/users/logout" id="logout">Log out</a>
         </div>
         

@@ -4,6 +4,13 @@ var router = express.Router();
 const authMiddleware = require('../middlewares/authMiddleware');
 
 router.get('/menu', authMiddleware, productController.renderMenu);
+router.get('/menu/rolls', authMiddleware, productController.renderMenuRolls);
+router.get('/menu/mixed', authMiddleware, productController.renderMenuMixed);
+router.get('/menu/snacks', authMiddleware, productController.renderMenuSnacks);
+router.get('/menu/salads', authMiddleware, productController.renderMenuSalads);
+router.get('/menu/tempura', authMiddleware, productController.renderMenuTempura);
+router.get('/menu/dessert', authMiddleware, productController.renderMenuDessert);
+router.get('/menu/drinks', authMiddleware, productController.renderMenuDrinks);
 
 router.get('/cart', authMiddleware, productController.renderProductCart);
 router.get('/detail/:id', productController.renderProductDetail);

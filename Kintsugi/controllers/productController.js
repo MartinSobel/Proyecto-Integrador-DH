@@ -9,6 +9,48 @@ const productController = {
             return res.render("menu", {products});
         })
     },
+    renderMenuRolls: function (req, res, next) {
+        db.Product.findAll({where:{category_id: 1}
+        }).then(function(products){
+            return res.render("menu", {products});
+        })
+    },
+    renderMenuMixed: function (req, res, next) {
+        db.Product.findAll({where:{category_id: 2}
+        }).then(function(products){
+            return res.render("menu", {products});
+        })
+    },
+    renderMenuSnacks: function (req, res, next) {
+        db.Product.findAll({where:{category_id: 3}
+        }).then(function(products){
+            return res.render("menu", {products});
+        })
+    },
+    renderMenuSalads: function (req, res, next) {
+        db.Product.findAll({where:{category_id: 4}
+        }).then(function(products){
+            return res.render("menu", {products});
+        })
+    },
+    renderMenuTempura: function (req, res, next) {
+        db.Product.findAll({where:{category_id: 5}
+        }).then(function(products){
+            return res.render("menu", {products});
+        })
+    },
+    renderMenuDessert: function (req, res, next) {
+        db.Product.findAll({where:{category_id: 6}
+        }).then(function(products){
+            return res.render("menu", {products});
+        })
+    },
+    renderMenuDrinks: function (req, res, next) {
+        db.Product.findAll({where:{category_id: 7}
+        }).then(function(products){
+            return res.render("menu", {products});
+        })
+    },
     addToCart: function (req, res, next){
         // Consultamos si el usuario tiene un carrito creando en la base de datos
         db.User.findOne({
@@ -242,7 +284,7 @@ const productController = {
             id: req.params.id
             }
         }).then(function(){
-            res.redirect("/product_manager/edit/"+ req.params.id)
+            res.redirect("/product_manager/")
         }).catch(function(error){
             console.log(error)
             res.send('error')

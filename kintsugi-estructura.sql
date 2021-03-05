@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-02-2021 a las 22:18:08
+-- Tiempo de generación: 05-03-2021 a las 01:31:15
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.0
 
@@ -83,7 +83,8 @@ CREATE TABLE `user` (
   `Name` varchar(100) NOT NULL,
   `Password` text NOT NULL,
   `Phone` bigint(15) NOT NULL,
-  `Email` varchar(100) NOT NULL
+  `Email` varchar(100) NOT NULL,
+  `admin` enum('no','yes') NOT NULL DEFAULT 'no'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

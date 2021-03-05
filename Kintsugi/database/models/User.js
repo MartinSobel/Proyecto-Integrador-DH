@@ -19,6 +19,9 @@ module.exports = (sequelize, DataTypes) => {
         email: {
             type: DataTypes.STRING
         },
+        admin: {
+            type: DataTypes.ENUM('no', 'yes')
+        }
     };
 
     let config = {

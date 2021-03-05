@@ -16,44 +16,43 @@
       <div class="productscart">
         <% for(let i = 0 ; i < cart.products.length ; i++){ %>
           <div class="productcart">
-            <img src="/images/my-uploads/<%= cart.products[i].image %>">
-            <div class="columna1">
-              <h3><%= cart.products[i].name %></h3>
-              <p class="description"><%= cart.products[i].description %></p>
-              <p class="precio">$<%= cart.products[i].price %></p>
-            </div>
-              <div class="columna2">
-                  <p class="precio"><%= prodCount[i].count %> units</p>
-                  <form action="/products/addAnother/<%= cart.products[i].id %>" method="POST">
-                    <button type="submit" class="buttonPlus"><a class="add-another scale">Add another</a></button>
-                  </form>
-                  <br>
-                  <br>
-                  <form action="/products/deleteOne/<%= cart.products[i].id %>" method="POST">
-                    <button type="submit" class="buttonPlus"><a class="delete scale">Delete</a></button>
-                  </form>
+              <img src="/images/my-uploads/<%= cart.products[i].image %>">
+              <div class="columna1">
+                <h3><%= cart.products[i].name %></h3>
+                <p class="description"><%= cart.products[i].description %></p>
+                <p class="precio">$<%= cart.products[i].price %></p>
               </div>
-          </div>   
+              <div class="columna2">
+                <p class="precio"><%= prodCount[i].count %> units</p>
+                <form action="/products/addAnother/<%= cart.products[i].id %>" method="POST">
+                  <button type="submit" class="buttonPlus"><a class="add-another scale">Add another</a></button>
+                </form>
+                <form action="/products/deleteOne/<%= cart.products[i].id %>" method="POST">
+                  <button type="submit" class="buttonPlus"><a class="delete scale">Delete</a></button>
+                </form>
+              </div>
+          </div>
+          <hr class="separator">   
         <% } %>    
       </div>
-            <div class="bill">
-              <h3>Your bill</h3><br>
-              <% for(let i = 0 ; i < cart.products.length ; i++){ %>
-                <div class="productofinal">
-                  <p class="cantbill">x<%= prodCount[i].count %></p>
-                  <p><%= cart.products[i].name %></p>
-                  <p>$<%= cart.products[i].price %></p>
-                </div>
-              <% } %>   
-                <div class="total">
-                  <h3>Final price:</h3>
-                  <h3>$<%= cart.total %></h3>
-                </div>
-                <form action="/products/checkout" method="POST">
-                  <button type="submit" class="btn">Checkout</button>
-                </form>
-            </div>
+          <div class="bill">
+            <h3>Your bill</h3><br>
+            <% for(let i = 0 ; i < cart.products.length ; i++){ %>
+              <div class="productofinal">
+                <p class="cantbill">x<%= prodCount[i].count %></p>
+                <p><%= cart.products[i].name %></p>
+                <p>$<%= cart.products[i].price %></p>
+              </div>
+            <% } %>   
+              <div class="total">
+                <h3>Final price:</h3>
+                <h3>$<%= cart.total %></h3>
+              </div>
+              <form action="/products/checkout" method="POST">
+                <button type="submit" class="btn">Checkout</button>
+              </form>
           </div>
+    </div>
       <% } else { %>  
         <div class="containercart">
           <div class="container-empty">
