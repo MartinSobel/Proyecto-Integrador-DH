@@ -7,15 +7,15 @@
  
   <%- include('./partials/header')  %>
 
-  <main class="containerlogin">
-    <div class="datos">
+  <main class="containerlogin" >
+    <div class="datos" id="containerprofile">
 
         <div class="titulacion">
             <h2>My profile</h2>
         </div>
 
         <div class="formulario">
-            <form action="/users/profile/<%= user.id %>" method="POST">
+            <form id="profile" action="/users/profile/<%= user.id %>" method="POST">
                 <h3>Name:</h3>       
                 <input type="text" id="name" name="name" value="<%= user.name %>" class="input-control"><br>
                 <h3>Phone:</h3>  
@@ -28,7 +28,7 @@
             <% } %>
             <a href="/product_manager" id="prod-manager" class="scale">Product Manager</a>
 
-            <a href="/users/logout" id="logout">Log out</a>
+            <a href="/users/logout" class="logoutprof">Log out</a>
         </div>
         
       </div>    

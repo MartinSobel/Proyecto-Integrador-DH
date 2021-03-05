@@ -558,6 +558,8 @@ footer p{
 }
 
 .container-dataimg-der{
+  display:flex;
+  flex-direction: column;
   background-color: rgba(0, 0, 0, 0.8);
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -678,7 +680,6 @@ padding-top: 40px;
 } 
 
 .imgder {
-  display: flex;
   flex-direction: column;
   height: 65vh;
   flex-wrap: wrap;
@@ -1518,17 +1519,51 @@ align-items: center;
 
 }
 
+/*===========================
+PROFILE
+===========================*/
+
+
+#containerprofile{
+background-color: rgba(0, 0, 0, 0.8);
+border-radius: 15px;
+border-bottom-left-radius: 15px;
+width: 250px;
+padding: 50px;
+padding-top: 20px;
+margin-bottom: 50px;
+}
+
 #button-profile{
   width: 60px;
   margin-top: 20px;
   margin-bottom: 20px;
+  align-self: center;
 }
 
 #prod-manager{
   text-decoration: none;
   color: #A8CA55;
   font-size: 14px;
-  align-self: center;
+  align-self: flex-end;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: -40px;
 } 
+
+ .logoutprof{
+  color: #EA5457;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top:20px;
+  align-self: flex-end;
+}
+
+@media (max-width: 300px){
+ #containerprofile{
+   width: 200px;
+ }
+ #containerprofile .titulacion h2{
+   font-size: 32px;
+ }
+}
