@@ -1124,9 +1124,9 @@ display: flex;
 .container-pmenu{
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 20px;
-  height: 600px;
+  height: 580px;
   padding: 0px 45px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   overflow-x: hidden;
 }
 .titulos-pmenu{

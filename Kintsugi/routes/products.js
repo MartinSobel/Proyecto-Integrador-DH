@@ -13,9 +13,9 @@ router.get('/menu/dessert', authMiddleware, productController.renderMenuDessert)
 router.get('/menu/drinks', authMiddleware, productController.renderMenuDrinks);
 
 router.get('/cart', authMiddleware, productController.renderProductCart);
-router.get('/detail/:id', productController.renderProductDetail);
+router.get('/detail/:id', authMiddleware , productController.renderProductDetail);
 
-router.get('/checkout', productController.renderCheckout);
+router.get('/checkout' , authMiddleware ,  productController.renderCheckout);
 router.post('/checkout', productController.closeCart);
 
 router.post('/addToCart/:id', productController.addToCart);
