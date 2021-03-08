@@ -17,24 +17,24 @@
 
       <div class="nav-menu">
         <ul>
-          <li><a href="/products/menu">All products</a></li>
-          <li><a href="/products/menu/rolls" class="scale">Rolls</a></li>
-          <li><a href="/products/menu/mixed" class="scale">Mixed</a></li>
-          <li><a href="/products/menu/snacks" class="scale">Snacks</a></li>
-          <li><a href="/products/menu/salads" class="scale">Salads</a></li>
-          <li><a href="/products/menu/tempura" class="scale">Tempura</a></li>
+          <li><a href="/products/menu" class="selected-nav-menu allprod scale">All products</a></li>
+          <li><a href="/products/menu/rolls" class="rolls scale">Rolls</a></li>
+          <li><a href="/products/menu/mixed" class="mixed scale">Mixed</a></li>
+          <li><a href="/products/menu/snacks" class="snacks scale">Snacks</a></li>
+          <li><a href="/products/menu/salads" class="salads scale">Salads</a></li>
+          <li><a href="/products/menu/tempura" class="tempura scale">Tempura</a></li>
         </ul>
         <hr>
         <ul>
-          <li><a href="/products/menu/dessert" id="dessert" class="scale">Dessert</a></li>
-          <li><a href="/products/menu/drinks" id="drinks" class="scale">Drinks</a></li>
+          <li><a href="/products/menu/dessert" id="dessert" class="dessert scale">Dessert</a></li>
+          <li><a href="/products/menu/drinks" id="drinks" class="drinks scale">Drinks</a></li>
           <i class="fas fa-plus"></i>
         </ul>
       </div>
 
       <div class="container-pmenu">
         <div class="titulos-pmenu">
-          <h3>All products</h3>
+          <h3 class="allprod-h3"></h3>
           <div class="scale"><p>Sort by <i class="fas fa-caret-down"></i></p></div>
         </div>
         <div class="products-menu">
@@ -61,5 +61,59 @@
 
     <%- include('./partials/footer')  %>
 
+    <script>
+      window.addEventListener("load", function(){
+
+        var allprodh3 = document.querySelector(".allprod-h3")
+        var allprod = document.querySelector(".allprod")
+        var rolls = document.querySelector(".rolls")
+        var mixed = document.querySelector(".mixed")
+        var snacks = document.querySelector(".snacks")
+        var salads = document.querySelector(".salads")
+        var tempura = document.querySelector(".tempura")
+        var dessert = document.querySelector(".dessert")
+        var drinks = document.querySelector(".drinks")
+        
+        var link = window.location.pathname
+
+        switch(link){
+          case "/products/menu/rolls":
+            allprodh3.innerHTML = "Rolls"
+            rolls.classList.add("selected-nav-menu")
+          break
+          case "/products/menu/mixed":
+            allprodh3.innerHTML = "Mixed"
+            mixed.classList.add("selected-nav-menu")
+          break
+          case "/products/menu/snacks":
+            allprodh3.innerHTML = "Snacks"
+            snacks.classList.add("selected-nav-menu")
+          break
+          case "/products/menu/salads":
+            allprodh3.innerHTML = "Salads"
+            salads.classList.add("selected-nav-menu")
+          break
+          case "/products/menu/tempura":
+            allprodh3.innerHTML = "Tempura"
+            tempura.classList.add("selected-nav-menu")
+          break
+          case "/products/menu/dessert":
+            allprodh3.innerHTML = "Dessert"
+            dessert.classList.add("selected-nav-menu")
+          break
+          case "/products/menu/drinks":
+            allprodh3.innerHTML = "Drinks"
+            drinks.classList.add("selected-nav-menu")
+          break
+          default:
+            allprodh3.innerHTML = "All products"
+        }
+
+        if(link != "/products/menu"){
+          allprod.classList.remove("selected-nav-menu")
+        }
+
+      })
+    </script>
   </body>
 </html>
