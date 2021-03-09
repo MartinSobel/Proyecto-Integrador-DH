@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-03-2021 a las 01:31:15
+-- Tiempo de generación: 09-03-2021 a las 19:20:06
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.0
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `cart` (
   `id` int(255) NOT NULL,
   `user_id` int(255) NOT NULL,
-  `total` int(100) NOT NULL,
+  `total` int(100) NOT NULL DEFAULT 0,
   `status` enum('open','closed') NOT NULL DEFAULT 'open'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
