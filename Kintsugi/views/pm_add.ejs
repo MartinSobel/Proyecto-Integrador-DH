@@ -20,10 +20,17 @@
           </div>
         
         <div class="container-form">
+          <% if(typeof errors != 'undefined'){ %>
+            <p class="error"> Oops! Check below for errors: </p>
+            <% for (let i = 0; i < errors.length; i++) { %>
+              <span class="error"><%= errors[i].msg %></span>
+              <% } %>
+            
+        <% } %>
             <div class="formulario">
                 
                 <form action="/product_manager/store" method="POST" enctype="multipart/form-data">
-                    <h3>Product name</h3>
+                    <h3 class="prodName">Product name</h3>
                     <input type="text" id="name" name="name" placeholder="Name"><br>
                     <h3>Description</h3>
                     <p>Max. 200 characters</p>

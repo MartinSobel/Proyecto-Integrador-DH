@@ -20,6 +20,13 @@
           </div>
         
         <div class="container-form">
+          <% if(typeof errors != 'undefined'){ %>
+            <p class="error"> Oops! Check below for errors: </p>
+            <% for (let i = 0; i < errors.length; i++) { %>
+              <span class="error"><%= errors[i].msg %></span>
+              <% } %>
+            
+        <% } %>
             <div class="formulario">
                 
                 <form action="/product_manager/edit/<%= product.id %>" method="POST" enctype='multipart/form-data'>

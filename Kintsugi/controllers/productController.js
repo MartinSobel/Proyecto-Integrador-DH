@@ -1,6 +1,7 @@
 const fs = require('fs');
 const db = require('../database/models');
 var products = JSON.parse(fs.readFileSync(__dirname + "/../database/products.json"));
+const {check, validationResult, body} = require('express-validator');
 
 
 const productController = {
@@ -251,17 +252,21 @@ const productController = {
         return res.render("pm_add");
     },
     store: function(req, res, next) {
-        db.Product.create({
-            name: req.body.name,
-            description: req.body.desc,
-            price: req.body.price,
-            category_id: req.body.cat,
-            image: req.files[0].filename
-        }).then(e =>{
-            res.redirect("/product_manager/")
-        }).catch(function(e){
-            console.log("CATCH DE PM ADD > STORE" + e)
-        })
+        let errors = validationResult(req);
+        if (!errors.isEmpty()){
+            return res.render('pm_add', {errors: errors.errors});
+        }else{ db.Product.create({
+                name: req.body.name,
+                description: req.body.desc,
+                price: req.body.price,
+                category_id: req.body.cat,
+                image: req.files[0].filename
+            }).then(e =>{
+                res.redirect("/product_manager/")
+            }).catch(function(e){
+                console.log("CATCH DE PM ADD > STORE" + e)
+            })
+        }
     },
     renderProductEdit: function (req, res, next) {
             db.Product.findByPk(req.params.id).then(function(product){
@@ -272,38 +277,49 @@ const productController = {
             })
         },
     update: function(req, res, next) {
-        if(req.files[0] == undefined){
-        db.Product.findByPk(req.params.id)
-        .then(prod =>{
-            db.Product.update({
-                name: req.body.name,
-                description: req.body.desc,
-                price: req.body.price,
-                category_id: req.body.cat,
-                image: prod.image
-            },{
-            where: {id: req.params.id}
-                }).then(function(){
-                    res.redirect("/product_manager/")
-                }).catch(function(error){
-                    console.log(error)
-                    res.send('error')
-                    });
-        }) } else {
-            db.Product.update({
-                name: req.body.name,
-                description: req.body.desc,
-                price: req.body.price,
-                category_id: req.body.cat,
-                image: req.files[0].filename
-            },{
-            where: {id: req.params.id}
-                }).then(function(){
-                    res.redirect("/product_manager/")
-                }).catch(function(error){
-                    console.log(error)
-                    res.send('error')
-                    });
+        console.log('LLEGUEEEEE');
+        let errors = validationResult(req);
+        if (!errors.isEmpty()){
+            db.Product.findByPk(req.params.id).then(function(product){
+                return res.render("pm_edit",{product, errors: errors.errors}) 
+            }).catch(function(error){
+                console.log(error)
+                res.send("No se encontró el producto");
+            });
+        }else{
+            if(req.files[0] == undefined){
+            db.Product.findByPk(req.params.id)
+            .then(prod =>{
+                db.Product.update({
+                    name: req.body.name,
+                    description: req.body.desc,
+                    price: req.body.price,
+                    category_id: req.body.cat,
+                    image: prod.image
+                },{
+                where: {id: req.params.id}
+                    }).then(function(){
+                        res.redirect("/product_manager/")
+                    }).catch(function(error){
+                        console.log(error)
+                        res.send('error')
+                        });
+            }) } else {
+                db.Product.update({
+                    name: req.body.name,
+                    description: req.body.desc,
+                    price: req.body.price,
+                    category_id: req.body.cat,
+                    image: req.files[0].filename
+                },{
+                where: {id: req.params.id}
+                    }).then(function(){
+                        res.redirect("/product_manager/")
+                    }).catch(function(error){
+                        console.log(error)
+                        res.send('error')
+                        });
+            }
         }
     },
     destroy: function(req,res,next){

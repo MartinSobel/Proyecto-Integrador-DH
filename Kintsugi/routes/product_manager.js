@@ -4,6 +4,7 @@ var router = express.Router();
 let multer = require('multer');
 let path = require ('path');
 const pmMiddleware = require('../middlewares/pmMiddleware');
+const {check, validationResult, body} = require('express-validator');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -19,11 +20,13 @@ var storage = multer.diskStorage({
 router.get('/', pmMiddleware,  productController.renderProductManager);
 
 router.get('/add', pmMiddleware, productController.renderProductAdd);
-router.post('/store', upload.any(), productController.store);
+router.post('/store', [check('description').isLength({max:200}), check('price').isInt()], upload.any(), productController.store);
 
 router.get('/edit/:id?', pmMiddleware, productController.renderProductEdit);
-router.post('/edit/:id', upload.any(), productController.update);
+router.post('/edit/:id', [check('description').isLength({max:200}), check('price').isInt()], upload.any(), productController.update);
 
 router.get('/destroy/:id', pmMiddleware, productController.destroy);
+
+
 
 module.exports = router;

@@ -1324,7 +1324,9 @@ display: flex;
 /*===================================
  Product add
 ===================================*/
-
+.prodName{
+  margin-top:100px !important;
+}
 .main-formulario{
   background-color: #151617;
   display: flex;
@@ -1353,7 +1355,7 @@ display: flex;
   padding-top: 50px;
   background-color: black;
   width: 70%;
-  height: 1850px;
+  padding-bottom: 80px;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -1416,7 +1418,7 @@ textarea:focus, input:focus {
 }
 #form-foto2{
   border-radius: 20px;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 #add-img{
   width: 398px;
