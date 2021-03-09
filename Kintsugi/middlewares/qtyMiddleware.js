@@ -15,17 +15,21 @@ function qtyMiddleware(req,res,next){
                     status: 'open' 
                 }
             }).then(cart => {
-                db.Cart_Product.findAll({
-                    where:{
-                        cart_id: cart.id
-                    }
-                }).then(prods =>{
-                    res.locals.qtyCart = prods.length
+                if (cart == null){
                     next()
-                }).catch(function(e){
-                    console.log(e);
-                    next();
-                })
+                } else{
+                    db.Cart_Product.findAll({
+                        where:{
+                            cart_id: cart.id
+                        }
+                    }).then(prods =>{
+                        res.locals.qtyCart = prods.length
+                        next()
+                    }).catch(function(e){
+                        console.log(e);
+                        next();
+                    })
+                }
             }).catch(function(e){
                 console.log(e);
                 next();
@@ -37,4 +41,3 @@ function qtyMiddleware(req,res,next){
 }
 
 module.exports = qtyMiddleware;
-
