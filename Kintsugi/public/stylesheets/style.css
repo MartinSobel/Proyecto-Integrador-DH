@@ -404,41 +404,40 @@ margin-bottom: -10px;
 /*===================================
  Product details
 ===================================*/
-  .productname{
-    width: 500px;
-    align-self: center;
-  }
-  #product-main{
-    padding-top: 20px;
-    flex-direction: column;
-  }
-  #product-description{
-    display: inherit;
-    width: 100% !important;
-    margin-top: 10px;
-  }
-  #details{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0px 20px;
-  }
-  #product-main {
-    width: 80% !important;
-  }
+.productname{
+  width: 500px;
+  align-self: center;
+}
+#product-main{
+  flex-direction: column;
+}
+#product-description{
+  display: inherit;
+  width: 100% !important;
+  margin-top: 10px;
+}
+#details{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0px 20px;
+}
+#product-main {
+  width: 80% !important;
+}
 
-  #product-main{
-    width: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#product-main{
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #product_title_jap{
-  width: 300px;
+  width: 280px;
 }
 
 #product-main span{
@@ -489,11 +488,11 @@ margin-bottom: -10px;
   width: 75%;
 }
 
-
 #product_image{
   display: block;
   width: 300px;
   margin: 3% auto;
+  margin-top: 35px;
   border-radius: 10px;
   align-self: center;
 }
@@ -517,6 +516,9 @@ margin-bottom: -10px;
   }
   #product_title_jap{
     width: 200px;
+  }
+  .container-prod-detail {
+    width: 60%;
   }
 }
 @media (max-width: 450px){

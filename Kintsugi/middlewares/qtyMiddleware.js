@@ -34,6 +34,9 @@ function qtyMiddleware(req,res,next){
                 console.log(e);
                 next();
             })
+        }).catch(function(e){
+            console.log(e);
+            next();
         })
     } else {
         next();
