@@ -11,7 +11,7 @@ function pmMiddleware(req, res, next){
         }).then((result)=>{
             db.User.findByPk(result.id)
                 .then(function(user){
-                res.render('profile',{user, msg: 'Sorry, you have to be admin to access this section'});
+                res.render('profile',{user, msg: 'Sorry, you have to be administrator to access this section'});
             }).catch(e =>{
                 console.log(e)
             })
