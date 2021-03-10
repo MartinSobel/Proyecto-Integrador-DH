@@ -1440,26 +1440,6 @@ textarea:focus, input:focus {
   color: #EA5457;
 }
 
-@media (max-width: 1050px){
-  #form-foto1{
-    width: 413px;
-    height: 152px;
-  }
-  .container-form{
-    width: 90%;
-  }
-}
-
-@media (max-width: 700px){
-  #form-foto1{
-    width: 413px;
-    height: 152px;
-  }
-  .container-form{
-    width: 98%;
-  }
-}
-
 select {
   -webkit-appearance:none;
   -moz-appearance:none;
@@ -1476,6 +1456,7 @@ select {
   color:#fff;
   cursor:pointer;
   font-size: 1em;
+  font-family: 'SF-Pro-Text-Regular';
 }
 select::-ms-expand {
   display: none;
@@ -1505,6 +1486,60 @@ select::-ms-expand {
   color: #EA5457;
 }
 
+@media (max-width: 1050px){
+  #form-foto1{
+    width: 413px;
+    height: 152px;
+  }
+  .container-form{
+    width: 90%;
+  }
+}
+
+@media (max-width: 700px){
+  #form-foto1{
+    width: 413px;
+    height: 152px;
+  }
+  .container-form{
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px){
+  .container-form{
+    width: 105%;
+    padding-top: 10px;
+  }
+  #form-foto1{
+    width: 280px;
+    height: 120px;
+  }
+  .container-form .formulario input, .container-form .formulario .select{
+    width: 280px;
+  }
+  .container-form .formulario select{
+    padding-left: 20px;
+  }
+  .main-formulario .nav-menu{
+    text-align: center;
+    height: 70px;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .main-formulario .nav-menu ul{
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+/*==*/
+
+  #add-img, #form-foto2 {
+      width: 280px;
+  }
+}
+
+
 /*===================================
  Product edit
 ===================================*/
@@ -1517,6 +1552,7 @@ select::-ms-expand {
   margin-right: -70px;
   margin-top: 20px;
   padding: 40px 40px;
+  height: fit-content;
 }
 .products-edit img{
   width: 217px;
