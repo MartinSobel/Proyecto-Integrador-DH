@@ -35,6 +35,7 @@
 
   var treslineas = document.querySelector("#treslineas")
   var navbar = document.querySelector("nav")
+  var burgerNav = document.querySelector(".burger-nav")
   var cartNav = document.querySelector(".cartnav")
   var fade = document.querySelectorAll(".fade")
 
@@ -43,6 +44,8 @@
     navbar.classList.toggle("expand")
     treslineas.classList.toggle("fa-times")
     cartNav.classList.toggle("hidden")
+    burgerNav.classList.toggle("margin")
+    burgerNav.classList.toggle("opacity")
     fade.forEach(element => {
       element.classList.toggle("opacity")
     });

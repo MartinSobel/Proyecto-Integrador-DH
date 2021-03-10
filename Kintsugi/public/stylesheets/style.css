@@ -174,6 +174,49 @@ nav a:hover{
 
 
 
+.expand{
+  height: 400px !important;
+  align-items: start;
+  box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.9);
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease ;
+  -moz-transition: all 0.4s ease ;
+}
+
+.burger-nav{
+  display: none;
+  text-decoration: none !important;
+  position: absolute;
+  top: 100px;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  width: 100%;
+  background-color: #000;
+  border-radius: 20px;
+  opacity: 0;
+  margin-top: -200px;
+}
+
+.burger-nav a{
+  font-size: 16pt;
+  margin-bottom: -20px;
+  opacity: 0;
+  transition: all 0.5s ease !important;
+  -webkit-transition: all 0.5s ease !important;
+  -moz-transition: all 0.5s ease !important;
+}
+
+.margin{
+  margin-top: 0px !important;
+}
+
+.opacity{
+  opacity: 1 !important;
+  margin-bottom: 50px !important;
+}
+
+
 @media (max-width: 1000px){
   nav ul:nth-child(1) li:nth-child(n+2), nav ul:nth-child(2) li:nth-child(2){
     display: none;
@@ -189,7 +232,9 @@ nav a:hover{
     padding-left: 0px;
     padding-right: 30px;
   }
-
+  .burger-nav{
+    display: flex;
+  }
 }
 
 @media (max-width: 700px){
@@ -205,38 +250,6 @@ nav a:hover{
 
 }
 
-.expand{
-  height: 400px !important;
-  align-items: start;
-  box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.9);
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease ;
-  -moz-transition: all 0.5s ease ;
-}
-
-.burger-nav{
-  text-decoration: none !important;
-  position: absolute;
-  top: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-self: center;
-  width: 100%;
-}
-
-.burger-nav a{
-  font-size: 16pt;
-  margin-bottom: 50px;
-  opacity: 0;
-}
-
-.burger-nav .opacity{
-  opacity: 1;
-  transition: all 0.6s ease !important;
-  -webkit-transition: all 0.6s ease !important;
-  -moz-transition: all 0.6s ease !important;
-}
 
 
 /*===================================
