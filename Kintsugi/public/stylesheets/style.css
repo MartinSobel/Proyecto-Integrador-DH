@@ -121,12 +121,13 @@ nav{
   background-color: black;
   color: gray;
   width: 97.5%;
-  height: 10%;
+  height: 90px;
   border-radius: 20px;
   z-index: 1;
   justify-content: space-between;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.6);
 }
+
 
 .fa-user-circle{
   margin-left: 10px;
@@ -140,6 +141,10 @@ nav ul{
 nav ul li{
   padding: 0px 30px;
   align-self: center;
+}
+
+nav ul li a{
+  text-decoration: none !important;
 }
 
 nav ul img{
@@ -168,21 +173,23 @@ nav a:hover{
 }
 
 
-@media (max-width: 1200px){
-  nav ul li:nth-child(-n+3){
+
+@media (max-width: 1000px){
+  nav ul:nth-child(1) li:nth-child(n+2), nav ul:nth-child(2) li:nth-child(2){
     display: none;
   }
   #hide-it{
     display: none;
   }
   #treslineas{
-    display: flex;
+    display: block;
     font-size: 26px;
   }
   nav ul li{
     padding-left: 0px;
     padding-right: 30px;
   }
+
 }
 
 @media (max-width: 700px){
@@ -197,6 +204,40 @@ nav a:hover{
   }
 
 }
+
+.expand{
+  height: 400px !important;
+  align-items: start;
+  box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.9);
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease ;
+  -moz-transition: all 0.5s ease ;
+}
+
+.burger-nav{
+  text-decoration: none !important;
+  position: absolute;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  width: 100%;
+}
+
+.burger-nav a{
+  font-size: 16pt;
+  margin-bottom: 50px;
+  opacity: 0;
+}
+
+.burger-nav .opacity{
+  opacity: 1;
+  transition: all 0.6s ease !important;
+  -webkit-transition: all 0.6s ease !important;
+  -moz-transition: all 0.6s ease !important;
+}
+
 
 /*===================================
  Home
@@ -325,7 +366,7 @@ margin-bottom: -10px;
   transition-duration: 0.12s !important;
   transition-timing-function: ease-in !important;
   border: 2px solid #EA5457 !important;
-  text-decoration: none;
+  text-decoration: none !important;
   color: #fff;
 }
 

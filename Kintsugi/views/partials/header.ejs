@@ -8,7 +8,7 @@
     </ul>
     <ul>
       <!-- <li><a href="" class="scale"><i class="fas fa-search"></i></a></li> -->
-      <li><a href="/products/cart" class="scale"><i class="fas fa-shopping-cart"></i><span class="qty-cart"><%= locals.qtyCart %></span></a></li>
+      <li><a href="/products/cart" class="scale cartnav"><i class="fas fa-shopping-cart"></i><span class="qty-cart"><%= locals.qtyCart %></span></a></li>
 
       <% if(locals.userLogged == null){ %>
         <li><a href="/users/login" class="scale">Login   <i class="fas fa-sign-in-alt"></i></a></li>
@@ -18,4 +18,34 @@
       
       <li><a href="#"><i class="fas fa-bars" id="treslineas"></i></a></li>
     </ul>
+
+    <div class="burger-nav">
+        <a href="/" class="scale fade">Home</a>
+        <a href="/products/menu" class="scale fade">Menu</a>
+        <a href="/products/cart" class="scale fade">Cart <i class="fas fa-shopping-cart"></i><span class="qty-cart"><%= locals.qtyCart %></span></a>
+        <% if(locals.userLogged == null){ %>
+          <a href="/users/login" class="scale fade">Login   <i class="fas fa-sign-in-alt"></i></a>
+        <% } else { %>
+          <a href="/users/login" class="scale fade"><%= locals.userLogged %><i class="fas fa-user-circle"></i></a>
+        <% } %>   
+    </div>
+
 </nav>
+<script>
+
+  var treslineas = document.querySelector("#treslineas")
+  var navbar = document.querySelector("nav")
+  var cartNav = document.querySelector(".cartnav")
+  var fade = document.querySelectorAll(".fade")
+
+
+  treslineas.addEventListener("click", ()=>{
+    navbar.classList.toggle("expand")
+    treslineas.classList.toggle("fa-times")
+    cartNav.classList.toggle("hidden")
+    fade.forEach(element => {
+      element.classList.toggle("opacity")
+    });
+  })
+
+</script>
