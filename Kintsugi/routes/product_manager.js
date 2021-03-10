@@ -4,6 +4,7 @@ var router = express.Router();
 let multer = require('multer');
 let path = require ('path');
 const pmMiddleware = require('../middlewares/pmMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 const {check, validationResult, body} = require('express-validator');
 
 var storage = multer.diskStorage({
@@ -17,15 +18,15 @@ var storage = multer.diskStorage({
    
   var upload = multer({ storage: storage })
 
-router.get('/', pmMiddleware,  productController.renderProductManager);
+router.get('/', authMiddleware, pmMiddleware,  productController.renderProductManager);
 
-router.get('/add', pmMiddleware, productController.renderProductAdd);
+router.get('/add', authMiddleware, pmMiddleware, productController.renderProductAdd);
 router.post('/store', [check('description').isLength({max:200}), check('price').isInt()], upload.any(), productController.store);
 
-router.get('/edit/:id?', pmMiddleware, productController.renderProductEdit);
+router.get('/edit/:id?', authMiddleware, pmMiddleware, productController.renderProductEdit);
 router.post('/edit/:id', [check('description').isLength({max:200}), check('price').isInt()], upload.any(), productController.update);
 
-router.get('/destroy/:id', pmMiddleware, productController.destroy);
+router.get('/destroy/:id', authMiddleware, pmMiddleware, productController.destroy);
 
 
 
