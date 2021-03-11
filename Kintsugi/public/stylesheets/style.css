@@ -801,18 +801,18 @@ padding-top: 40px;
   }
 
   .container-dataimg-der{
+    padding-top: 50px;
     padding-left: 40px;
     padding-right: 40px;
-    height: 450px;
     padding-bottom: 100px;
     border-bottom-left-radius: 15px;
     border-top-right-radius: 0px;
     margin-top: 0px;
     margin-bottom: 50px;
+    height: 450px;
   }
 
   .container-dataimg-izq{
-    padding-top: -100px;
     height: 550px;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 0px;
@@ -821,10 +821,30 @@ padding-top: 40px;
   }
   .carousel-inner img{
     width: 350px!important;
-    height:150px !important;
+    height: 150px !important;
     
   }
   
+}
+
+@media (max-width: 450px){
+  .formulario h3, .form-validation, .titulacion p{
+    width: 280px !important;
+  }
+  .container-dataimg-izq{
+  margin-left: -20px;
+  }
+  .container-dataimg-der{
+  margin-left: -35px;
+  padding-top: 90px;
+  z-index: -5;
+  }
+  #already, #noAccount {
+  align-self: baseline;
+  }
+  #recieve-news{
+    width: 185px;
+  }
 }
 
 
