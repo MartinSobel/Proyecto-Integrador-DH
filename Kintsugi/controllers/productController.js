@@ -277,7 +277,6 @@ const productController = {
             })
         },
     update: function(req, res, next) {
-        console.log('LLEGUEEEEE');
         let errors = validationResult(req);
         if (!errors.isEmpty()){
             db.Product.findByPk(req.params.id).then(function(product){

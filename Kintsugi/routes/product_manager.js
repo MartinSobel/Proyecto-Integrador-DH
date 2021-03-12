@@ -21,10 +21,10 @@ var storage = multer.diskStorage({
 router.get('/', authMiddleware, pmMiddleware,  productController.renderProductManager);
 
 router.get('/add', authMiddleware, pmMiddleware, productController.renderProductAdd);
-router.post('/store', [check('description').isLength({max:200}), check('price').isInt()], upload.any(), productController.store);
+router.post('/store', upload.any(), productController.store);
 
 router.get('/edit/:id?', authMiddleware, pmMiddleware, productController.renderProductEdit);
-router.post('/edit/:id', [check('description').isLength({max:200}), check('price').isInt()], upload.any(), productController.update);
+router.post('/edit/:id', upload.any(), productController.update);
 
 router.get('/destroy/:id', authMiddleware, pmMiddleware, productController.destroy);
 
