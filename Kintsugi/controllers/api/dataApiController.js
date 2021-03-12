@@ -20,11 +20,11 @@ let dataApiController = {
     },
     sales: function(req,res){
         db.Cart.findAll({
-            where: {status:0}
+            where: {status:"closed"}
         })
         .then(function(cart){
-            for(let i = 0; i<cart.length; i++){
-                users[i].setDataValue("endpoint", "/api/data/sales/" + cart[i].id)
+            for(let i = 0; i < cart.length; i++){
+                cart[i].setDataValue("endpoint", "/api/data/sales/" + cart[i].id)
             }
             let answer = {
                 meta: {
@@ -69,11 +69,13 @@ let dataApiController = {
                 db.User.findAll()
                     .then(function(users){
                         answer.data.totalUsers = users.length;
-                        db.Cart.findAll()
-                            .then(function(carts){
-                                answer.data.totalCarts = carts.length;
-                                res.json(answer);
-                            })
+                        db.Cart.findAll(
+                            {where:{status:"closed"}}
+                        )
+                        .then(function(carts){
+                            answer.data.totalCarts = carts.length;
+                            res.json(answer);
+                        })
                     })
             })   
     },
